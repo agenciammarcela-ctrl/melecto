@@ -51,7 +51,7 @@ Salva esse vídeo se quiser entender o protocolo completo 🔖
 ### SLIDES
 
 **Slide 1 — CAPA**
-*"5 sinais que seu corpo usa para pedir uma construção mais consciente"*
+*"5 sinais que seu corpo dá quando precisa de mais do que você está oferecendo"*
 Subtítulo: "E o que a ciência diz sobre cada um."
 
 **Slide 2**
