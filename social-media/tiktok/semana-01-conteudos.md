@@ -1,348 +1,284 @@
-# MAXME Bio — TikTok | Semana 01
-**Tom:** Conversacional, direto, científico mas acessível. Sem jargão de academia.
-**Formato base:** Hook forte nos primeiros 2s. Informação real. CTA simples no final.
-**Duração ideal:** 30–60 segundos por vídeo.
+# MAXME BIO — TikTok | Semana 01
+**Tom:** Lúcido, embasado, sóbrio — sem hype, sem gym talk, sem alarmismo
+**Formato base:** Hook nos primeiros 3s. Dado real. Mecanismo simples. CTA direto.
+**Duração ideal:** 30–60 segundos por vídeo
+**SEO:** dizer o nome do ingrediente/tema nos primeiros 5s para indexação na busca do TikTok
 
 ---
 
-## VÍDEO 1 — SEGUNDA-FEIRA
-**Produto:** MAXME Coffee + Creatina
-**Duração:** ~40s
-**Tema:** "O que tem no seu café da manhã?"
-**Gancho emocional:** curiosidade / desmistificação
-
----
-
-### HOOK (primeiros 2 segundos)
-> **Texto na tela:** "Creatina no café? Deixa eu te explicar."
-> **Voz:** tom calmo, sem hype
-
----
-
-### ROTEIRO COMPLETO
-
-**[0–3s]**
-"Creatina no café da manhã. Parece coisa de fisiculturista, né? Mas calma."
-
-**[4–15s]**
-"A creatina não é só pra músculo. Estudos mostram que ela melhora memória de trabalho, velocidade de raciocínio e desempenho cognitivo — especialmente em pessoas que não comem muita carne vermelha."
-
-**[16–28s]**
-"O MAXME Coffee combina 3g de creatina com 75mg de cafeína, TCM — que é gordura boa de absorção rápida — colina, taurina e vitaminas B. Tudo que o cérebro precisa pra ligar de verdade de manhã."
-
-**[29–38s]**
-"Sem acelerar coração. Sem aquela ansiedade de estimulante forte. Só foco limpo."
-
-**[39–40s — CTA]**
-"Link na bio. ☕"
-
----
-
-### TEXTO NA TELA (overlays sugeridos)
-- "Creatina = foco cognitivo também"
-- "75mg de cafeína = 1 espresso bem feito"
-- "TCM = energia sem pico de insulina"
-- "Sem agitação. Sem taquicardia."
-
-### SOM SUGERIDO
-Áudio original (voz over calma) ou lo-fi instrumental neutro.
-
-### LEGENDA DO POST
-Café da manhã ou protocolo matinal? Tem diferença 👆 #MAXMEBio #CaféFuncional #Creatina #FocoCognitivo #SaúdeReal #SupplementoInteligente #Longevidade
-
----
-
-## VÍDEO 2 — TERÇA-FEIRA
-**Produto:** Whey Protein Concentrado + Colágeno Cpure®
-**Duração:** ~45s
-**Tema:** "O que acontece com seu músculo depois dos 30"
-**Gancho emocional:** educação / leveza / pertencimento
-
----
-
-### HOOK (primeiros 2 segundos)
-> **Texto na tela:** "Após os 30, você começa a perder músculo. Mesmo sem perceber."
-> **Voz:** direta, sem drama
-
----
-
-### ROTEIRO COMPLETO
-
-**[0–4s]**
-"Depois dos 30 anos, o corpo começa a perder massa muscular progressivamente. Isso tem nome: sarcopenia. E é mais comum do que você imagina."
-
-**[5–18s]**
-"Não precisa ter pânico. Mas precisa de proteína de qualidade, de verdade, no dia a dia. Não necessariamente pra ficar grande — mas pra manter força, articulações funcionando e metabolismo ativo."
-
-**[19–34s]**
-"O MAXME Whey Concentrado tem 23g de proteína por dose, mais colágeno hidrolisado Cpure® — que apoia tendões e articulações — e TCM pra energia sustentada. Tudo numa dose só."
-
-**[35–43s]**
-"Não é sobre estética. É sobre continuar funcional em qualquer idade."
-
-**[44–45s — CTA]**
-"Link na bio. 3 sabores."
-
----
-
-### TEXTO NA TELA (overlays sugeridos)
-- "Sarcopenia começa antes dos 40"
-- "23g de proteína por dose"
-- "Colágeno Cpure® = articulações e tecidos"
-- "TCM = energia real"
-- "Força ≠ estética. Força = autonomia."
-
-### SOM SUGERIDO
-Áudio original ou trilha suave/instrumental. Evitar música agitada.
-
-### LEGENDA DO POST
-Músculo é independência, não estética 💪 #MAXMEBio #WheyProtein #Colágeno #Sarcopenia #Longevidade #SaúdeMuscular #BemEstarReal
-
----
-
-## VÍDEO 3 — QUARTA-FEIRA
+## VÍDEO 01 — Terça | 6h–8h
 **Produto:** Coenzima Q10 + B-Complex
 **Duração:** ~50s
-**Tema:** "Por que você ainda se sente cansado"
-**Gancho emocional:** identificação / alívio de descoberta
+**Tema:** A causa mais subestimada do cansaço mental
+**Hook:** Identificação — pergunta incômoda
 
----
+### HOOK (0–3s)
+*Texto em tela: "Você dorme bem, come bem. E ainda assim sente fadiga o dia todo."*
+> "Isso não é fraqueza. Tem explicação biológica."
 
-### HOOK (primeiros 2 segundos)
-> **Texto na tela:** "Você dorme bem mas acorda cansado? Isso tem explicação."
-> **Voz:** empática, sem julgamento
-
----
-
-### ROTEIRO COMPLETO
+### ROTEIRO
 
 **[0–5s]**
-"Você dorme 7, 8 horas. Come relativamente bem. E ainda assim sente aquela fadiga de fundo o dia todo. Isso não é frescura."
-
-**[6–18s]**
-"Uma das causas mais subestimadas é o déficit de Coenzima Q10. Ela é literalmente o componente que a mitocôndria usa pra produzir energia — o ATP. Com a idade, os níveis caem. E a fadiga aparece sem motivo aparente."
-
-**[19–32s]**
-"O problema? A maioria dos suplementos de CoQ10 tem absorção baixíssima. O corpo aproveita uma fração pequeníssima."
-
-**[33–44s]**
-"O MAXME CoQ10 usa tecnologia Ubiqsome® com Phytosome® — 5x mais absorção que fórmulas convencionais. Mais Complexo B, que potencializa a ação. 1 dose. Até 24h de ação."
-
-**[45–48s]**
-"Sem estimulantes. Sem pico de energia seguido de queda."
-
-**[49–50s — CTA]**
-"Link na bio."
-
----
-
-### TEXTO NA TELA (overlays sugeridos)
-- "ATP = energia celular real"
-- "CoQ10 cai com a idade"
-- "Absorção convencional = baixa"
-- "Ubiqsome® = 5x mais absorção"
-- "1 dose. 24h de ação."
-- "Sem estimulante. Sem queda."
-
-### SOM SUGERIDO
-Áudio original ou trilha lo-fi calmante. Ritmo conversacional.
-
-### LEGENDA DO POST
-Fadiga persistente tem explicação 🔋 #MAXMEBio #CoQ10 #EnergiaReal #FadigaCrônica #Mitocôndria #SaúdeCelular #SupplementoInteligente
-
----
-
-## VÍDEO 4 — QUINTA-FEIRA
-**Produto:** Whey Isolado + Hidrolisado
-**Duração:** ~35s
-**Tema:** "Qual é a diferença entre whey concentrado, isolado e hidrolisado?"
-**Gancho emocional:** educação prática / desmistificação
-
----
-
-### HOOK (primeiros 2 segundos)
-> **Texto na tela:** "Whey concentrado, isolado, hidrolisado — qual você deve escolher?"
-> **Voz:** didática, sem condescendência
-
----
-
-### ROTEIRO COMPLETO
-
-**[0–4s]**
-"Tem três tipos principais de whey. E a diferença importa dependendo do que você precisa."
-
-**[5–16s]**
-"O concentrado tem mais lactose e gordura. É bom, mas pode pesar na digestão pra quem tem sensibilidade. O isolado passa por um processo de filtragem extra — menos lactose, mais proteína pura por dose."
-
-**[17–26s]**
-"O hidrolisado já vem 'pré-digerido': as proteínas estão quebradas em peptídeos menores, absorção mais rápida e ainda menos carga digestiva."
-
-**[27–32s]**
-"O MAXME Whey Isolado + Hidrolisado combina os dois. 23g de proteína por dose. Pureza alta, digestão leve."
-
-**[33–35s — CTA]**
-"Link na bio. Escolha o sabor."
-
----
-
-### TEXTO NA TELA (overlays sugeridos)
-- "Concentrado: mais acessível, mais lactose"
-- "Isolado: + puro, – lactose"
-- "Hidrolisado: absorção mais rápida"
-- "MAXME: isolado + hidrolisado juntos"
-- "23g de proteína | Chocolate, Cappuccino, Natural"
-
-### SOM SUGERIDO
-Áudio original. Ritmo rápido mas claro.
-
-### LEGENDA DO POST
-Whey é tudo igual? Não exatamente 🧪 #MAXMEBio #WheyIsolado #WheyHidrolisado #Proteína #NutriçãoDeVerdade #SupplementoInteligente #SaúdeReal
-
----
-
-## VÍDEO 5 — SEXTA-FEIRA
-**Produto:** MAXME Coffee + Creatina
-**Duração:** ~30s
-**Tema:** "Rotina matinal — mostrando o produto em uso"
-**Formato:** POV / lifestyle — mais visual, menos explicativo
-
----
-
-### HOOK (primeiros 2 segundos)
-> **Texto na tela:** "Minha rotina matinal mudou quando eu parei de só tomar café."
-> **Voz:** pessoal, leve
-
----
-
-### ROTEIRO COMPLETO
-
-**[0–3s]**
-"Todo dia começo assim:"
-
-**[4–12s]**
-[Cena: preparando o MAXME Coffee, luz da manhã, sem pressa]
-"MAXME Coffee + Creatina. Dissolve fácil, sabor bom, sem adição de açúcar."
-
-**[13–22s]**
-"A diferença que eu sinto? Foco mais limpo nas primeiras horas. Sem aquela ansiedade de café forte."
-
-**[23–28s]**
-"Não é magia. É fórmula. 3g de creatina, cafeína, TCM, colina. Faz sentido."
-
-**[29–30s — CTA]**
-"Link na bio ☕"
-
----
-
-### TEXTO NA TELA (overlays sugeridos)
-- "Sem açúcar adicionado"
-- "Adoçado naturalmente"
-- "Foco sem ansiedade"
-
-### SOM SUGERIDO
-Lo-fi manhã / áudio de natureza leve / áudio original.
-
-### LEGENDA DO POST
-Protocolo matinal simples e que faz sentido ☕ #MAXMEBio #RotinaMatinal #CaféFuncional #Creatina #FocoDiário #BomDia #Longevidade
-
----
-
-## VÍDEO 6 — SÁBADO
-**Produto:** Whey Protein Concentrado + Colágeno Cpure®
-**Duração:** ~40s
-**Tema:** "Por que colágeno junto com proteína?"
-**Gancho emocional:** curiosidade científica
-
----
-
-### HOOK (primeiros 2 segundos)
-> **Texto na tela:** "Colágeno no whey? Por quê?"
-> **Voz:** direta, curiosa
-
----
-
-### ROTEIRO COMPLETO
-
-**[0–4s]**
-"Quando você vê colágeno junto com whey protein, pode parecer que é só pra pele. Mas não é."
+"Você faz tudo certo. Dorme suas horas, come relativamente bem, toma café. E ainda assim tem uma fadiga de fundo que não passa. Esse padrão tem uma causa pouco discutida."
 
 **[5–18s]**
-"Tendões, ligamentos, cartilagens, discos intervertebrais — tudo isso é basicamente colágeno. E eles sofrem muito com treinos, envelhecimento e rotina pesada."
+"CoQ10 — Coenzima Q10. É o componente que a mitocôndria usa para produzir energia celular, o ATP. Com a idade, os níveis caem naturalmente. O resultado: fadiga persistente sem causa aparente, especialmente cognitiva."
 
-**[19–28s]**
-"O colágeno Cpure® que a MAXME usa é hidrolisado — fragmentado em peptídeos que o corpo absorve e redireciona pros tecidos que precisam."
+**[18–30s]**
+"O detalhe que quase ninguém menciona: a maioria dos suplementos de CoQ10 tem absorção muito baixa. O corpo aproveita uma fração mínima do que você ingere. A forma de entrega do ativo importa tanto quanto a dosagem."
 
-**[29–36s]**
-"Junto com 23g de proteína e TCM, é a fórmula pra quem pensa em se manter funcional — não só musculoso."
+**[30–42s]**
+"O MAXME CoQ10 usa tecnologia Ubiqsome® com Phytosome® — 5x mais absorção que fórmulas convencionais. Mais Complexo B para potencializar. Uma cápsula por dia, ação de até 24 horas. Sem estimulante, sem pico, sem queda."
 
-**[37–40s — CTA]**
-"Disponível em 3 sabores. Link na bio."
+**[42–50s — CTA]**
+"Se isso faz sentido pra você, salva esse vídeo. E me conta nos comentários: você já sabia dessa diferença de absorção?"
 
----
-
-### TEXTO NA TELA (overlays sugeridos)
-- "Colágeno ≠ só estética"
-- "Tendões, ligamentos, cartilagens"
-- "Cpure® = colágeno hidrolisado premium"
-- "23g proteína + suporte articular + TCM"
+### TEXTO NA TELA (overlays)
+- "CoQ10 = combustível da mitocôndria"
+- "Níveis caem com a idade"
+- "Absorção convencional: baixa"
+- "Ubiqsome® = 5x mais absorção"
+- "1 cápsula | 24h de ação"
 
 ### SOM SUGERIDO
-Áudio original ou instrumental suave.
+Áudio original (voz direta, tom calmo) | Lo-fi instrumental sutil ao fundo.
 
-### LEGENDA DO POST
-Proteína pro músculo. Colágeno pro que sustenta o músculo 🦴 #MAXMEBio #Colágeno #WheyProtein #SaúdeArticular #CpureCollagen #Longevidade #BemEstarReal
+### LEGENDA
+CoQ10 e a causa ignorada do cansaço mental. Entenda a diferença de absorção antes de suplementar. #coq10 #saude #longevidade #suplementos #energiacelular #maxmebio #fyp
 
 ---
 
-## VÍDEO 7 — DOMINGO
-**Produto:** Coenzima Q10 + B-Complex
+## VÍDEO 02 — Quarta | 10h–12h
+**Produto:** Whey Protein Concentrado + Colágeno Cpure®
 **Duração:** ~45s
-**Tema:** "O que sua mitocôndria faz por você — e como cuidar dela"
-**Gancho emocional:** descoberta / empoderamento
+**Tema:** Por que músculo é longevidade — não estética
+**Hook:** Contra-intuitivo + identidade
 
----
+### HOOK (0–3s)
+*Texto em tela: "Músculo não é sobre como você parece. É sobre quanto tempo você dura."*
+> "Essa é uma das mudanças de perspectiva mais importantes que você pode ter sobre saúde."
 
-### HOOK (primeiros 2 segundos)
-> **Texto na tela:** "Você conhece a mitocôndria. Mas sabe como cuidar dela?"
-> **Voz:** calma, instigante
-
----
-
-### ROTEIRO COMPLETO
+### ROTEIRO
 
 **[0–5s]**
-"A mitocôndria é a usina de energia das células. Todo mundo sabe isso da biologia do colégio. Mas quase ninguém fala como cuidar dela na vida adulta."
+"Sarcopenia — a perda progressiva de massa muscular com a idade — começa antes dos 40. Não é exclusiva de quem não treina. E tem consequências diretas sobre autonomia, mobilidade e metabolismo."
 
-**[6–18s]**
-"Ela precisa de Coenzima Q10 pra funcionar. E os níveis de CoQ10 caem naturalmente com a idade — e ainda mais se você usa estatinas, que são remédios pra colesterol."
+**[5–18s]**
+"Músculo é o órgão metabólico mais ativo do corpo. Ele regula insulina, armazena aminoácidos como reserva, protege articulações, sustenta postura. Quando você perde massa muscular, perde função — não só volume."
 
-**[19–30s]**
-"Suplementar resolve. Mas o detalhe é a absorção. A maioria das fórmulas convencionais de CoQ10 tem aproveitamento muito baixo pelo organismo."
+**[18–32s]**
+"Proteína de qualidade é a base da manutenção muscular. O MAXME Whey Concentrado tem 23g por dose, mais colágeno hidrolisado Cpure® — que apoia tendões, ligamentos e cartilagens — e TCM para energia sustentada."
 
-**[31–40s]**
-"A MAXME usa tecnologia Ubiqsome® com Phytosome® — 5x mais absorção, ação de até 24h com 1 cápsula por dia. E o Complexo B potencializa tudo."
+**[32–42s]**
+"Não é sobre treinar pesado. É sobre fornecer ao corpo o que ele precisa para se manter funcional por mais tempo."
 
-**[41–43s]**
-"Energia estável. Proteção celular. Sem estimulante."
+**[42–45s — CTA]**
+"Disponível em 3 sabores. Link na bio."
 
-**[44–45s — CTA]**
-"Link na bio."
-
----
-
-### TEXTO NA TELA (overlays sugeridos)
-- "Mitocôndria = usina de energia"
-- "CoQ10 cai com a idade (e com estatinas)"
-- "Absorção convencional: baixa"
-- "Ubiqsome® + Phytosome® = 5x mais absorção"
-- "1 cápsula. 24h de ação."
+### TEXTO NA TELA (overlays)
+- "Sarcopenia começa antes dos 40"
+- "Músculo = autonomia, não estética"
+- "23g proteína | Colágeno Cpure® | TCM"
+- "Funcional por mais tempo"
 
 ### SOM SUGERIDO
-Áudio original. Tom reflexivo de domingo.
+Áudio original. Tom reflexivo e direto.
 
-### LEGENDA DO POST
-Mitocôndria feliz, você com energia de verdade 🔋 #MAXMEBio #CoQ10 #Mitocôndria #SaúdeCelular #EnergiaReal #SupplementoInteligente #Longevidade #BemEstarReal
+### LEGENDA
+Músculo é longevidade. Entenda por que perder massa muscular é um problema muito além da estética. #longevidade #saude #proteina #colágeno #sarcopenia #maxmebio #fyp
 
 ---
 
-*Documento criado para uso interno MAXME Bio | Semana 01*
+## VÍDEO 03 — Quinta | 18h–20h
+**Produto:** Magnésio Bisglicinato (educativo de ingrediente)
+**Duração:** ~40s
+**Tema:** Por que a forma do magnésio importa
+**Hook:** Dado surpreendente + erro comum
+
+### HOOK (0–3s)
+*Texto em tela: "73% dos brasileiros têm déficit de magnésio."*
+> "E a maioria está suplementando com a forma de menor absorção."
+
+### ROTEIRO
+
+**[0–5s]**
+"Magnésio bisglicinato. Se você usa magnésio — ou pensa em usar — essa informação muda como você escolhe o produto."
+
+**[5–18s]**
+"O magnésio participa de mais de 300 processos no corpo: regulação do sono, função muscular, síntese de proteínas, transmissão nervosa. Em déficit, você sente em vários canais ao mesmo tempo — sem identificar a causa."
+
+**[18–30s]**
+"Mas nem todo magnésio é igual. O óxido de magnésio — o mais comum e barato — tem absorção de cerca de 4%. O bisglicinato, quelado com glicina, tem absorção significativamente maior. E a glicina em si tem efeito calmante — o que potencializa o benefício no sono."
+
+**[30–38s]**
+"300mg, 30 a 60 minutos antes de dormir. É uma das intervenções mais simples, mais estudadas e com melhor custo-benefício disponíveis."
+
+**[38–40s — CTA]**
+"Você já usa? Me conta nos comentários."
+
+### TEXTO NA TELA (overlays)
+- "Magnésio bisglicinato"
+- "73% dos brasileiros têm déficit"
+- "Óxido: ~4% de absorção"
+- "Bisglicinato: absorção muito superior"
+- "300mg | 30–60min antes de dormir"
+
+### SOM SUGERIDO
+Áudio original. Ritmo direto e informativo.
+
+### LEGENDA
+Magnésio bisglicinato: por que a forma do suplemento muda tudo. 300mg antes de dormir. #magnesio #sono #saude #suplementos #longevidade #maxmebio #fyp
+
+---
+
+## VÍDEO 04 — Sexta | 10h–12h
+**Produto:** MAXME Coffee + Creatina
+**Duração:** ~45s
+**Tema:** Creatina como suplemento cognitivo — não de academia
+**Hook:** Contra-intuitivo + desmistificação
+
+### HOOK (0–3s)
+*Texto em tela: "Creatina não é suplemento de academia. É suplemento de cérebro."*
+> "Essa percepção está mudando na literatura científica — e faz toda diferença na hora de decidir se você deveria usar."
+
+### ROTEIRO
+
+**[0–5s]**
+"Creatina. Por anos associada exclusivamente a treinos de musculação. Mas os estudos mais recentes mostram um efeito cognitivo documentado — especialmente relevante para quem não consome muita carne vermelha."
+
+**[5–20s]**
+"A creatina melhora a disponibilidade de energia no cérebro — o mesmo mecanismo que atua no músculo. Resultados documentados incluem melhora em memória de trabalho, velocidade de raciocínio e desempenho em tarefas cognitivas complexas."
+
+**[20–35s]**
+"O MAXME Coffee combina 3g de creatina monohidratada com 75mg de cafeína — equivalente a um espresso — mais TCM para energia sem instabilidade glicêmica, colina, taurina e vitaminas do complexo B."
+
+**[35–42s]**
+"O resultado é um estado de alerta mais limpo e sustentado. Sem aceleração de batimentos, sem pico de ansiedade."
+
+**[42–45s — CTA]**
+"Salva se isso faz sentido pra você."
+
+### TEXTO NA TELA (overlays)
+- "Creatina + cognição: estudos recentes"
+- "Memória de trabalho | Velocidade de raciocínio"
+- "3g creatina | 75mg cafeína | TCM"
+- "Foco limpo. Energia sustentada."
+
+### SOM SUGERIDO
+Áudio original. Tom calmo, levemente curioso.
+
+### LEGENDA
+Creatina para o cérebro: o que a ciência mostra e por que isso importa para quem trabalha com a mente. #creatina #saude #focoCognitivo #suplementos #longevidade #maxmebio #fyp
+
+---
+
+## VÍDEO 05 — Sábado | 9h–11h
+**Produto:** Educativo de marca (sem produto específico)
+**Duração:** ~35s
+**Tema:** A diferença entre estimular e nutrir
+**Hook:** Pergunta que reposiciona
+
+### HOOK (0–3s)
+*Texto em tela: "Tem diferença entre energia estimulada e energia construída."*
+> "E entender essa diferença muda como você escolhe o que coloca no corpo."
+
+### ROTEIRO
+
+**[0–8s]**
+"Energia estimulada é o pico de cafeína, o açúcar, o pre-workout. Ela funciona — mas depende de repetição, aumenta a tolerância e cria um ciclo de altos e baixos."
+
+**[8–22s]**
+"Energia construída vem de mitocôndrias bem nutridas, de magnésio suficiente para a função muscular, de CoQ10 para a produção de ATP, de proteínas para manutenção dos tecidos. Ela não tem pico — mas também não tem queda."
+
+**[22–32s]**
+"A Maxme Bio não trabalha com estimulantes. Trabalha com a infraestrutura que o corpo usa para gerar energia de forma consistente. É uma diferença de abordagem, não de produto."
+
+**[32–35s — CTA]**
+"Se isso faz sentido pra você, segue o perfil. Tem mais dessa conversa aqui."
+
+### TEXTO NA TELA (overlays)
+- "Estimulado: pico e queda"
+- "Construído: consistência"
+- "Mitocôndria | CoQ10 | Magnésio | Proteína"
+- "Infraestrutura de energia"
+
+### SOM SUGERIDO
+Áudio original. Tom reflexivo, ritmo pausado.
+
+### LEGENDA
+A diferença entre estimular o corpo e nutri-lo. Uma muda o dia. A outra muda os próximos anos. #saude #longevidade #energiacelular #bemestar #suplementos #maxmebio #fyp
+
+---
+
+## VÍDEO 06 — Domingo | 9h–11h
+**Produto:** Linha completa (narrativa de marca)
+**Duração:** ~40s
+**Tema:** Por que saúde é construção — não reação
+**Hook:** Reposicionamento de crença
+
+### HOOK (0–3s)
+*Texto em tela: "A maioria das pessoas começa a cuidar da saúde quando algo para de funcionar."*
+> "A Maxme Bio existe para quem decidiu começar antes disso."
+
+### ROTEIRO
+
+**[0–8s]**
+"Medicina reativa espera o sintoma para agir. Medicina preventiva constrói a base antes que o sintoma apareça. A diferença não está no diagnóstico — está no momento da decisão."
+
+**[8–22s]**
+"Suplementação de qualidade não é sobre corrigir um problema. É sobre fornecer ao corpo os ativos que ele usa para funcionar no ótimo — energia celular, proteção articular, clareza cognitiva, equilíbrio hormonal."
+
+**[22–35s]**
+"A Maxme Bio é uma marca de biotecnologia existencial. Trabalhamos na unidade mínima da vida — a célula. Porque é lá que a longevidade começa."
+
+**[35–40s — CTA]**
+"Se você quer entender mais sobre esse tipo de abordagem, segue o perfil. Tem muito mais."
+
+### TEXTO NA TELA (overlays)
+- "Reativo: espera o sintoma"
+- "Preventivo: constrói a base"
+- "Energia celular | Cognição | Articulações"
+- "Longevidade começa na célula"
+
+### SOM SUGERIDO
+Áudio original. Tom sóbrio, quase reflexivo.
+
+### LEGENDA
+Saúde como construção diária — não como reação a uma doença. Essa é a diferença que a Maxme Bio representa. #longevidade #saude #medicinaPreventiva #bemestar #maxmebio #fyp
+
+---
+
+## ORIENTAÇÕES DE PRODUÇÃO — SEMANA 01
+
+**Câmera e enquadramento:**
+- Fala direta para câmera nos vídeos educativos
+- Luz natural ou softbox — visual limpo, sem exagero
+- Sem cenário de academia, sem pesos ao fundo
+- Ambiente neutro que remeta a escritório, cozinha, sala — cotidiano inteligente
+
+**Texto em tela:**
+- Fonte limpa e legível (sem fontes decorativas)
+- Cor contrastante com o fundo (branco ou verde da marca)
+- Sincronizado com a fala — não repetido, complementar
+
+**Ritmo:**
+- Cortes a cada 3–5 segundos
+- Sem enrolação nos primeiros 5 segundos
+- Pausas naturais — tom de conversa, não de locução
+
+---
+
+## MÉTRICAS-ALVO — SEMANA 01
+
+| Vídeo | Meta principal | Meta secundária |
+|---|---|---|
+| V01 — CoQ10 (Terça) | Taxa de conclusão >50% | Comentários com perguntas |
+| V02 — Whey/Colágeno (Quarta) | Compartilhamentos | Salvamentos |
+| V03 — Magnésio (Quinta) | Alcance (não-seguidores) | Comentários |
+| V04 — Creatina (Sexta) | Salvamentos | Novos seguidores |
+| V05 — Estimular vs. Nutrir (Sábado) | Seguidas | Compartilhamentos |
+| V06 — Marca (Domingo) | Alcance | Comentários de identificação |
+
+---
+
+*MAXME Bio | TikTok | Semana 01 | Alinhado ao StoryBrand v1.0*

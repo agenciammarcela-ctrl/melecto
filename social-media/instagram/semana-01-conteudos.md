@@ -1,286 +1,222 @@
-# MAXME Bio — Instagram | Semana 01
-**Tom:** Direto, acolhedor, autoridade científica com linguagem acessível.
-**Foco:** Longevidade, performance real, ciência sem jargão.
+# MAXME BIO — Instagram | Semana 01
+**Tom:** Lúcido e Embasado | Sóbrio e Vital | Sugeridor, não Impositivo
+**Proibido:** vibe gym, alarmismo, promessas de curto prazo, linguagem de "resultado imediato"
+**Personas:** O Realizador Ativo (35–40) | A Zeladora da Vitalidade (50–65)
+**Arquétipo:** O Sábio — autoridade silenciosa que educa
 
 ---
 
-## POST 1 — SEGUNDA-FEIRA
-**Produto:** MAXME Coffee + Creatina
-**Formato:** Reels (15–30s) + Caption
-**Tema:** O café que faz mais do que te acordar
-
-### ROTEIRO DO REELS
-> Cena: pessoa preparando a bebida de manhã, luz natural, ambiente calmo — sem academia, sem agito.
-
-**Texto na tela (sequência):**
-1. "Você já tomou café hoje."
-2. "E se ele também alimentasse seu cérebro?"
-3. "MAXME Coffee + Creatina."
-4. "Foco. Energia. Sem aquela aceleração toda."
-
-**Narração (voz over ou legenda):**
-"A creatina não é só pra quem treina. Ela é combustível pra neurônio também. Combinar com cafeína, TCM e colina? Isso é começar o dia com intenção."
-
----
-
-### CAPTION
-
-Café da manhã ou protocolo matinal?
-
-Com o MAXME Coffee, a diferença é o que acontece dentro:
-
-→ 3g de creatina monohidratada (sim, a mesma dos atletas — mas o foco aqui é cognitivo também)
-→ 75mg de cafeína (o equivalente a um espresso bem feito)
-→ TCM para energia que não cai no meio da manhã
-→ Colina, taurina e vitaminas B para o sistema nervoso trabalhar bem
-
-Sem aceleração dos batimentos. Sem aquela ansiedade de estimulante forte.
-Só clareza.
-
-Cuidar do cérebro todos os dias é longevidade. ☕
-
-🔗 Link na bio para conhecer a fórmula completa.
-
-**Hashtags:**
-#MAXMEBio #CaféFuncional #CreatinaParaCérebro #SaúdeCognitiva #BemEstarReal #SupplementosBrasileiros #Longevidade #EnergiaSemAgito #CaféDaManhã #PerformanceDiária
-
----
-
-## POST 2 — TERÇA-FEIRA
-**Produto:** Whey Protein Concentrado + Colágeno Cpure®
-**Formato:** Carrossel (6 slides)
-**Tema:** Proteína que pensa no longo prazo
-
-### ESTRUTURA DO CARROSSEL
-
-**Slide 1 — Capa:**
-> "Você não precisa de mais músculo. Você precisa de mais autonomia."
-
-**Slide 2:**
-> **23g de proteína por dose.**
-> Mas não é qualquer proteína.
-> É whey concentrado de alta digestibilidade + colágeno hidrolisado Cpure®.
-
-**Slide 3:**
-> **Por que o colágeno importa?**
-> Depois dos 30, a produção natural cai ~1% ao ano.
-> Tendões, articulações, pele, intestino — tudo depende dele.
-> Suplementar é investir no que te mantém funcional por mais tempo.
-
-**Slide 4:**
-> **TCM dentro da fórmula.**
-> Triglicerídeos de cadeia média = energia rápida que não vira gordura acumulada.
-> Saciedade real. Metabolismo sustentado.
-
-**Slide 5:**
-> **Para quem é?**
-> Para quem quer continuar forte aos 50, 60, 70 anos.
-> Não para quem quer resultado rápido pra verão.
-> Para quem pensa em viver bem — não só em aparecer bem.
-
-**Slide 6 — CTA:**
-> "Disponível em Chocolate, Cappuccino e Natural."
-> 🔗 Link na bio.
-> R$ 220,92 | 910g
-
----
-
-### CAPTION
-
-Força muscular não é sobre estética. É sobre independência.
-
-Carregar as compras, subir escada, continuar ativo com a família — isso se constrói com hábito e proteína de qualidade.
-
-O MAXME Whey + Colágeno Cpure® foi pensado pra quem joga no longo prazo. Veja nos slides o que a fórmula entrega. 👆
-
-**Hashtags:**
-#MAXMEBio #WheyProtein #Colágeno #CpureCollagen #SaúdeMuscular #Longevidade #ProteinaDeQualidade #TCM #SaúdeIntegrativa #VidaAtiva #BemEstarReal
-
----
-
-## POST 3 — QUARTA-FEIRA
+## POST 01 — REELS | Terça | 13h
 **Produto:** Coenzima Q10 + B-Complex
-**Formato:** Carrossel (5 slides)
-**Tema:** Por que você ainda se sente cansado — mesmo dormindo bem
+**Persona-alvo:** Realizador Ativo
+**Objetivo:** Alcance e descoberta | Hook: dado surpreendente + identificação
 
-### ESTRUTURA DO CARROSSEL
+### ROTEIRO
 
-**Slide 1 — Capa:**
-> "Dormiu 8 horas. Ainda assim acordou no modo economia de energia?"
+**[0–3s — GANCHO]**
+*Texto em tela: "Você não está cansado. Sua célula está."*
+> "Se você tem energia para quase tudo mas clareza para quase nada — o problema não é sua agenda."
 
-**Slide 2:**
-> **Isso tem nome: déficit de CoQ10.**
->
-> A Coenzima Q10 é o componente que suas células usam pra produzir energia de verdade (ATP).
-> Com a idade, os níveis caem — e a fadiga aparece mesmo com descanso adequado.
+**[3–12s — MECANISMO]**
+> "O cérebro consome 20% da energia do corpo. E essa energia tem uma origem: a mitocôndria. Quando a Coenzima Q10 está em déficit, o primeiro sinal não é físico — é cognitivo. Decisões que custam mais do que deveriam. Foco que fragmenta."
 
-**Slide 3:**
-> **O problema dos suplementos convencionais de CoQ10:**
-> Baixa absorção. O corpo aproveita pouco.
->
-> **A solução MAXME:**
-> Tecnologia Ubiqsome® com Phytosome®
-> → 5x mais absorção
-> → Ação prolongada por até 24h
-> → 1 dose por dia
+**[12–25s — TRADUÇÃO PARA A VIDA REAL]**
+> "Não é fraqueza. É bioquímica. E esse é exatamente o tipo de problema que a medicina preventiva começa a mapear — não quando você adoece, mas quando você percebe que não está funcionando no seu melhor."
 
-**Slide 4:**
-> **Complexo B no mesmo produto — e não é à toa.**
-> As vitaminas do complexo B são o "combustível" que a CoQ10 precisa pra funcionar.
-> Juntos, são 2x mais potentes que suplementos convencionais de CoQ10.
+**[25–35s — EVIDÊNCIA + SOLUÇÃO]**
+> "O MAXME CoQ10 usa tecnologia Ubiqsome® — que aumenta a absorção em 5x em relação a fórmulas convencionais. Uma cápsula. Até 24 horas de ação. Sem estimulante, sem pico, sem queda."
 
-**Slide 5 — CTA:**
-> "Energia celular real. Sem estimulantes artificiais."
-> R$ 110,42 | 🔗 Link na bio
+**[35–45s — CTA]**
+> "Salva esse vídeo. Semana que vem falo sobre o protocolo completo de energia celular."
+*Texto em tela: "Salva para não perder o protocolo"*
 
----
+**Legenda:**
+Clareza mental não é sorte. É infraestrutura.
 
-### CAPTION
+O cérebro usa 20% da energia do corpo — e quando a base celular não está no ótimo, o primeiro sinal é cognitivo: foco fragmentado, decisões mais lentas, a névoa que você não sabe nomear.
 
-Se você faz tudo "certo" — dorme bem, se alimenta bem, pratica atividade — e ainda assim sente aquela fadiga crônica de fundo... a resposta pode estar na mitocôndria.
+CoQ10 com tecnologia de alta absorção atua exatamente onde a energia nasce.
 
-A Coenzima Q10 é o motor celular. Quando ela está em falta, nada funciona no ritmo que deveria.
-
-O MAXME CoQ10 + B-Complex usa tecnologia de absorção avançada pra chegar onde precisa chegar. Sem picos. Sem queda de energia. Do café da manhã ao fim do dia.
-
-Veja os slides. 👆
+Salva esse vídeo se quiser entender o protocolo completo 🔖
 
 **Hashtags:**
-#MAXMEBio #CoQ10 #CoenzimQ10 #EnergiaReal #FadigaCrônica #SaúdeCelular #Mitocôndria #ComplexoB #BemEstarReal #SupplementoInteligente #Longevidade
+#longevidade #saude #bemestar #suplementos #energiacelular #mitocondria #coq10 #vidasaudavel #medicinaIntegrativa #maxmebio #clareza #biohacking
 
 ---
 
-## POST 4 — QUINTA-FEIRA
-**Produto:** Whey Isolado + Hidrolisado
-**Formato:** Post estático (imagem com texto) ou Reels curto
-**Tema:** A diferença entre proteína boa e proteína certa
+## POST 02 — CARROSSEL | Quarta | 10h
+**Produto:** Educativo de marca (sem produto específico)
+**Persona-alvo:** Zeladora da Vitalidade
+**Objetivo:** Salvamentos e autoridade
 
-### CAPTION
+### SLIDES
 
-Tem whey. E tem o whey certo pra você.
+**Slide 1 — CAPA**
+*"5 sinais que seu corpo usa para pedir uma construção mais consciente"*
+Subtítulo: "E o que a ciência diz sobre cada um."
 
-O MAXME Whey Isolado + Hidrolisado combina duas das formas mais puras e eficientes de proteína do mercado:
+**Slide 2**
+**Cansaço que o sono não resolve**
+Acordar sem disposição depois de 8 horas não é fraqueza — é sinal de que a recuperação celular está comprometida. O magnésio bisglicinato atua nos receptores que regulam o ciclo profundo do sono.
 
-**Isolado:** baixo teor de lactose, alta concentração proteica por dose.
-**Hidrolisado:** já parcialmente "pré-digerido" — absorção mais rápida, menos sobrecarga digestiva.
+**Slide 3**
+**Articulações que falam antes de você**
+Rigidez matinal, desconforto ao descer escada. Não é "da idade" — é inflamação silenciosa. Colágeno tipo II e MSM reconstroem a matriz que protege as articulações no longo prazo.
 
-23g de proteína por dose. Sem enrolação.
+**Slide 4**
+**Foco que fragmenta**
+Começar três coisas e não terminar nenhuma. O cérebro depende de energia mitocondrial para sustentar atenção. Sem a infraestrutura certa, concentração vira esforço — não hábito.
 
-Para quem treina ou não treina, mas entende que proteína de qualidade é base de qualquer rotina de saúde séria.
+**Slide 5**
+**Imunidade que oscila**
+Recuperação lenta, resfriados frequentes. O sistema imune tem base nutricional. Vitamina D3, K2 e zinco atuam em conjunto — e a biodisponibilidade do suplemento importa tanto quanto a dosagem.
 
-Disponível em Chocolate, Cappuccino e Natural.
-R$ 382,42 | 832g | 🔗 Link na bio
+**Slide 6**
+**Energia que some à tarde**
+O pico de manhã e o vazio às 15h sugerem instabilidade mitocondrial. A diferença entre estimular e nutrir está na origem do problema — e nas formas de resolução.
+
+**Slide 7 — INSIGHT FINAL**
+*"Seu corpo não está envelhecendo mais rápido. Está pedindo uma atenção mais precisa."*
+
+Saúde é uma construção diária. Cada sinal é um dado — não um diagnóstico.
+
+**Slide 8 — CTA**
+*"Salva esse carrossel."*
+Cada sinal tem uma resposta baseada em evidência.
+Semana que vem: o protocolo por trás de cada um.
+
+**Legenda:**
+Esses sinais não são inevitáveis. São dados.
+
+O corpo fala antes de precisar gritar — e quando você aprende a ouvir, a resposta é sempre mais precisa do que parece.
+
+Salva esse carrossel para ter essa referência quando precisar 🔖
 
 **Hashtags:**
-#MAXMEBio #WheyIsolado #WheyHidrolisado #ProteínaDeAltoValor #SemLactose #NutriçãoInteligente #RecuperaçãoMuscular #SupplementoBrasileiro #Longevidade #SaúdeReal
+#longevidade #saude #vidasaudavel #suplementos #bemestar #envelhecerbem #autonomia #magnesio #vitaminaD #energiacelular #medicinaIntegrativa #maxmebio #conscienciabiologica
 
 ---
 
-## POST 5 — SEXTA-FEIRA
-**Produto:** MAXME Coffee + Creatina
-**Formato:** Stories sequenciais (4 telas) + Enquete
-**Tema:** Como você começa seu dia?
+## POST 03 — REELS | Quinta | 10h
+**Produto:** Magnésio Bisglicinato (educativo de ingrediente)
+**Persona-alvo:** Ambas
+**Objetivo:** Educação + alcance orgânico | Hook: dado surpreendente
 
-### STORIES
+### ROTEIRO
 
-**Story 1:**
-> Texto: "Seu café da manhã faz o básico ou faz mais?"
-> [Imagem do produto em cena cotidiana]
+**[0–3s — GANCHO]**
+*Texto em tela: "73% dos brasileiros têm déficit de magnésio."*
+> "E a maioria não percebe — porque o déficit afeta sono, humor e clareza ao mesmo tempo, e você atribui a qualquer outra coisa."
 
-**Story 2:**
-> Texto: "A creatina não é só pra treino."
-> Subtexto: "Estudos mostram melhora em memória de trabalho, raciocínio e velocidade de resposta mental."
-> [Fundo simples, tipografia limpa]
+**[3–15s — MECANISMO]**
+> "O magnésio participa de mais de 300 processos no corpo. Em déficit, você sente em vários canais ao mesmo tempo: dificuldade para dormir, tensão muscular, irritabilidade, névoa cognitiva. Sintomas difusos que raramente levam a uma causa única."
 
-**Story 3 — Enquete:**
-> "Você já usa algum suplemento de manhã?"
-> [ ] Sim, faz parte da rotina
-> [ ] Não, mas tenho curiosidade
+**[15–28s — POR QUE A FORMA IMPORTA]**
+> "Mas nem todo magnésio é igual. O bisglicinato é quelado com glicina — o que aumenta a absorção e ainda tem efeito calmante próprio por conta da glicina. É a diferença entre suplementar e realmente repor."
 
-**Story 4 — CTA:**
-> "MAXME Coffee + Creatina."
-> "Energia + foco. Sem picos. Sem agitação."
-> [Botão de link: Conhecer o produto]
+**[28–40s — COMO USAR]**
+> "300mg, 30 a 60 minutos antes de dormir. É simples, documentado e um dos experimentos mais honestos que você pode fazer com a própria saúde."
 
----
+**[40–50s — CTA]**
+> "Se você já usa, conta nos comentários o que mudou. Se ainda não usa, salva esse vídeo."
 
-## POST 6 — SÁBADO
-**Produto:** Whey Protein Concentrado + Colágeno Cpure®
-**Formato:** Reels (20–30s)
-**Tema:** O que o envelhecimento faz com sua proteína muscular
+**Legenda:**
+Magnésio bisglicinato.
 
-### ROTEIRO DO REELS
+Não é tendência — é um dos micronutrientes mais estudados para sono, cognição e função muscular.
 
-**Hook (primeiros 3s):**
-> Texto na tela: "Após os 40, você perde músculo. Mesmo treinando."
+73% dos brasileiros têm déficit. E a maioria suplementa com a forma de menor absorção.
 
-**Desenvolvimento:**
-> Narração: "Sarcopenia é a perda progressiva de massa muscular com a idade. Começa antes do que você imagina. E a proteína certa — na dose certa — é uma das ferramentas mais estudadas pra desacelerar esse processo."
+300mg antes de dormir. Uma semana. Observe.
 
-**Solução:**
-> "MAXME Whey + Colágeno Cpure®. 23g de proteína + suporte articular + TCM pra energia sustentada."
-
-**CTA:**
-> "Não é sobre ficar sarado. É sobre continuar funcional."
-> 🔗 Link na bio.
-
----
-
-### CAPTION
-
-Sarcopenia. Palavra feia pra um processo natural: a perda de massa muscular com a idade.
-
-O bom: ela é reversível e prevenível com proteína adequada, treino e hábitos consistentes.
-
-O MAXME Whey + Colágeno Cpure® foi pensado exatamente pra essa jornada. Alta digestibilidade, suporte ao tecido conjuntivo e energia que sustenta sua rotina — não só seu treino.
-
-Cuidar do músculo é cuidar da independência. 🔗 Link na bio.
+Você já usa? Conta nos comentários 👇
 
 **Hashtags:**
-#MAXMEBio #Sarcopenia #WheyProtein #Colágeno #EnvelhecimentoSaudável #SaúdeMuscular #Longevidade #ProteinaDeQualidade #CpureCollagen #VidaAtiva
+#magnesio #magnesiobishglicinato #sono #saude #longevidade #suplementos #bemestar #vidasaudavel #maxmebio #energiacelular #medicinaIntegrativa
 
 ---
 
-## POST 7 — DOMINGO
-**Produto:** Coenzima Q10 + B-Complex
-**Formato:** Carrossel reflexivo (4 slides)
-**Tema:** O que você está fazendo pela sua saúde que vai importar em 10 anos?
+## POST 04 — CARROSSEL | Sexta | 11h
+**Produto:** Protocolo matinal (educativo + branding)
+**Persona-alvo:** Realizador Ativo
+**Objetivo:** Salvamentos + autoridade de marca
 
-### ESTRUTURA DO CARROSSEL
+### SLIDES
 
-**Slide 1 — Capa:**
-> "A saúde que você constrói hoje é a vitalidade que você vai ter amanhã."
+**Slide 1 — CAPA**
+*"O protocolo de manhã que constrói os próximos 20 anos"*
+"Não é motivação. É bioquímica."
 
-**Slide 2:**
-> **Antioxidante celular.**
-> A CoQ10 protege as células do estresse oxidativo — um dos principais mecanismos do envelhecimento acelerado.
-> Não é promessa. É bioquímica.
+**Slide 2**
+**Luz solar nos primeiros 30 minutos**
+Ancora o ritmo circadiano, regula o cortisol matinal e sinaliza ao sistema nervoso o início do ciclo ativo. Sem tela nos primeiros minutos. O sinal mais poderoso — e o mais gratuito.
 
-**Slide 3:**
-> **Saúde cardiovascular.**
-> O coração é o músculo de maior demanda energética do corpo.
-> A CoQ10 está presente em alta concentração no tecido cardíaco — e sua reposição é especialmente relevante após os 35 anos.
+**Slide 3**
+**Hidratação antes do café**
+O corpo acorda em leve déficit hídrico. 500ml de água antes do primeiro café otimiza a função renal e a circulação inicial. O café potencializa o estado de alerta — mas não substitui a base.
 
-**Slide 4 — CTA:**
-> "MAXME CoQ10 + B-Complex."
-> "1 dose. 24h de ação. Tecnologia Ubiqsome®."
-> R$ 110,42 | 🔗 Link na bio
+**Slide 4**
+**Movimento antes das decisões**
+10 a 20 minutos de movimento elevam BDNF — fator neurotrófico que prepara o córtex pré-frontal. Você raciocina melhor depois de se mover. Não é motivação. É neurociência.
 
----
+**Slide 5**
+**Suplementação com a refeição certa**
+Vitaminas lipossolúveis (D3, K2) e CoQ10 têm absorção máxima com gordura presente. O café da manhã — quando inclui alguma gordura — é o momento mais eficiente para esses ativos.
 
-### CAPTION
+**Slide 6**
+**A primeira hora sem fragmentação**
+O estado cognitivo da manhã é o mais valioso do dia. Entregá-lo ao feed antes de construir qualquer coisa é uma troca que raramente vale o que parece. 60 minutos de presença antes do mundo digital altera a qualidade do restante do dia.
 
-Domingo é um bom dia pra pensar em hábitos — não em tendências.
+**Slide 7 — CTA**
+*"Qual desses você já pratica?"*
+Comenta o número — e o que ainda falta integrar.
 
-A Coenzima Q10 não é modinha. É um dos suplementos mais estudados em saúde mitocondrial e cardiovascular. E a forma como você suplementa importa tanto quanto a decisão de suplementar.
+**Legenda:**
+Alta performance não começa na segunda reunião. Começa nas primeiras horas.
 
-A tecnologia Ubiqsome® da MAXME entrega 5x mais absorção que fórmulas convencionais. Porque não basta ingerir. Precisa chegar.
+Esse protocolo não é rígido — é uma estrutura. Adapte. Mas constrói a base todos os dias.
 
-Cuide de quem você vai ser em 10 anos. ✔️
+Salva para revisitar quando a rotina desviar 🔖
 
 **Hashtags:**
-#MAXMEBio #CoQ10 #SaúdeCardiovascular #Mitocôndria #Antioxidante #BemEstarReal #SupplementoInteligente #Longevidade #Ubiqsome #SaúdeCelular
+#performance #longevidade #rotina #saude #biohacking #bemestar #suplementos #coq10 #vidasaudavel #maxmebio #medicinaIntegrativa #foco #clareza
 
 ---
 
-*Documento criado para uso interno MAXME Bio | Semana 01*
+## STORIES — SEMANA 01 (Diários)
+
+**Segunda**
+- Story 1: Enquete — "Você acorda disposto ou precisa de tempo para 'ligar'?"
+- Story 2: "Se você votou 'preciso de tempo' — amanhã posto um vídeo sobre o que pode estar acontecendo na base celular."
+
+**Terça (após o Reels)**
+- Story 1: "Postei algo no feed que muda como você entende o seu cansaço. Vale dois minutos."
+- Story 2: Enquete — "Qual desses você sente com mais frequência?" [Foco fragmentado / Cansaço sem causa / Os dois]
+
+**Quarta (após o Carrossel)**
+- Story 1: Caixa de perguntas — "Qual sinal o seu corpo dá que você ainda não sabe explicar?"
+- Story 2–3: Responder 2 perguntas com texto direto + referência ao carrossel
+
+**Quinta**
+- Story 1: "Você usa magnésio bisglicinato?" [Sim, regularmente / Já usei / Nunca usei]
+- Story 2: Resultado + "X% ainda não usa. O vídeo no feed explica por que a forma importa."
+
+**Sexta (após o Carrossel)**
+- Story 1: "Qual passo do protocolo de manhã você já faz?" [caixa aberta]
+- Story 2: "O mais respondido foi [X]. Faz sentido — é o mais fácil de começar."
+- Story 3: "Semana que vem: protocolo completo de energia celular. Tem algo específico que quer que eu cubra?" [caixa de perguntas]
+
+---
+
+## MÉTRICAS-ALVO — SEMANA 01
+
+| Post | Meta principal | Meta secundária |
+|---|---|---|
+| Reels (Terça) | Taxa de retenção >65% | Compartilhamentos via DM |
+| Carrossel (Quarta) | Salvamentos | Comentários com perguntas |
+| Reels (Quinta) | Alcance (não-seguidores) | Comentários |
+| Carrossel (Sexta) | Salvamentos | Compartilhamentos via DM |
+
+---
+
+*MAXME Bio | Semana 01 | Alinhado ao StoryBrand v1.0*
