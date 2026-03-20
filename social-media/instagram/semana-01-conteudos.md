@@ -15,27 +15,26 @@
 
 **[0–3s — GANCHO]**
 *Texto em tela: "Você não está cansado. Sua célula está."*
-> "Se você tem energia para quase tudo mas clareza para quase nada — o problema não é sua agenda."
+> "Se você tem energia para se mover mas não tem clareza para pensar — o problema está na origem da energia, não no quanto você descansa."
 
 **[3–12s — MECANISMO]**
-> "O cérebro consome 20% da energia do corpo. E essa energia tem uma origem: a mitocôndria. Quando a Coenzima Q10 está em déficit, o primeiro sinal não é físico — é cognitivo. Decisões que custam mais do que deveriam. Foco que fragmenta."
+> "O cérebro consome 20% da energia do corpo. E essa energia tem uma origem: a mitocôndria. Quando a Coenzima Q10 + B-Complex está em déficit, o primeiro sinal não é físico — é cognitivo. Decisões que custam mais do que deveriam. Foco que fragmenta."
 
 **[12–25s — TRADUÇÃO PARA A VIDA REAL]**
 > "Não é fraqueza. É bioquímica. E esse é exatamente o tipo de problema que a medicina preventiva começa a mapear — não quando você adoece, mas quando você percebe que não está funcionando no seu melhor."
 
 **[25–35s — EVIDÊNCIA + SOLUÇÃO]**
-> "O MAXME CoQ10 usa tecnologia Ubiqsome® — que aumenta a absorção em 5x em relação a fórmulas convencionais. Uma cápsula. Até 24 horas de ação. Sem estimulante, sem pico, sem queda."
+> "O MAXME Coenzima Q10 + B-Complex usa tecnologia Ubiqsome® — que aumenta a absorção em 5x em relação a fórmulas convencionais. Uma cápsula. Até 24 horas de ação. Sem estimulante, sem pico, sem queda."
 
 **[35–45s — CTA]**
-> "Salva esse vídeo. Semana que vem falo sobre o protocolo completo de energia celular."
-*Texto em tela: "Salva para não perder o protocolo"*
+> "Comenta aqui: você sente mais falta de energia física ou de clareza mental? Quero entender o que faz mais sentido pra trazer aqui."
 
 **Legenda:**
 Clareza mental não é sorte. É infraestrutura.
 
 O cérebro usa 20% da energia do corpo — e quando a base celular não está no ótimo, o primeiro sinal é cognitivo: foco fragmentado, decisões mais lentas, a névoa que você não sabe nomear.
 
-CoQ10 com tecnologia de alta absorção atua exatamente onde a energia nasce.
+Coenzima Q10 + B-Complex com tecnologia de alta absorção atua exatamente onde a energia nasce.
 
 Salva esse vídeo se quiser entender o protocolo completo 🔖
 
