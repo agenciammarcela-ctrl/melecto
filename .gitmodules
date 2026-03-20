@@ -1,0 +1,3 @@
+[submodule "aiox-core"]
+	path = aiox-core
+	url = https://github.com/SynkraAI/aiox-core.git
