@@ -147,44 +147,66 @@ Você já usa? Conta nos comentários 👇
 ---
 
 ## POST 04 — CARROSSEL | Sexta | 11h
-**Produto:** Protocolo matinal (educativo + branding)
+**Produto:** Protocolo matinal com suplementação MAXME alinhada à janela da manhã
 **Persona-alvo:** Realizador Ativo
 **Objetivo:** Salvamentos + autoridade de marca
+**Arquivo completo (copy + briefing de design):** `carrosseis/carrossel-02-protocolo-manha.md`
 
-### SLIDES
+### SLIDES (resumo — ver arquivo completo para versão final)
 
 **Slide 1 — CAPA**
-*"O protocolo de manhã que constrói os próximos 20 anos"*
-"Não é motivação. É bioquímica."
+*"Atitudes da manhã que constroem os seus próximos 20 anos"*
+Subtítulo: "Não é motivação. É bioquímica."
+Rodapé: MAXME Bio | Ciência aplicada à longevidade
 
-**Slide 2**
+**Slide 2 — Atitude 01**
 **Luz solar nos primeiros 30 minutos**
-Ancora o ritmo circadiano, regula o cortisol matinal e sinaliza ao sistema nervoso o início do ciclo ativo. Sem tela nos primeiros minutos. O sinal mais poderoso — e o mais gratuito.
+Ancora o ritmo circadiano, regula o cortisol matinal e sinaliza ao sistema nervoso o início do ciclo ativo. Sem tela nos primeiros minutos. O sinal mais poderoso — e ainda é gratuito.
+10 minutos do lado de fora já são suficientes.
 
-**Slide 3**
+**Slide 3 — Atitude 02**
 **Hidratação antes do café**
-O corpo acorda em leve déficit hídrico. 500ml de água antes do primeiro café otimiza a função renal e a circulação inicial. O café potencializa o estado de alerta — mas não substitui a base.
+O corpo acorda em leve déficit hídrico. 500ml de água antes do primeiro café otimiza a função renal e a circulação inicial.
+A ordem importa: Água → Luz → Movimento → Café.
 
-**Slide 4**
+**Slide 4 — Atitude 03**
 **Movimento antes das decisões**
-10 a 20 minutos de movimento elevam BDNF — fator neurotrófico que prepara o córtex pré-frontal. Você raciocina melhor depois de se mover. Não é motivação. É neurociência.
+10 a 20 minutos de movimento elevam BDNF — proteína fundamental para neurogênese, plasticidade sináptica e sobrevivência dos neurônios.
+Você raciocina melhor depois de se mover. Não é motivação. É neurociência.
 
-**Slide 5**
-**Suplementação com a refeição certa**
-Vitaminas lipossolúveis (D3, K2) e CoQ10 têm absorção máxima com gordura presente. O café da manhã — quando inclui alguma gordura — é o momento mais eficiente para esses ativos.
+**Slide 5 — Atitude 04**
+**Suplementação no horário certo**
+A manhã é a janela certa para ativos que sustentam foco, energia celular e clareza cognitiva. Timing importa tanto quanto o que você toma.
 
-**Slide 6**
-**A primeira hora sem fragmentação**
-O estado cognitivo da manhã é o mais valioso do dia. Entregá-lo ao feed antes de construir qualquer coisa é uma troca que raramente vale o que parece. 60 minutos de presença antes do mundo digital altera a qualidade do restante do dia.
+Suplementos MAXME para a manhã:
+→ **BrainMag** — foco e clareza mental. Pela manhã, com ou sem refeição.
+→ **D-Ribose** — substrato direto de ATP. Pela manhã ou antes de atividade física/mental.
+→ **CoQ10 + Complexo B** — energia mitocondrial sustentada. Pela manhã, até o meio-dia.
+→ **Coenzima Q10 Orodispersível** — absorção imediata, sem necessidade de refeição. Até o meio-dia.
+→ **Ômega 3 + CoQ10** — função cardiovascular e energia celular. Manhã ou almoço com gordura.
+→ **Creatina** — consistência supera timing. Qualquer horário, todos os dias.
+
+*Nota: MAG 3, MAG 5 e ADEK têm janelas diferentes — fim do dia ou refeições principais.*
+
+**Slide 6 — Atitude 05**
+**A primeira hora sem telas**
+O estado cognitivo da manhã é o mais valioso do dia. Entregá-lo ao feed antes de construir qualquer coisa é uma troca que raramente vale o que parece.
+60 minutos de presença antes do mundo digital altera a qualidade do dia inteiro.
 
 **Slide 7 — CTA**
 *"Qual desses você já pratica?"*
-Comenta o número — e o que ainda falta integrar.
+Comenta o número — e o que ainda falta incluir na sua rotina.
+🔖 Salva | 💬 Comenta o número | ↗ Manda pra quem precisa ver isso
 
 **Legenda:**
-Alta performance não começa na segunda reunião. Começa nas primeiras horas.
+Alta performance não começa na correria. Começa nas escolhas conscientes das primeiras horas.
 
-Esse protocolo não é rígido — é uma estrutura. Adapte. Mas constrói a base todos os dias.
+Essas atitudes não são rígidas — são uma estrutura. Adapte ao que cabe na sua realidade. Mas faça.
+
+Salva esse carrossel para revisitar quando a rotina desviar 🔖
+
+**Hashtags:**
+#performance #longevidade #rotina #saude #biohacking #bemestar #suplementos #coq10 #vidasaudavel #maxmebio #medicinaIntegrativa #foco #clareza #ritmoCircadiano #BDNF #energiacelular #protocolomanha #creatina #brainmag #saudeintegrativa
 
 Salva para revisitar quando a rotina desviar 🔖
 
