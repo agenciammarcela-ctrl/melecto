@@ -2,11 +2,12 @@
 **Post:** 02 | Quarta | 10h
 **Persona-alvo:** Zeladora da Vitalidade (50–65)
 **Objetivo:** Salvamentos + autoridade de marca
-**Tom:** Lúcido, embasado, sugeridor — nunca alarmista
+**Tom:** Lúcido, embasado, sugeridor, nunca alarmista
+**Regra de estilo:** Sem traço longo. Frases que se completam e fluem umas nas outras.
 
 ---
 
-## COPY DOS SLIDES (versão melhorada)
+## COPY DOS SLIDES
 
 ---
 
@@ -31,18 +32,16 @@ MAXME Bio | Ciência aplicada à longevidade
 Cansaço que o sono não resolve
 
 **Corpo:**
-Você dorme 7, 8 horas — e acorda como se não tivesse dormido.
+Você dorme sete, oito horas e acorda com a sensação de que não descansou. Isso não é fraqueza e não é algo a se acostumar. É um sinal de que o ciclo profundo do sono, a fase em que a recuperação celular de fato acontece, está sendo comprometido antes de completar o que precisaria completar.
 
-Não é fraqueza. É sinal de que o ciclo profundo do sono (fase delta) está comprometido.
-
-Sem ele, a recuperação celular não acontece. O corpo chega ao dia seguinte carregando o que o sono deveria ter limpo.
+Quando o corpo não atravessa essa fase com qualidade, ele chega ao dia seguinte carregando o que o sono deveria ter processado. O cansaço não é uma falha de caráter. É uma informação.
 
 **Mecanismo:**
-O magnésio bisglicinato atua nos receptores GABA — os mesmos envolvidos no relaxamento neural que abre o sono profundo. Sem magnésio suficiente, você dorme, mas não recupera.
+O magnésio quelado na forma bisglicinato atua nos receptores GABA, os mesmos envolvidos no relaxamento neural que permite a entrada no sono profundo. Sem magnésio em nível adequado, você adormece, mas não recupera de verdade.
 
 **Indicação MaxMe Bio:**
-→ **Magnésio Bisglicinato MAXME**
-Forma quelada de alta absorção. 300mg, 30–60 min antes de dormir.
+→ **MAG 3 MAXME**
+Fórmula com magnésio bisglicinato de alta absorção. Tomar no fim da tarde ou antes de dormir.
 
 ---
 
@@ -54,18 +53,16 @@ Forma quelada de alta absorção. 300mg, 30–60 min antes de dormir.
 Articulações que falam antes de você
 
 **Corpo:**
-Rigidez ao sair da cama. Aquele desconforto sutil ao descer a escada.
+Aquela rigidez ao sair da cama. O desconforto discreto ao descer a escada. Esses sinais costumam ser descartados como coisa da idade, mas a ciência mostra outra leitura: a matriz que protege as articulações se reconstrói todos os dias, e o que acontece nessa reconstrução depende diretamente do que você oferece ao organismo.
 
-Não é inevitável. Não é "da idade".
-
-É inflamação silenciosa — e a matriz que protege suas articulações se reconstrói (ou não) todos os dias, dependendo do que você oferece a ela.
+Quando a matéria-prima falta, o desgaste acontece em silêncio, antes de qualquer diagnóstico, antes de qualquer dor aguda.
 
 **Mecanismo:**
-O colágeno tipo II nativo preserva e estimula a síntese da cartilagem articular. O MSM (metilsulfonilmetano) reduz marcadores inflamatórios e aumenta a absorção. Juntos, atuam na raiz — não no sintoma.
+O colágeno tipo II nativo estimula a síntese da cartilagem articular pela via da tolerância oral. O MSM (metilsulfonilmetano) atua na redução de marcadores inflamatórios e aumenta a captação dos nutrientes envolvidos na regeneração. Juntos, atuam na estrutura, não apenas no alívio.
 
 **Indicação MaxMe Bio:**
 → **Colágeno Tipo II + MSM MAXME**
-Ação estrutural e anti-inflamatória. Proteção articular de longo prazo.
+Ação estrutural e anti-inflamatória para proteção articular de longo prazo.
 
 ---
 
@@ -74,21 +71,19 @@ Ação estrutural e anti-inflamatória. Proteção articular de longo prazo.
 **Número do sinal:** 03/05
 
 **Título:**
-Foco que fragmenta
+Foco que se fragmenta no meio do caminho
 
 **Corpo:**
-Você começa uma tarefa, lembra de outra, abre uma aba, perde o fio.
+Você começa uma tarefa, lembra de outra, abre uma aba, perde o fio. Tenta voltar, já esqueceu onde estava. Isso não é falta de disciplina. É o resultado de um cérebro operando sem o combustível que precisa para sustentar atenção de verdade.
 
-Não é distração. É falta de combustível.
-
-O córtex pré-frontal — responsável por planejamento e atenção sustentada — consome uma quantidade desproporcional de energia celular. Quando a mitocôndria não entrega, o foco é o primeiro a ir.
+O córtex pré-frontal, a região responsável por planejamento, tomada de decisão e concentração prolongada, consome uma quantidade de energia desproporcional ao seu tamanho. Quando a produção mitocondrial não acompanha essa demanda, o foco fragmenta antes de você perceber.
 
 **Mecanismo:**
-A Coenzima Q10 é o carreador de elétrons na produção de ATP mitocondrial. Sem ela em níveis adequados, o cérebro entra em modo de economia — e concentração vira esforço, não estado natural.
+O BrainMag combina formas de magnésio com alta penetração cerebral, que atravessam a barreira hematoencefálica e atuam diretamente na transmissão sináptica e na plasticidade neural. O resultado é uma base mais estável para sustentar atenção, não um pico artificial de energia.
 
 **Indicação MaxMe Bio:**
-→ **Coenzima Q10 + B-Complex MAXME**
-Tecnologia Ubiqsome® — absorção 5x superior. Energia celular real, sem estimulante.
+→ **BrainMag MAXME**
+Magnésio de penetração cerebral para foco, clareza mental e memória de trabalho. Tomar pela manhã.
 
 ---
 
@@ -97,21 +92,19 @@ Tecnologia Ubiqsome® — absorção 5x superior. Energia celular real, sem esti
 **Número do sinal:** 04/05
 
 **Título:**
-Imunidade que oscila
+Imunidade que oscila sem aviso
 
 **Corpo:**
-Você se recupera devagar. Todo resfriado que passa por perto, te pega.
+Você se recupera devagar. Todo resfriado que circula acaba te encontrando. A questão aqui não é falta de sorte. O sistema imunológico não é uma barreira passiva. É uma infraestrutura ativa, que depende de nutrientes específicos para produzir células de defesa, regular respostas inflamatórias e manter o equilíbrio entre reação e proteção.
 
-O sistema imune não é uma barreira fixa — é uma infraestrutura dinâmica, de base nutricional, que precisa de matéria-prima para funcionar.
-
-E a maioria das pessoas suplementa com a dose certa, mas na forma errada.
+E a maioria das pessoas suplementa com a dose certa, mas na forma que o organismo absorve mal.
 
 **Mecanismo:**
-Vitamina D3 regula a resposta imune adaptativa. K2 direciona o cálcio e protege tecidos. Zinco é cofator de mais de 300 enzimas — inclusive as que produzem células de defesa. A biodisponibilidade da forma importa tanto quanto a dosagem.
+A vitamina D3 regula a resposta imune adaptativa e reduz a susceptibilidade a infecções. A K2 garante que o cálcio seja direcionado corretamente, protegendo tecidos que precisam de proteção. Quando essas vitaminas trabalham juntas, a biodisponibilidade de uma potencializa a da outra.
 
 **Indicação MaxMe Bio:**
-→ **Vitamina D3 + K2 + Zinco MAXME**
-Fórmula sinérgica. Biodisponibilidade aumentada. Imunidade que se sustenta.
+→ **ADEK MAXME**
+Vitaminas lipossolúveis A, D, E e K em formulação sinérgica. Tomar durante refeições com gordura presente.
 
 ---
 
@@ -120,21 +113,19 @@ Fórmula sinérgica. Biodisponibilidade aumentada. Imunidade que se sustenta.
 **Número do sinal:** 05/05
 
 **Título:**
-Energia que some às 15h
+Energia que vai embora às três da tarde
 
 **Corpo:**
-Você arranca bem de manhã — e às três da tarde é como se o dia tivesse acabado.
+O dia começa bem. Você tem clareza, disposição, tudo parece possível. Aí chegam as três da tarde e é como se alguém tivesse desligado um interruptor. Esse padrão não é normal, no sentido de inevitável. É um sinal metabólico: a produção de energia está acontecendo por demanda imediata, reativa, sem uma base sustentada por trás.
 
-Esse padrão não é "normal". É um sinal metabólico: a mitocôndria está produzindo energia por demanda imediata, não por capacidade sustentada.
-
-A diferença entre estimular e nutrir está exatamente aqui.
+A diferença entre estimular o corpo e nutri-lo aparece exatamente nesse momento do dia.
 
 **Mecanismo:**
-O complexo B ativa as vias metabólicas que convertem nutrientes em ATP. A CoQ10 assegura a cadeia de transporte de elétrons. Sem essa base, você vive de pico — não de fluxo.
+A CoQ10 (Coenzima Q10) é o transportador de elétrons na cadeia respiratória mitocondrial, o passo que converte os nutrientes em ATP de forma eficiente. O complexo B ativa as vias metabólicas que alimentam esse processo. Sem essa base funcionando bem, você vive de pico e de queda, não de fluxo constante.
 
 **Indicação MaxMe Bio:**
-→ **Coenzima Q10 + B-Complex MAXME**
-Energia que dura porque nasce da célula — não de estimulante.
+→ **CoQ10 + Complexo B MAXME**
+Suporte mitocondrial completo para energia celular que sustenta o dia inteiro. Tomar pela manhã, até o meio-dia.
 
 ---
 
@@ -147,11 +138,9 @@ Seu corpo não está envelhecendo mais rápido.
 Está pedindo uma atenção mais precisa.
 
 **Corpo:**
-Saúde não se constrói quando os sinais viram sintomas.
-Ela se constrói quando os sinais ainda são dados — e você sabe o que fazer com eles.
+Saúde se constrói antes dos sinais virarem sintomas. Ela se constrói enquanto os dados ainda são dados, quando você ainda pode responder com precisão ao invés de reagir com urgência.
 
-Cada sinal é uma informação.
-Cada informação tem uma resposta.
+Cada sinal é uma informação. Cada informação tem uma resposta. E a resposta certa depende de entender o mecanismo, não apenas o desconforto.
 
 ---
 
@@ -161,9 +150,7 @@ Cada informação tem uma resposta.
 Salva esse carrossel.
 
 **Corpo:**
-Cada sinal tem uma resposta baseada em evidência — e um protocolo por trás.
-
-Na semana que vem: o passo a passo completo para endereçar cada um deles.
+Cada sinal tem uma resposta baseada em evidência e um protocolo por trás. Na semana que vem você vai ver o passo a passo completo para endereçar cada um deles com precisão.
 
 **CTA visual:**
 🔖 Salva | 💬 Comenta qual sinal você reconhece | ↗ Compartilha com quem precisa ver isso
@@ -174,9 +161,7 @@ Na semana que vem: o passo a passo completo para endereçar cada um deles.
 
 Esses sinais não são inevitáveis. São dados.
 
-O corpo fala antes de precisar gritar — e quando você aprende a ouvir, a resposta é sempre mais precisa do que parece.
-
-5 sinais. 5 mecanismos. 5 respostas com base em ciência.
+O corpo fala antes de precisar gritar, e quando você aprende a ouvir, a resposta é sempre mais precisa do que parece. Cinco sinais, cinco mecanismos, cinco respostas com base em ciência.
 
 Salva esse carrossel para ter essa referência quando precisar 🔖
 

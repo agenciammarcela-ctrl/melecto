@@ -58,34 +58,37 @@ Rodapé: MAXME Bio | Ciência aplicada à longevidade
 
 **Slide 2 — SINAL 01/05**
 **Cansaço que o sono não resolve**
-Você dorme 7, 8 horas — e acorda como se não tivesse dormido. Não é fraqueza. É o ciclo profundo do sono comprometido — a fase delta, onde a recuperação celular acontece.
-O magnésio bisglicinato atua nos receptores GABA que abrem o sono profundo.
-→ *Indicação MAXME: Magnésio Bisglicinato — forma quelada, 300mg antes de dormir*
+Você dorme sete, oito horas e acorda com a sensação de que não descansou. O ciclo profundo do sono está sendo comprometido antes de completar a recuperação celular que precisaria completar.
+O magnésio quelado na forma bisglicinato atua nos receptores GABA que permitem a entrada no sono profundo.
+→ *Indicação MAXME: MAG 3 — com magnésio bisglicinato de alta absorção. Tomar no fim da tarde ou antes de dormir.*
 
 **Slide 3 — SINAL 02/05**
 **Articulações que falam antes de você**
-Rigidez ao sair da cama. Desconforto sutil ao descer a escada. Não é inevitável — é inflamação silenciosa. A matriz articular se reconstrói todos os dias, dependendo do que você oferece a ela.
-O colágeno tipo II + MSM atuam na raiz: estrutura e inflamação.
+Rigidez ao sair da cama. Desconforto discreto ao descer a escada. A matriz que protege as articulações se reconstrói todos os dias, dependendo do que você oferece ao organismo.
+O colágeno tipo II nativo e o MSM atuam na estrutura e na inflamação, não apenas no alívio.
 → *Indicação MAXME: Colágeno Tipo II + MSM — ação estrutural e anti-inflamatória*
 
 **Slide 4 — SINAL 03/05**
-**Foco que fragmenta**
-Começar uma tarefa, lembrar de outra, perder o fio. Não é distração — é falta de combustível celular. O córtex pré-frontal consome energia desproporcional. Quando a mitocôndria não entrega, a atenção é a primeira a ir.
-→ *Indicação MAXME: Coenzima Q10 + B-Complex — tecnologia Ubiqsome®, absorção 5x superior*
+**Foco que se fragmenta no meio do caminho**
+Você começa uma tarefa, perde o fio, tenta voltar. Isso não é falta de disciplina. É o resultado de um cérebro operando sem o combustível que precisa para sustentar atenção de verdade.
+O BrainMag combina formas de magnésio com alta penetração cerebral, que atravessam a barreira hematoencefálica e atuam na transmissão sináptica.
+→ *Indicação MAXME: BrainMag — magnésio de penetração cerebral para foco e clareza mental. Tomar pela manhã.*
 
 **Slide 5 — SINAL 04/05**
-**Imunidade que oscila**
-Recuperação lenta, resfriados frequentes. O sistema imune tem base nutricional. A maioria suplementa com a dose certa, mas na forma errada — e biodisponibilidade importa tanto quanto dosagem.
-→ *Indicação MAXME: Vitamina D3 + K2 + Zinco — fórmula sinérgica de alta biodisponibilidade*
+**Imunidade que oscila sem aviso**
+Recuperação lenta, resfriados frequentes. O sistema imunológico é uma infraestrutura ativa que depende de nutrientes específicos para funcionar. A maioria suplementa com a dose certa, mas na forma que o organismo absorve mal.
+D3 e K2 trabalham em sinergia: uma potencializa a biodisponibilidade da outra.
+→ *Indicação MAXME: ADEK — vitaminas lipossolúveis A, D, E e K em formulação sinérgica. Tomar com refeições com gordura.*
 
 **Slide 6 — SINAL 05/05**
-**Energia que some às 15h**
-Você arranca bem de manhã e às três da tarde é como se o dia tivesse acabado. Esse padrão não é normal — é sinal de produção energética por demanda imediata, não por capacidade sustentada.
-→ *Indicação MAXME: Coenzima Q10 + B-Complex — energia que nasce da célula, não de estimulante*
+**Energia que vai embora às três da tarde**
+O dia começa bem. Às três da tarde é como se alguém tivesse desligado um interruptor. Esse padrão não é inevitável. É um sinal metabólico de produção energética sem base sustentada.
+A CoQ10 é o transportador de elétrons na cadeia mitocondrial. O complexo B ativa as vias que alimentam esse processo. Sem essa base, você vive de pico e de queda.
+→ *Indicação MAXME: CoQ10 + Complexo B — suporte mitocondrial para energia que sustenta o dia inteiro. Tomar pela manhã.*
 
 **Slide 7 — INSIGHT FINAL**
 *"Seu corpo não está envelhecendo mais rápido. Está pedindo uma atenção mais precisa."*
-Saúde não se constrói quando os sinais viram sintomas. Cada sinal é uma informação. Cada informação tem uma resposta.
+Saúde se constrói antes dos sinais virarem sintomas. Cada sinal é uma informação. Cada informação tem uma resposta.
 
 **Slide 8 — CTA**
 *"Salva esse carrossel."*
