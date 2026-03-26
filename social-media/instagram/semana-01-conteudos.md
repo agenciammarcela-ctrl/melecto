@@ -44,55 +44,66 @@ Salva esse vídeo se quiser entender o protocolo completo 🔖
 ---
 
 ## POST 02 — CARROSSEL | Quarta | 10h
-**Produto:** Educativo de marca (sem produto específico)
+**Produto:** Educativo de marca com indicação de produto por sinal
 **Persona-alvo:** Zeladora da Vitalidade
 **Objetivo:** Salvamentos e autoridade
+**Arquivo completo (copy + briefing de design):** `carrosseis/carrossel-01-5-sinais.md`
 
-### SLIDES
+### SLIDES (resumo — ver arquivo completo para versão final)
 
 **Slide 1 — CAPA**
 *"5 sinais que seu corpo dá quando precisa de mais do que você está oferecendo"*
 Subtítulo: "E o que a ciência diz sobre cada um."
+Rodapé: MAXME Bio | Ciência aplicada à longevidade
 
-**Slide 2**
+**Slide 2 — SINAL 01/05**
 **Cansaço que o sono não resolve**
-Acordar sem disposição depois de 8 horas não é fraqueza — é sinal de que a recuperação celular está comprometida. O magnésio bisglicinato atua nos receptores que regulam o ciclo profundo do sono.
+Você dorme 7, 8 horas — e acorda como se não tivesse dormido. Não é fraqueza. É o ciclo profundo do sono comprometido — a fase delta, onde a recuperação celular acontece.
+O magnésio bisglicinato atua nos receptores GABA que abrem o sono profundo.
+→ *Indicação MAXME: Magnésio Bisglicinato — forma quelada, 300mg antes de dormir*
 
-**Slide 3**
+**Slide 3 — SINAL 02/05**
 **Articulações que falam antes de você**
-Rigidez matinal, desconforto ao descer escada. Não é "da idade" — é inflamação silenciosa. Colágeno tipo II e MSM reconstroem a matriz que protege as articulações no longo prazo.
+Rigidez ao sair da cama. Desconforto sutil ao descer a escada. Não é inevitável — é inflamação silenciosa. A matriz articular se reconstrói todos os dias, dependendo do que você oferece a ela.
+O colágeno tipo II + MSM atuam na raiz: estrutura e inflamação.
+→ *Indicação MAXME: Colágeno Tipo II + MSM — ação estrutural e anti-inflamatória*
 
-**Slide 4**
+**Slide 4 — SINAL 03/05**
 **Foco que fragmenta**
-Começar três coisas e não terminar nenhuma. O cérebro depende de energia mitocondrial para sustentar atenção. Sem a infraestrutura certa, concentração vira esforço — não hábito.
+Começar uma tarefa, lembrar de outra, perder o fio. Não é distração — é falta de combustível celular. O córtex pré-frontal consome energia desproporcional. Quando a mitocôndria não entrega, a atenção é a primeira a ir.
+→ *Indicação MAXME: Coenzima Q10 + B-Complex — tecnologia Ubiqsome®, absorção 5x superior*
 
-**Slide 5**
+**Slide 5 — SINAL 04/05**
 **Imunidade que oscila**
-Recuperação lenta, resfriados frequentes. O sistema imune tem base nutricional. Vitamina D3, K2 e zinco atuam em conjunto — e a biodisponibilidade do suplemento importa tanto quanto a dosagem.
+Recuperação lenta, resfriados frequentes. O sistema imune tem base nutricional. A maioria suplementa com a dose certa, mas na forma errada — e biodisponibilidade importa tanto quanto dosagem.
+→ *Indicação MAXME: Vitamina D3 + K2 + Zinco — fórmula sinérgica de alta biodisponibilidade*
 
-**Slide 6**
-**Energia que some à tarde**
-O pico de manhã e o vazio às 15h sugerem instabilidade mitocondrial. A diferença entre estimular e nutrir está na origem do problema — e nas formas de resolução.
+**Slide 6 — SINAL 05/05**
+**Energia que some às 15h**
+Você arranca bem de manhã e às três da tarde é como se o dia tivesse acabado. Esse padrão não é normal — é sinal de produção energética por demanda imediata, não por capacidade sustentada.
+→ *Indicação MAXME: Coenzima Q10 + B-Complex — energia que nasce da célula, não de estimulante*
 
 **Slide 7 — INSIGHT FINAL**
 *"Seu corpo não está envelhecendo mais rápido. Está pedindo uma atenção mais precisa."*
-
-Saúde é uma construção diária. Cada sinal é um dado — não um diagnóstico.
+Saúde não se constrói quando os sinais viram sintomas. Cada sinal é uma informação. Cada informação tem uma resposta.
 
 **Slide 8 — CTA**
 *"Salva esse carrossel."*
-Cada sinal tem uma resposta baseada em evidência.
-Semana que vem: o protocolo por trás de cada um.
+Cada sinal tem uma resposta baseada em evidência — e um protocolo por trás.
+Na semana que vem: o passo a passo completo para endereçar cada um deles.
+🔖 Salva | 💬 Comenta qual sinal você reconhece | ↗ Compartilha
 
 **Legenda:**
 Esses sinais não são inevitáveis. São dados.
 
 O corpo fala antes de precisar gritar — e quando você aprende a ouvir, a resposta é sempre mais precisa do que parece.
 
+5 sinais. 5 mecanismos. 5 respostas com base em ciência.
+
 Salva esse carrossel para ter essa referência quando precisar 🔖
 
 **Hashtags:**
-#longevidade #saude #vidasaudavel #suplementos #bemestar #envelhecerbem #autonomia #magnesio #vitaminaD #energiacelular #medicinaIntegrativa #maxmebio #conscienciabiologica
+#longevidade #saude #vidasaudavel #suplementos #bemestar #envelhecerbem #autonomia #magnesio #vitaminaD #energiacelular #medicinaIntegrativa #maxmebio #conscienciabiologica #colageno #cansaco #foco #imunidade #mitocondria #coq10 #saudeintegrativa
 
 ---
 
