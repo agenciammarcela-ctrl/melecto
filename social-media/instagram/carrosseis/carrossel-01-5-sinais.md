@@ -121,11 +121,11 @@ O dia começa bem. Você tem clareza, disposição, tudo parece possível. Aí c
 A diferença entre estimular o corpo e nutri-lo aparece exatamente nesse momento do dia.
 
 **Mecanismo:**
-A CoQ10 (Coenzima Q10) é o transportador de elétrons na cadeia respiratória mitocondrial, o passo que converte os nutrientes em ATP de forma eficiente. O complexo B ativa as vias metabólicas que alimentam esse processo. Sem essa base funcionando bem, você vive de pico e de queda, não de fluxo constante.
+A Coenzima Q10 é o transportador de elétrons na cadeia respiratória mitocondrial, o passo que converte os nutrientes em ATP de forma eficiente. O Complexo B ativa as vias metabólicas que alimentam esse processo — funcionando como o combustível para a usina geradora. Sem essa base, você vive de pico e de queda, não de fluxo constante.
 
 **Indicação MaxMe Bio:**
-→ **CoQ10 + Complexo B MAXME**
-Suporte mitocondrial completo para energia celular que sustenta o dia inteiro. Tomar pela manhã, até o meio-dia.
+→ **CoQ10 + B-Complex MAXME**
+Tecnologia Ubiqsome®: a CoQ10 é "envelopada" em uma estrutura que o corpo reconhece facilmente, garantindo 5 vezes mais absorção e ação prolongada por até 24 horas com uma única dose. Sem estimulante. Tomar pela manhã, até o meio-dia.
 
 ---
 

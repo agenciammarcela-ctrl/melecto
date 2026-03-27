@@ -121,6 +121,10 @@ Combinação sinérgica para função cardiovascular e energia celular.
 Consistência supera timing. Tomar todos os dias, no mesmo horário.
 *Qualquer horário — o que for mais fácil de manter.*
 
+→ **Maxme Coffee + Creatina**
+A forma mais prática de começar o dia com creatina (3g), cafeína calibrada (75mg), TCM, taurina, colina e Complexo B em uma dose só. Energia funcional sem palpitação, sem agitação, sem queda.
+*2 scoops em água, pela manhã ou antes de atividade física. Combina com BrainMag para suporte cognitivo ampliado.*
+
 **Nota de rodapé do slide:**
 Outros suplementos MAXME têm janelas diferentes: magnésios de relaxamento (MAG 3 / MAG 5) e ADEK funcionam melhor no fim do dia ou durante refeições principais.
 
