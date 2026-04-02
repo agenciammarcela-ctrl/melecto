@@ -1,0 +1,54 @@
+Mes,Canal,Metrica,Valor_Numerico,Unidade,Variacao_Pct,Sinal_Variacao,Categoria
+2026-03-01,Ecommerce,Vendas Brutas,1049000.58,BRL,17,positivo,Receita
+2026-03-01,Ecommerce,Vendas Liquidas,781557.67,BRL,15,positivo,Receita
+2026-03-01,Ecommerce,Vendas Totais,809728.15,BRL,15,positivo,Receita
+2026-03-01,Ecommerce,Descontos,267442.91,BRL,27,atencao,Custo
+2026-03-01,Ecommerce,Custo de Envio,28170.48,BRL,32,atencao,Custo
+2026-03-01,Ecommerce,Pedidos,2596,unidade,24,positivo,Volume
+2026-03-01,Ecommerce,Ticket Medio Bruto,404.09,BRL,0,neutro,Eficiencia
+2026-03-01,Ecommerce,Ticket Medio Liquido,301.06,BRL,0,neutro,Eficiencia
+2026-03-01,Ecommerce,Taxa Clientes Recorrentes,44.97,pct,28,positivo,Fidelizacao
+2026-03-01,Meta Ads,Investimento,166204,BRL,0,neutro,Custo
+2026-03-01,Meta Ads,Impressoes,3085049,unidade,0,neutro,Alcance
+2026-03-01,Meta Ads,Alcance,447667,unidade,0,neutro,Alcance
+2026-03-01,Meta Ads,Frequencia,6.89,x,0,atencao,Eficiencia
+2026-03-01,Meta Ads,CTR,2.04,pct,0,neutro,Eficiencia
+2026-03-01,Meta Ads,Cliques no Link,63049,unidade,0,neutro,Volume
+2026-03-01,Meta Ads,CPC,2.64,BRL,0,neutro,Eficiencia
+2026-03-01,Meta Ads,CPM,53.87,BRL,0,neutro,Eficiencia
+2026-03-01,Email Marketing,Emails Enviados,10,unidade,43,positivo,Volume
+2026-03-01,Email Marketing,Taxa de Abertura,24.4,pct,0,neutro,Eficiencia
+2026-03-01,Email Marketing,Taxa de Clique,1.2,pct,0,neutro,Eficiencia
+2026-03-01,Email Marketing,Receita Total,258358.84,BRL,0,positivo,Receita
+2026-03-01,Email Marketing,Receita Newsletter,179137.72,BRL,0,positivo,Receita
+2026-03-01,Email Marketing,Receita Automacoes,79221.12,BRL,0,positivo,Receita
+2026-03-01,Email Marketing,Receita por Email,25835.88,BRL,0,positivo,Eficiencia
+2026-03-01,WhatsApp,Receita Influenciada Total,227315,BRL,0,positivo,Receita
+2026-03-01,WhatsApp,Receita Campanhas,148303.62,BRL,0,positivo,Receita
+2026-03-01,WhatsApp,Receita Automacoes,89440,BRL,0,positivo,Receita
+2026-03-01,WhatsApp,Investimento Campanhas,6956.95,BRL,0,neutro,Custo
+2026-03-01,WhatsApp,ROI Campanhas,21,x,0,positivo,Eficiencia
+2026-03-01,WhatsApp,Disparos,13410,unidade,0,neutro,Volume
+2026-03-01,WhatsApp,Campanhas Disparadas,8,unidade,0,neutro,Volume
+2026-03-01,WhatsApp,Taxa de Engajamento,11.43,pct,0,positivo,Eficiencia
+2026-03-01,WhatsApp,Bounce Rate,6.99,pct,0,neutro,Eficiencia
+2026-03-01,WhatsApp,Ticket Medio,311,BRL,0,neutro,Eficiencia
+2026-03-01,WhatsApp,LTV,329,BRL,0,neutro,Fidelizacao
+2026-03-01,Instagram,Seguidores,63911,unidade,4.5,positivo,Audiencia
+2026-03-01,Instagram,Crescimento Liquido,2821,unidade,0,positivo,Audiencia
+2026-03-01,Instagram,Novos Seguidores,3484,unidade,0,positivo,Audiencia
+2026-03-01,Instagram,Deixaram de Seguir,663,unidade,0,negativo,Audiencia
+2026-03-01,Instagram,Visualizacoes Reels e Posts,188000,unidade,164,positivo,Alcance
+2026-03-01,Instagram,Alcance Nao Seguidores,76,pct,220,positivo,Alcance
+2026-03-01,Instagram,Reels Publicados,17,unidade,0,positivo,Conteudo
+2026-03-01,Instagram,Posts Publicados,2,unidade,0,neutro,Conteudo
+2026-03-01,Blog SEO,Cliques Organicos,4400,unidade,29.8,positivo,Alcance
+2026-03-01,Blog SEO,Impressoes,69100,unidade,6.7,positivo,Alcance
+2026-03-01,Blog SEO,Posicao Media,4.3,posicao,-0.59,positivo,Eficiencia
+2026-03-01,Blog SEO,Sessoes,5363,unidade,28,positivo,Volume
+2026-03-01,Blog SEO,Transacoes,321,unidade,4.9,positivo,Volume
+2026-03-01,Blog SEO,Taxa de Conversao,5.99,pct,-18.1,negativo,Eficiencia
+2026-03-01,Blog SEO,Receita Organica,106412.82,BRL,-8.4,negativo,Receita
+2026-03-01,Blog SEO,Duracao Media Sessao,292,segundos,8.9,positivo,Eficiencia
+2026-03-01,Blog SEO,Taxa de Engajamento,64.6,pct,1.8,positivo,Eficiencia
+2026-03-01,Blog SEO,Blogs Publicados,8,unidade,0,neutro,Conteudo
