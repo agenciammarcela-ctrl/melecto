@@ -16,6 +16,10 @@ Mes,Canal,Metrica,Valor_Numerico,Unidade,Variacao_Pct,Sinal_Variacao,Categoria
 2026-03-01,Meta Ads,Cliques no Link,63049,unidade,0,neutro,Volume
 2026-03-01,Meta Ads,CPC,2.64,BRL,0,neutro,Eficiencia
 2026-03-01,Meta Ads,CPM,53.87,BRL,0,neutro,Eficiencia
+2026-03-01,Meta Ads,Compras Atribuidas,1959,unidade,0,positivo,Volume
+2026-03-01,Meta Ads,CPA,84.84,BRL,0,neutro,Eficiencia
+2026-03-01,Meta Ads,ROAS,3.56,x,0,positivo,Eficiencia
+2026-03-01,Meta Ads,Receita Atribuida,591686.24,BRL,0,positivo,Receita
 2026-03-01,Email Marketing,Emails Enviados,10,unidade,43,positivo,Volume
 2026-03-01,Email Marketing,Taxa de Abertura,24.4,pct,0,neutro,Eficiencia
 2026-03-01,Email Marketing,Taxa de Clique,1.2,pct,0,neutro,Eficiencia
