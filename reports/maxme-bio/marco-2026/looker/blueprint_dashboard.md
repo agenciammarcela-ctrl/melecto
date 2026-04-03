@@ -21,13 +21,14 @@
 | Cor canal WhatsApp | Verde claro | `#25D366` |
 | Cor canal Instagram | Gradiente rosa | `#E1306C` |
 | Cor canal Blog/SEO | Amarelo | `#DFFF00` |
+| Cor canal Influenciadoras | Laranja | `#FF6B35` |
 | Fonte | Roboto ou Inter | — |
 
 ---
 
 ## ESTRUTURA GERAL DO DASHBOARD
 
-O dashboard tem **6 páginas** (abas no Looker Studio):
+O dashboard tem **7 páginas** (abas no Looker Studio):
 
 ```
 1. Visão Geral (Overview)
@@ -36,6 +37,7 @@ O dashboard tem **6 páginas** (abas no Looker Studio):
 4. CRM — Email + WhatsApp
 5. Instagram
 6. Blog / SEO
+7. Influenciadoras / Afiliadas
 ```
 
 ---
@@ -258,6 +260,76 @@ O dashboard tem **6 páginas** (abas no Looker Studio):
 
 ---
 
+## PÁGINA 7 — INFLUENCIADORAS / AFILIADAS
+
+### Cabeçalho
+- Título: "Influenciadoras & Afiliadas"
+- Subtítulo: "GoAffPro — Março 2026"
+- Linha `#FF6B35`
+
+### Bloco 1 — Scorecards de visão geral (linha única)
+| Card | Valor | Cor destaque |
+|---|---|---|
+| Afiliadas ativas | 29 | — |
+| Pedidos gerados | 759 | — |
+| Receita total | R$ 215.165 | verde |
+| Comissões pagas | R$ 41.430 | — |
+| Investimento total | ~R$ 71.430 | — |
+| ROI do canal | 3,0x | verde |
+
+> Filtro implícito: `Canal = "Influenciadoras"`
+
+### Bloco 2 — Ranking de afiliadas (tabela top 10)
+- Tipo: **Tabela com barras de dados**
+- Colunas: Rank | Afiliada | Pedidos | Receita | Comissão | Var. Receita
+- Ordenar: Receita decrescente
+- Barra de dados na coluna Receita, cor `#FF6B35`
+- Realçar linha 1 (Thais Tavares) com fundo `#2A2A2A`
+- Estilo: zebrado escuro `#1C1C1C` / `#252525`
+
+**Dados a inserir manualmente (tabela estática ou Google Sheets conectado):**
+| # | Afiliada | Pedidos | Receita | Comissão |
+|---|---|---|---|---|
+| 1 | Thais Tavares | 268 | R$ 74.013 | R$ 14.280 |
+| 2 | Thalissa Nunes | 177 | R$ 44.811 | R$ 8.544 |
+| 3 | Bella Falconi | 112 | R$ 31.704 | R$ 6.096 |
+| 4 | Rosineide Maria | 64 | R$ 17.050 | R$ 3.278 |
+| 5 | Karine Rodrigues | 25 | R$ 8.270 | R$ 1.612 |
+| 6 | Izabelle Vieira | 21 | R$ 6.445 | R$ 1.239 |
+| 7 | AS CLARAS | 8 | R$ 5.827 | R$ 1.146 |
+| 8 | Priscila Moreira | 13 | R$ 4.297 | R$ 852 |
+| 9 | Maria F. Costa Siqueira | 13 | R$ 4.119 | R$ 806 |
+| 10 | Gabriela Prando | 6 | R$ 3.086 | R$ 615 |
+
+### Bloco 3 — Concentração de receita (gráfico de rosca)
+- Tipo: **Gráfico de rosca**
+- Fatias:
+  - Thais Tavares: 34,4% — `#FF6B35`
+  - Thalissa Nunes: 20,8% — `#FF8C5A`
+  - Bella Falconi: 14,7% — `#FFB380`
+  - Outros (26 afiliadas): 30,1% — `#444444`
+- Legenda à direita
+- Título: "Concentração de Receita — Top 3 = 69%"
+
+### Bloco 4 — Cards de destaque (3 cards lado a lado)
+**Card 1 — Maior receita do mês:**
+- Fundo `#252525`, borda superior `#FF6B35`
+- Ícone de troféu + texto: "Thais Tavares" | "R$ 74.013 | 268 pedidos"
+
+**Card 2 — Maior crescimento:**
+- Fundo `#252525`, borda superior `#00E676`
+- Ícone de seta + texto: "Thalissa Nunes" | "+R$ 41.085 vs mês anterior"
+
+**Card 3 — Alerta de queda:**
+- Fundo `#252525`, borda superior `#FF5252`
+- Ícone de alerta + texto: "Rosineide Maria" | "-R$ 10.673 vs mês anterior | -23 pedidos"
+
+### Bloco 5 — Insight em caixa de texto
+- Fundo `#DFFF00`, texto preto, negrito
+- "As 3 maiores afiliadas respondem por 69% da receita do canal. Diversificar a base ativa reduz risco de concentração."
+
+---
+
 ## INSTRUÇÕES DE MONTAGEM NO LOOKER STUDIO
 
 ### Passo 1 — Conectar os dados
@@ -292,7 +364,11 @@ Para cada scorecard:
 Em cada página de canal, adicionar filtro implícito:
 - Canal = "Ecommerce" (na página de e-commerce)
 - Canal = "Meta Ads" (na página de tráfego)
-- etc.
+- Canal = "Email Marketing" (na página de e-mail)
+- Canal = "WhatsApp" (na página de WhatsApp)
+- Canal = "Instagram" (na página de Instagram)
+- Canal = "Blog SEO" (na página de Blog)
+- Canal = "Influenciadoras" (na página de influenciadoras)
 
 ---
 
