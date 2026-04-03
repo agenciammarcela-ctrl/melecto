@@ -56,3 +56,13 @@ Mes,Canal,Metrica,Valor_Numerico,Unidade,Variacao_Pct,Sinal_Variacao,Categoria
 2026-03-01,Blog SEO,Duracao Media Sessao,292,segundos,8.9,positivo,Eficiencia
 2026-03-01,Blog SEO,Taxa de Engajamento,64.6,pct,1.8,positivo,Eficiencia
 2026-03-01,Blog SEO,Blogs Publicados,8,unidade,0,neutro,Conteudo
+2026-03-01,Influenciadoras,Afiliadas Ativas,29,unidade,0,neutro,Volume
+2026-03-01,Influenciadoras,Pedidos Totais,759,unidade,0,positivo,Volume
+2026-03-01,Influenciadoras,Receita Total,215165,BRL,0,positivo,Receita
+2026-03-01,Influenciadoras,Comissoes Pagas,41430,BRL,0,neutro,Custo
+2026-03-01,Influenciadoras,Investimento Fixo Parceiras,30000,BRL,0,neutro,Custo
+2026-03-01,Influenciadoras,Investimento Total Canal,71430,BRL,0,neutro,Custo
+2026-03-01,Influenciadoras,ROI do Canal,3.0,x,0,positivo,Eficiencia
+2026-03-01,Influenciadoras,Receita Top1 Thais Tavares,74013,BRL,0,positivo,Receita
+2026-03-01,Influenciadoras,Receita Top2 Thalissa Nunes,44811,BRL,0,positivo,Receita
+2026-03-01,Influenciadoras,Receita Top3 Bella Falconi,31704,BRL,0,positivo,Receita
