@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Harry Potter — A Prova dos Bruxos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+
+<main id="app" class="app">
+
+  <!-- TELA 1: BOAS-VINDAS / CADASTRO -->
+  <section id="screen-welcome" class="screen screen--active">
+    <div class="card card--welcome">
+      <p class="eyebrow">✦ Salão Principal de Hogwarts ✦</p>
+      <h1 class="title">Quiz Harry Potter</h1>
+      <p class="subtitle">A Prova dos Bruxos</p>
+      <p class="lede">3 bruxos entram na arena. 10 perguntas sobre os 6 primeiros filmes.<br>Fáceis, médias e difíceis — todos respondem todas.</p>
+
+      <form id="form-players" class="form-players" autocomplete="off">
+        <div class="player-input player-input--1">
+          <label for="p1">Bruxo(a) 1</label>
+          <input type="text" id="p1" maxlength="18" placeholder="Nome do 1º jogador" required>
+        </div>
+        <div class="player-input player-input--2">
+          <label for="p2">Bruxo(a) 2</label>
+          <input type="text" id="p2" maxlength="18" placeholder="Nome do 2º jogador" required>
+        </div>
+        <div class="player-input player-input--3">
+          <label for="p3">Bruxo(a) 3</label>
+          <input type="text" id="p3" maxlength="18" placeholder="Nome do 3º jogador" required>
+        </div>
+        <button type="submit" class="btn btn--primary btn--big">Começar a Prova ✨</button>
+      </form>
+
+      <div class="rules">
+        <div class="rules__item"><span class="dot dot--easy"></span> 2 perguntas fáceis</div>
+        <div class="rules__item"><span class="dot dot--medium"></span> 4 perguntas médias</div>
+        <div class="rules__item"><span class="dot dot--hard"></span> 4 perguntas difíceis</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELA 2: JOGO -->
+  <section id="screen-game" class="screen">
+    <div class="hud">
+      <div class="hud__progress">
+        <span id="progress-label">Pergunta 1 de 10</span>
+        <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+      </div>
+      <div class="hud__scores" id="hud-scores"></div>
+    </div>
+
+    <div class="card card--game">
+      <div class="game-top">
+        <span id="difficulty-badge" class="badge">Fácil</span>
+        <div class="movie-tag" id="movie-tag">Filme 1</div>
+      </div>
+
+      <div class="turn-banner" id="turn-banner">
+        <span class="turn-banner__wand">🪄</span>
+        <span>Vez de <strong id="turn-player-name">—</strong> responder</span>
+      </div>
+
+      <div class="timer-wrap">
+        <div id="timer-fill" class="timer-fill"></div>
+      </div>
+
+      <h2 id="question-text" class="question-text">Carregando pergunta...</h2>
+
+      <div id="answers" class="answers"></div>
+
+      <div class="game-footer">
+        <p id="feedback-text" class="feedback-text"></p>
+        <button id="btn-next" class="btn btn--primary btn--next" hidden>Próximo ➜</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TELA 3: RESULTADO -->
+  <section id="screen-result" class="screen">
+    <div class="card card--result">
+      <p class="eyebrow">✦ A Prova terminou ✦</p>
+      <h1 class="title title--small" id="winner-title">E o Campeão de Hogwarts é...</h1>
+
+      <div id="podium" class="podium"></div>
+
+      <div id="result-details" class="result-details"></div>
+
+      <button id="btn-restart" class="btn btn--primary btn--big">Jogar Novamente 🔁</button>
+    </div>
+  </section>
+
+</main>
+
+<div id="confetti-layer" class="confetti-layer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
