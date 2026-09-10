@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maxme Bio — Relatório Digital | Março 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #1C1C1C;
+    --surface: #252525;
+    --surface2: #2E2E2E;
+    --border: #3A3A3A;
+    --text: #FFFFFF;
+    --muted: #AAAAAA;
+    --green: #00E676;
+    --yellow: #DFFF00;
+    --red: #FF5252;
+    --orange: #FF6B35;
+    --blue: #4A7BC8;
+    --teal: #00B8C8;
+    --purple: #7B5EA7;
+    --wa: #25D366;
+    --ig: #E1306C;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    padding: 0;
+  }
+
+  @media print {
+    body { background: #fff; color: #111; }
+    .no-print { display: none !important; }
+    .section { break-inside: avoid; page-break-inside: avoid; }
+    .card { background: #f5f5f5 !important; border: 1px solid #ddd !important; }
+    .header { background: #1C1C1C !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  .header {
+    background: linear-gradient(135deg, #7B5EA7 0%, #4A7BC8 35%, #00B8C8 70%, #00E676 100%);
+    padding: 48px 0 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+  }
+  .header .container { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; }
+  .brand { font-size: 32px; font-weight: 800; letter-spacing: -1px; color: #fff; }
+  .brand span { font-size: 13px; font-weight: 400; letter-spacing: 4px; text-transform: uppercase; display: block; opacity: 0.8; margin-bottom: 4px; }
+  .header-meta { text-align: right; }
+  .header-meta .period { font-size: 14px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px; }
+  .header-meta .title { font-size: 22px; font-weight: 700; color: #fff; }
+
+  .nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav .container { display: flex; gap: 4px; overflow-x: auto; padding: 0; }
+  .nav a {
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav a:hover { color: var(--text); border-color: var(--green); }
+
+  .section { padding: 48px 0; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+  .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 32px; }
+  .section-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .section-title { font-size: 22px; font-weight: 700; }
+  .section-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .kpi-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .kpi-grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .kpi-grid-6 { grid-template-columns: repeat(6, 1fr); }
+
+  .card {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent, var(--green));
+  }
+  .card-label { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+  .card-value { font-size: 26px; font-weight: 800; color: var(--text); line-height: 1; }
+  .card-value.sm { font-size: 20px; }
+  .card-var { font-size: 12px; font-weight: 600; margin-top: 6px; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .warn { color: var(--yellow); }
+  .neu { color: var(--muted); }
+
+  .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    background: var(--surface2);
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  tbody tr { border-top: 1px solid var(--border); }
+  tbody tr:hover { background: var(--surface2); }
+  tbody td { padding: 12px 16px; color: var(--text); }
+  .td-right { text-align: right; }
+  .td-center { text-align: center; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 700; }
+  .badge-green { background: rgba(0,230,118,0.15); color: var(--green); }
+  .badge-red { background: rgba(255,82,82,0.15); color: var(--red); }
+  .badge-yellow { background: rgba(223,255,0,0.15); color: var(--yellow); }
+  .badge-blue { background: rgba(74,123,200,0.15); color: var(--blue); }
+
+  .insight {
+    background: rgba(223,255,0,0.08);
+    border: 1px solid rgba(223,255,0,0.25);
+    border-left: 4px solid var(--yellow);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .insight strong { color: var(--yellow); }
+  .insight-green { background: rgba(0,230,118,0.08); border: 1px solid rgba(0,230,118,0.25); border-left: 4px solid var(--green); }
+  .insight-green strong { color: var(--green); }
+  .insight-red { background: rgba(255,82,82,0.08); border: 1px solid rgba(255,82,82,0.25); border-left: 4px solid var(--red); }
+  .insight-red strong { color: var(--red); }
+
+  .roi-card {
+    background: linear-gradient(135deg, rgba(0,230,118,0.15), rgba(0,184,200,0.1));
+    border: 1px solid rgba(0,230,118,0.3);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+  }
+  .roi-card .roi-value { font-size: 42px; font-weight: 800; color: var(--green); line-height: 1; }
+  .roi-card .roi-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+  .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .bar-label { font-size: 12px; color: var(--muted); width: 160px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .bar-track { flex: 1; height: 8px; background: var(--surface2); border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  .bar-val { font-size: 12px; font-weight: 600; color: var(--text); width: 80px; text-align: right; }
+
+  .highlight-card {
+    background: linear-gradient(135deg, rgba(0,230,118,0.12), rgba(0,184,200,0.08));
+    border: 1px solid rgba(0,230,118,0.3);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .highlight-card.orange {
+    background: linear-gradient(135deg, rgba(255,107,53,0.12), rgba(255,107,53,0.05));
+    border-color: rgba(255,107,53,0.3);
+  }
+  .highlight-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; }
+  .highlight-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+  .highlight-val { font-size: 14px; color: var(--muted); }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+  .footer { background: var(--surface); border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+  .footer p { font-size: 12px; color: var(--muted); }
+
+  .receipt-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .receipt-row:last-child { border-bottom: none; }
+  .receipt-row.total { font-weight: 700; font-size: 15px; padding-top: 14px; }
+  .receipt-row.total .receipt-val { color: var(--green); }
+
+  @media (max-width: 768px) {
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .kpi-grid-6 { grid-template-columns: repeat(2, 1fr); }
+    .kpi-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .kpi-grid-3 { grid-template-columns: 1fr 1fr; }
+    .card-value { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container">
+    <div class="brand">
+      <span>Sua dose máxima de longevidade</span>
+      MAXME BIO
+    </div>
+    <div class="header-meta">
+      <div class="period">Relatório Digital Mensal</div>
+      <div class="title">Março 2026</div>
+    </div>
+  </div>
+</div>
+
+<nav class="nav no-print">
+  <div class="container">
+    <a href="#overview">Visão Geral</a>
+    <a href="#ecommerce">E-commerce</a>
+    <a href="#ads">Tráfego Pago</a>
+    <a href="#email">E-mail</a>
+    <a href="#whatsapp">WhatsApp</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#blog">Blog / SEO</a>
+    <a href="#influencers">Influenciadoras</a>
+  </div>
+</nav>
+
+<section class="section" id="overview">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-dot" style="background:var(--green)"></div>
+      <div>
+        <div class="section-title">Visão Geral</div>
+        <div class="section-sub">Principais indicadores de março — comparativo com fevereiro 2026</div>
+      </div>
+    </div>
+    <div class="kpi-grid kpi-grid-6">
+      <div class="card" style="--accent:var(--teal)"><div class="card-label">Faturamento Bruto</div><div class="card-value">R$ 1,04M</div><div class="card-var pos">↑ 17% vs fevereiro</div></div>
+      <div class="card" style="--accent:var(--teal)"><div class="card-label">Faturamento Líquido</div><div class="card-value">R$ 781k</div><div class="card-var pos">↑ 15% vs fevereiro</div></div>
+      <div class="card" style="--accent:var(--teal)"><div class="card-label">Pedidos</div><div class="card-value">2.596</div><div class="card-var pos">↑ 24% vs fevereiro</div></div>
+      <div class="card" style="--accent:var(--teal)"><div class="card-label">Ticket Médio</div><div class="card-value">R$ 404</div><div class="card-var neu">—</div></div>
+      <div class="card" style="--accent:var(--green)"><div class="card-label">Clientes Recorrentes</div><div class="card-value">44,97%</div><div class="card-var pos">↑ 28% vs fevereiro</div></div>
+      <div class="card" style="--accent:var(--yellow)"><div class="card-label">Desconto s/ Bruto</div><div class="card-value warn">25,5%</div><div class="card-var warn">⚠ R$ 267k em descontos</div></div>
+    </div>
+    <div class="card" style="--accent:var(--green);margin-top:0">
+      <div class="card-label" style="margin-bottom:20px">Receita Rastreada por Canal — Março 2026</div>
+      <div class="bar-row"><span class="bar-label">Meta Ads</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue)"></div></div><span class="bar-val">R$ 591.686</span></div>
+      <div class="bar-row"><span class="bar-label">E-mail Marketing</span><div class="bar-track"><div class="bar-fill" style="width:43.7%;background:var(--purple)"></div></div><span class="bar-val">R$ 258.359</span></div>
+      <div class="bar-row"><span class="bar-label">WhatsApp</span><div class="bar-track"><div class="bar-fill" style="width:38.4%;background:var(--wa)"></div></div><span class="bar-val">R$ 227.315</span></div>
+      <div class="bar-row"><span class="bar-label">Influenciadoras</span><div class="bar-track"><div class="bar-fill" style="width:36.3%;background:var(--orange)"></div></div><span class="bar-val">R$ 215.165</span></div>
+      <div class="bar-row"><span class="bar-label">SEO / Blog</span><div class="bar-track"><div class="bar-fill" style="width:17.9%;background:var(--yellow)"></div></div><span class="bar-val">R$ 106.413</span></div>
+    </div>
+    <div class="insight insight-green" style="margin-top:16px"><strong>Março foi o melhor mês do trimestre.</strong> Crescimento em todos os canais rastreados, com destaque para e-mail (+43% em envios), WhatsApp (campanha top 3 histórico) e Instagram (+164% em visualizações).</div>
+  </div>
+</section>
+
+<section class="section" id="ecommerce">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-dot" style="background:var(--teal)"></div>
+      <div><div class="section-title">E-commerce</div><div class="section-sub">Shopify · 01/03/2026 a 31/03/2026</div></div>
+    </div>
+    <div class="two-col">
+      <div>
+        <div class="card" style="--accent:var(--teal)">
+          <div class="card-label" style="margin-bottom:16px">Detalhamento de Vendas</div>
+          <div class="receipt-row"><span>Vendas brutas</span><span class="receipt-val pos">R$ 1.049.000,58</span></div>
+          <div class="receipt-row"><span>Descontos</span><span class="receipt-val warn">− R$ 267.442,91</span></div>
+          <div class="receipt-row"><span>Devoluções</span><span class="receipt-val pos">R$ 0,00</span></div>
+          <div class="receipt-row"><span>Vendas líquidas</span><span class="receipt-val">R$ 781.557,67</span></div>
+          <div class="receipt-row"><span>Custo de envio</span><span class="receipt-val warn">R$ 28.170,48</span></div>
+          <div class="receipt-row total"><span>Vendas totais</span><span class="receipt-val">R$ 809.728,15</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="kpi-grid" style="grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0">
+          <div class="card" style="--accent:var(--teal)"><div class="card-label">Pedidos</div><div class="card-value">2.596</div><div class="card-var pos">↑ 24% vs fev</div></div>
+          <div class="card" style="--accent:var(--teal)"><div class="card-label">Ticket Médio Bruto</div><div class="card-value">R$ 404</div><div class="card-var neu">—</div></div>
+          <div class="card" style="--accent:var(--green)"><div class="card-label">Clientes Recorrentes</div><div class="card-value">44,97%</div><div class="card-var pos">↑ 28% vs fev</div></div>
+          <div class="card" style="--accent:var(--teal)"><div class="card-label">Ticket Médio Líquido</div><div class="card-value">R$ 301</div><div class="card-var neu">—</div></div>
+        </div>
+        <div class="insight"><strong>Atenção:</strong> Desconto representa <strong>25,5% do bruto</strong> — 1 em cada 4 reais vendidos é desconto.</div>
+        <div class="insight insight-green"><strong>Zero devoluções</strong> em março. Satisfação alta com produtos e logística.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ads">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-dot" style="background:var(--blue)"></div>
+      <div><div class="section-title">Tráfego Pago</div><div class="section-sub">Meta Ads · 01/03/2026 a 31/03/2026</div></div>
+    </div>
+    <div class="kpi-grid kpi-grid-4" style="margin-bottom:24px">
+      <div class="card" style="--accent:var(--blue)"><div class="card-label">Investimento</div><div class="card-value sm">R$ 166.204</div><div class="card-var neu">—</div></div>
+      <div class="card" style="--accent:var(--blue)"><div class="card-label">Receita Atribuída</div><div class="card-value sm">R$ 591.686</div><div class="card-var pos">ROAS 3,56x</div></div>
+      <div class="card" style="--accent:var(--blue)"><div class="card-label">Compras Atribuídas</div><div class="card-value sm">1.959</div><div class="card-var neu">CPA R$ 84,84</div></div>
+      <div class="roi-card"><div class="roi-value">3,56x</div><div class="roi-label">ROAS</div></div>
+    </div>
+    <div class="kpi-grid kpi-grid-6" style="margin-bottom:24px">
+      <div class="card" style="--accent:var(--blue)"><div class="card-label">Impressões</div><div class="card-value sm">3,08M</div></div>
+      <div class="card" style="--accent:var(--blue)"><div class="card-label">Alcance</div><div class="card-value sm">447.667</div></div>
+      <div class="card" style="--accent:var(--yellow)"><div class="card-label">Frequência</div><div class="card-value sm warn">6,89x</div><div class="card-var warn">⚠ Alta</div></div>
+      <div class="card" style="--accent:var(--blue)"><div class="card-label">CTR</div><div class="card-value sm">2,04%</div></div>
+      <div class="card" style="--accent:var(--blue)"><div class="card-label">Cliques no Link</div><div class="card-value sm">63.049</div></div>
+      <div class="card" style="--accent:var(--blue)"><div class="card-label">CPC</div><div class="card-value sm">R$ 2,64</div></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Campanha</th><th class="td-right">Compras</th><th class="td-right">CPA</th><th class="td-right">ROAS</th><th class="td-center">Performance</th></tr></thead>
+        <tbody>
+          <tr><td>Campanha 1</td><td class="td-right">1.025</td><td class="td-right">R$ 90,88</td><td class="td-right">3,15x</td><td class="td-center"><span class="badge badge-blue">Regular</span></td></tr>
+          <tr><td>Campanha 2</td><td class="td-right">670</td><td class="td-right">R$ 92,95</td><td class="td-right">3,42x</td><td class="td-center"><span class="badge badge-blue">Regular</span></td></tr>
+          <tr><td>Campanha 3</td><td class="td-right">106</td><td class="td-right">R$ 30,55</td><td class="td-right"><strong>8,97x</strong></td><td class="td-center"><span class="badge badge-green">★ Escalar</span></td></tr>
+          <tr><td>Campanha 4 (Awareness)</td><td class="td-right">—</td><td class="td-right">R$ 0,06/viz</td><td class="td-right">—</td><td class="td-center"><span class="badge badge-yellow">Topo de funil</span></td></tr>
+          <tr><td>Campanha 5</td><td class="td-right">158</td><td class="td-right">R$ 43,74</td><td class="td-right"><strong>8,26x</strong></td><td class="td-center"><span class="badge badge-green">★ Escalar</span></td></tr>
+          <tr style="font-weight:700;background:var(--surface2)"><td>TOTAL</td><td class="td-right">1.959</td><td class="td-right">R$ 84,84</td><td class="td-right">3,56x</td><td class="td-center">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight"><strong>Campanhas 3 e 5 têm ROAS acima de 8x</strong> — prioridade máxima de escala em abril. Frequência 6,89 indica necessidade de renovação de criativos.</div>
+  </div>
+</section>
+
+<section class="section" id="email">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-dot" style="background:var(--purple)"></div>
+      <div><div class="section-title">E-mail Marketing</div><div class="section-sub">Março 2026 · 10 envios — Semana da Mulher (3) + Semana do Consumidor (7)</div></div>
+    </div>
+    <div class="kpi-grid kpi-grid-4" style="margin-bottom:24px">
+      <div class="card" style="--accent:var(--purple)"><div class="card-label">Receita Total</div><div class="card-value sm">R$ 258.359</div><div class="card-var pos">R$ 25.836 / email</div></div>
+      <div class="card" style="--accent:var(--purple)"><div class="card-label">Custo Plataforma</div><div class="card-value sm">R$ 3.406</div><div class="card-var neu">—</div></div>
+      <div class="card" style="--accent:var(--green)"><div class="card-label">ROI</div><div class="card-value" style="color:var(--green)">75,8x</div><div class="card-var pos">↑ Melhor canal por ROI</div></div>
+      <div class="card" style="--accent:var(--purple)"><div class="card-label">Emails Enviados</div><div class="card-value sm">10</div><div class="card-var pos">↑ vs 7 em fevereiro</div></div>
+    </div>
+    <div class="two-col">
+      <div class="card" style="--accent:var(--purple)">
+        <div class="card-label" style="margin-bottom:16px">Split de Receita</div>
+        <div class="receipt-row"><span>Newsletter / Campanhas</span><span class="receipt-val">R$ 179.137,72</span></div>
+        <div class="receipt-row"><span style="color:var(--muted);font-size:12px">→ % do total</span><span class="receipt-val" style="color:var(--muted)">69,3%</span></div>
+        <div class="receipt-row"><span>Automações</span><span class="receipt-val">R$ 79.221,12</span></div>
+        <div class="receipt-row"><span style="color:var(--muted);font-size:12px">→ % do total</span><span class="receipt-val" style="color:var(--muted)">30,7%</span></div>
+        <div class="receipt-row total"><span>Total</span><span class="receipt-val">R$ 258.358,84</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="kpi-grid" style="grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0">
+          <div class="card" style="--accent:var(--purple)"><div class="card-label">Taxa de Abertura</div><div class="card-value sm">24,4%</div></div>
+          <div class="card" style="--accent:var(--purple)"><div class="card-label">Taxa de Clique</div><div class="card-value sm">1,2%</div></div>
+        </div>
+        <div class="highlight-card"><div class="highlight-title">📧 Maior Abertura</div><div class="highlight-name">"Vem ver o que você está perdendo..."</div><div class="highlight-val" style="color:var(--green);font-weight:700">42,8% de abertura</div></div>
+        <div class="highlight-card"><div class="highlight-title">💰 Maior Receita</div><div class="highlight-name">"Um aviso: não normalize isso…" (Creatina)</div><div class="highlight-val" style="color:var(--green);font-weight:700">R$ 18.254,83 · 48 pedidos</div></div>
+      </div>
+    </div>
+    <div class="insight insight-green" style="margin-top:16px"><strong>Frequência gera receita:</strong> 10 envios em março vs 7 em fevereiro → receita/email subiu de ~R$18k para R$25,8k. Automações representam só 30,7% — revisar fluxos de boas-vindas e abandono de carrinho.</div>
+  </div>
+</section>
+
+<section class="section" id="whatsapp">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-dot" style="background:var(--wa)"></div>
+      <div><div class="section-title">WhatsApp</div><div class="section-sub">Revi · 01/03/2026 a 31/03/2026 · 8 campanhas disparadas</div></div>
+    </div>
+    <div class="kpi-grid kpi-grid-4" style="margin-bottom:24px">
+      <div class="card" style="--accent:var(--wa)"><div class="card-label">Receita Influenciada Total</div><div class="card-value sm">R$ 227.315</div><div class="card-var neu">Marketing + Automações</div></div>
+      <div class="card" style="--accent:var(--wa)"><div class="card-label">Investimento</div><div class="card-value sm">R$ 13.943</div><div class="card-var neu">Plataforma</div></div>
+      <div class="roi-card" style="background:linear-gradient(135deg,rgba(37,211,102,0.15),rgba(37,211,102,0.05));border-color:rgba(37,211,102,0.3)"><div class="roi-value" style="color:var(--wa)">16,3x</div><div class="roi-label">ROI</div></div>
+      <div class="card" style="--accent:var(--wa)"><div class="card-label">Qualidade do Número</div><div class="card-value sm pos">Alta</div><div class="card-var neu">—</div></div>
+    </div>
+    <div class="two-col">
+      <div class="card" style="--accent:var(--wa)">
+        <div class="card-label" style="margin-bottom:16px">Split de Receita (Revi)</div>
+        <div class="receipt-row"><span>Marketing (campanhas)</span><span class="receipt-val">R$ 137.875</span></div>
+        <div class="receipt-row"><span>Automações</span><span class="receipt-val">R$ 89.440</span></div>
+        <div class="receipt-row total"><span>Total influenciado</span><span class="receipt-val">R$ 227.315</span></div>
+        <hr class="divider">
+        <div class="receipt-row"><span>Ticket médio</span><span class="receipt-val">R$ 311</span></div>
+        <div class="receipt-row"><span>LTV</span><span class="receipt-val">R$ 329</span></div>
+        <div class="receipt-row"><span>Frequência de compra</span><span class="receipt-val">1,0x</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="kpi-grid" style="grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0">
+          <div class="card" style="--accent:var(--wa)"><div class="card-label">Campanhas</div><div class="card-value sm">8</div></div>
+          <div class="card" style="--accent:var(--wa)"><div class="card-label">Disparos</div><div class="card-value sm">13.410</div></div>
+          <div class="card" style="--accent:var(--wa)"><div class="card-label">Engajamento</div><div class="card-value sm">11,43%</div></div>
+          <div class="card" style="--accent:var(--wa)"><div class="card-label">Bounce Rate</div><div class="card-value sm">6,99%</div></div>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(37,211,102,0.15),rgba(37,211,102,0.05));border:1px solid rgba(37,211,102,0.4);border-radius:12px;padding:20px;text-align:center">
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">🏆 Campanha Destaque do Mês</div>
+          <div style="font-size:28px;font-weight:800;color:var(--wa)">R$ 34.062</div>
+          <div style="font-size:13px;color:var(--muted);margin-top:4px">ROI 29,5x · Ticket R$ 391,52 · Engaj. 9,7%</div>
+          <div style="margin-top:12px;display:inline-block;background:rgba(37,211,102,0.2);color:var(--wa);font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px">🥉 3ª melhor campanha da história</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="instagram">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-dot" style="background:var(--ig)"></div>
+      <div><div class="section-title">Instagram</div><div class="section-sub">01/03/2026 a 31/03/2026 · 17 reels + 2 posts publicados</div></div>
+    </div>
+    <div class="kpi-grid kpi-grid-4" style="margin-bottom:24px">
+      <div class="card" style="--accent:var(--ig)"><div class="card-label">Seguidores</div><div class="card-value sm">63.911</div><div class="card-var pos">↑ 4,5% vs fevereiro</div></div>
+      <div class="card" style="--accent:var(--ig)"><div class="card-label">Crescimento Líquido</div><div class="card-value sm">+2.821</div><div class="card-var neu">+3.484 − 663 unfollows</div></div>
+      <div class="card" style="--accent:var(--ig)"><div class="card-label">Visualizações</div><div class="card-value sm">188 mil</div><div class="card-var pos">↑ 164% vs fevereiro</div></div>
+      <div class="card" style="--accent:var(--ig)"><div class="card-label">Alcance Não Seguidores</div><div class="card-value sm">76%</div><div class="card-var pos">↑ 220% vs fevereiro</div></div>
+    </div>
+    <div class="two-col">
+      <div class="card" style="--accent:var(--ig)">
+        <div class="card-label" style="margin-bottom:16px">Audiência — Faixa Etária</div>
+        <div class="bar-row"><span class="bar-label">45–54 anos</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--ig)"></div></div><span class="bar-val">37,0%</span></div>
+        <div class="bar-row"><span class="bar-label">35–44 anos</span><div class="bar-track"><div class="bar-fill" style="width:87%;background:var(--ig);opacity:0.8"></div></div><span class="bar-val">32,2%</span></div>
+        <div class="bar-row"><span class="bar-label">25–34 anos</span><div class="bar-track"><div class="bar-fill" style="width:20%;background:var(--ig);opacity:0.6"></div></div><span class="bar-val">7,4%</span></div>
+        <div class="bar-row"><span class="bar-label">18–24 anos</span><div class="bar-track"><div class="bar-fill" style="width:2%;background:var(--ig);opacity:0.4"></div></div><span class="bar-val">0,7%</span></div>
+        <hr class="divider">
+        <div class="card-label" style="margin-bottom:12px">Top Cidades</div>
+        <div class="bar-row"><span class="bar-label">São Paulo</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--ig)"></div></div><span class="bar-val">10,1%</span></div>
+        <div class="bar-row"><span class="bar-label">Rio de Janeiro</span><div class="bar-track"><div class="bar-fill" style="width:48%;background:var(--ig);opacity:0.7"></div></div><span class="bar-val">4,9%</span></div>
+        <div class="bar-row"><span class="bar-label">Belo Horizonte</span><div class="bar-track"><div class="bar-fill" style="width:40%;background:var(--ig);opacity:0.6"></div></div><span class="bar-val">4,0%</span></div>
+        <div class="bar-row"><span class="bar-label">Goiânia</span><div class="bar-track"><div class="bar-fill" style="width:16%;background:var(--ig);opacity:0.5"></div></div><span class="bar-val">1,6%</span></div>
+        <div class="bar-row"><span class="bar-label">Curitiba</span><div class="bar-track"><div class="bar-fill" style="width:15%;background:var(--ig);opacity:0.4"></div></div><span class="bar-val">1,5%</span></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div class="kpi-grid" style="grid-template-columns:1fr 1fr;gap:12px;margin-bottom:0">
+          <div class="card" style="--accent:var(--ig)"><div class="card-label">Reels</div><div class="card-value sm">17</div><div class="card-var pos">+4 vs fevereiro</div></div>
+          <div class="card" style="--accent:var(--ig)"><div class="card-label">Posts</div><div class="card-value sm">2</div></div>
+        </div>
+        <div class="insight insight-green"><strong>+164% de visualizações</strong> com apenas +4 reels a mais que fevereiro. O algoritmo está entregando.</div>
+        <div class="insight"><strong>76% das visualizações</strong> vieram de <strong>não seguidores</strong> (+220%). Alto potencial de aquisição orgânica.</div>
+        <div class="insight insight-green"><strong>Público dominante 35–54 anos (69,2%)</strong> — perfil alinhado com o produto. Audiência qualificada.</div>
+        <div style="background:var(--surface2);border-radius:12px;padding:16px;border:1px solid var(--border)"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:8px">📌 Meta para Abril</div><div style="font-size:13px">5 reels + 1 post por semana (recomendação do Instagram)</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="blog">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-dot" style="background:var(--yellow)"></div>
+      <div><div class="section-title">Blog / SEO Orgânico</div><div class="section-sub">Google Search Console + GA4 · Março 2026 · 8 blogs publicados</div></div>
+    </div>
+    <div class="kpi-grid kpi-grid-4" style="margin-bottom:24px">
+      <div class="card" style="--accent:var(--yellow)"><div class="card-label">Receita Orgânica</div><div class="card-value sm">R$ 106.413</div><div class="card-var neg">↓ 8,4% vs mês ant.</div></div>
+      <div class="card" style="--accent:var(--yellow)"><div class="card-label">Sessões</div><div class="card-value sm">5.363</div><div class="card-var pos">↑ 28% vs mês ant.</div></div>
+      <div class="card" style="--accent:var(--yellow)"><div class="card-label">Cliques Orgânicos</div><div class="card-value sm">4.400</div><div class="card-var pos">↑ 29,8% vs mês ant.</div></div>
+      <div class="card" style="--accent:var(--yellow)"><div class="card-label">Posição Média</div><div class="card-value sm">4,3</div><div class="card-var pos">↑ Melhorou 0,59</div></div>
+    </div>
+    <div class="kpi-grid kpi-grid-4" style="margin-bottom:24px">
+      <div class="card" style="--accent:var(--yellow)"><div class="card-label">Impressões</div><div class="card-value sm">69.100</div><div class="card-var pos">↑ 6,7%</div></div>
+      <div class="card" style="--accent:var(--yellow)"><div class="card-label">Transações</div><div class="card-value sm">321</div><div class="card-var pos">↑ 4,9%</div></div>
+      <div class="card" style="--accent:var(--yellow)"><div class="card-label">Taxa de Conversão</div><div class="card-value sm">5,99%</div><div class="card-var neg">↓ 18,1%</div></div>
+      <div class="card" style="--accent:var(--yellow)"><div class="card-label">Duração Média Sessão</div><div class="card-value sm">4:52</div><div class="card-var pos">↑ 8,9%</div></div>
+    </div>
+    <div class="card" style="--accent:var(--yellow)">
+      <div class="card-label" style="margin-bottom:16px">Crescimento YoY — Últimos 3 meses vs Ano Anterior</div>
+      <div class="three-col">
+        <div style="text-align:center;padding:16px;background:var(--surface2);border-radius:8px"><div style="font-size:32px;font-weight:800;color:var(--yellow)">+988%</div><div style="font-size:12px;color:var(--muted);margin-top:4px">Cliques orgânicos YoY</div></div>
+        <div style="text-align:center;padding:16px;background:var(--surface2);border-radius:8px"><div style="font-size:32px;font-weight:800;color:var(--yellow)">+22,6%</div><div style="font-size:12px;color:var(--muted);margin-top:4px">Sessões YoY</div></div>
+        <div style="text-align:center;padding:16px;background:var(--surface2);border-radius:8px"><div style="font-size:32px;font-weight:800;color:var(--yellow)">+43,3%</div><div style="font-size:12px;color:var(--muted);margin-top:4px">Receita orgânica YoY</div></div>
+      </div>
+    </div>
+    <div class="insight" style="margin-top:16px"><strong>Posição média 4,3 — na porta do Top 3.</strong> Otimizar títulos e meta descriptions dos artigos com maior volume de impressões pode dobrar o tráfego orgânico sem custo adicional.</div>
+  </div>
+</section>
+
+<section class="section" id="influencers">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-dot" style="background:var(--orange)"></div>
+      <div><div class="section-title">Influenciadoras & Afiliadas</div><div class="section-sub">GoAffPro · Março 2026 · 29 afiliadas ativas</div></div>
+    </div>
+    <div class="kpi-grid kpi-grid-4" style="margin-bottom:24px">
+      <div class="card" style="--accent:var(--orange)"><div class="card-label">Receita Total</div><div class="card-value sm">R$ 215.165</div><div class="card-var pos">29 afiliadas ativas</div></div>
+      <div class="card" style="--accent:var(--orange)"><div class="card-label">Pedidos Gerados</div><div class="card-value sm">759</div><div class="card-var neu">—</div></div>
+      <div class="card" style="--accent:var(--orange)"><div class="card-label">Comissões Pagas</div><div class="card-value sm">R$ 41.430</div><div class="card-var neu">19,3% da receita</div></div>
+      <div class="roi-card" style="background:linear-gradient(135deg,rgba(255,107,53,0.15),rgba(255,107,53,0.05));border-color:rgba(255,107,53,0.3)"><div class="roi-value" style="color:var(--orange)">3,0x</div><div class="roi-label">ROI do canal</div></div>
+    </div>
+    <div class="two-col" style="margin-bottom:24px">
+      <div class="highlight-card orange"><div class="highlight-title">🥇 Maior Receita</div><div class="highlight-name">Thais Tavares</div><div class="highlight-val" style="color:var(--orange);font-size:20px;font-weight:800;margin-top:4px">R$ 74.013</div><div class="highlight-val">268 pedidos · Comissão R$ 14.280</div></div>
+      <div class="highlight-card orange"><div class="highlight-title">📈 Maior Crescimento</div><div class="highlight-name">Thalissa Nunes</div><div class="highlight-val" style="color:var(--green);font-size:20px;font-weight:800;margin-top:4px">+R$ 41.085</div><div class="highlight-val">vs mês anterior · 177 pedidos · R$ 44.811 total</div></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="td-center">#</th><th>Afiliada</th><th class="td-right">Pedidos</th><th class="td-right">Receita</th><th class="td-right">Comissão</th><th class="td-right">Var. Receita</th></tr></thead>
+        <tbody>
+          <tr><td class="td-center"><strong>1</strong></td><td><strong>Thais Tavares</strong></td><td class="td-right">268</td><td class="td-right"><strong>R$ 74.013</strong></td><td class="td-right">R$ 14.280</td><td class="td-right"><span class="badge badge-green">+R$ 2.663</span></td></tr>
+          <tr><td class="td-center">2</td><td>Thalissa Nunes</td><td class="td-right">177</td><td class="td-right">R$ 44.811</td><td class="td-right">R$ 8.544</td><td class="td-right"><span class="badge badge-green">+R$ 41.085</span></td></tr>
+          <tr><td class="td-center">3</td><td>Bella Falconi</td><td class="td-right">112</td><td class="td-right">R$ 31.704</td><td class="td-right">R$ 6.096</td><td class="td-right"><span class="badge badge-green">+R$ 2.971</span></td></tr>
+          <tr><td class="td-center">4</td><td>Rosineide Maria</td><td class="td-right">64</td><td class="td-right">R$ 17.050</td><td class="td-right">R$ 3.278</td><td class="td-right"><span class="badge badge-red">−R$ 10.673</span></td></tr>
+          <tr><td class="td-center">5</td><td>Karine Rodrigues</td><td class="td-right">25</td><td class="td-right">R$ 8.270</td><td class="td-right">R$ 1.612</td><td class="td-right"><span class="badge badge-red">−R$ 3.074</span></td></tr>
+          <tr><td class="td-center">6</td><td>Izabelle Vieira</td><td class="td-right">21</td><td class="td-right">R$ 6.445</td><td class="td-right">R$ 1.239</td><td class="td-right"><span class="badge badge-red">−R$ 4.679</span></td></tr>
+          <tr><td class="td-center">7</td><td>AS CLARAS</td><td class="td-right">8</td><td class="td-right">R$ 5.827</td><td class="td-right">R$ 1.146</td><td class="td-right"><span class="badge badge-green">+R$ 2.459</span></td></tr>
+          <tr><td class="td-center">8</td><td>Priscila Moreira</td><td class="td-right">13</td><td class="td-right">R$ 4.297</td><td class="td-right">R$ 852</td><td class="td-right"><span class="badge badge-red">−R$ 2.091</span></td></tr>
+          <tr><td class="td-center">9</td><td>Maria F. Costa Siqueira</td><td class="td-right">13</td><td class="td-right">R$ 4.119</td><td class="td-right">R$ 806</td><td class="td-right"><span class="badge badge-red">−R$ 536</span></td></tr>
+          <tr><td class="td-center">10</td><td>Gabriela Prando</td><td class="td-right">6</td><td class="td-right">R$ 3.086</td><td class="td-right">R$ 615</td><td class="td-right"><span class="badge badge-green">+R$ 846</span></td></tr>
+          <tr style="color:var(--muted);font-size:12px"><td class="td-center" colspan="2">+ 19 outras afiliadas</td><td class="td-right">152</td><td class="td-right">R$ 19.553</td><td class="td-right">R$ 4.362</td><td class="td-right">—</td></tr>
+          <tr style="font-weight:700;background:var(--surface2)"><td class="td-center" colspan="2">TOTAL (29 afiliadas)</td><td class="td-right">759</td><td class="td-right">R$ 215.165</td><td class="td-right">R$ 41.430</td><td class="td-right">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="insight" style="margin-top:16px"><strong>Concentração alta:</strong> as 3 maiores afiliadas (Thais, Thalissa, Bella) respondem por <strong>69% da receita do canal</strong>. Diversificar a base reduz risco de dependência.</div>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="container">
+    <p>Maxme Bio · Relatório Digital Mensal · Março 2026</p>
+    <p style="margin-top:4px">Head de Digital · Gerado em 10/09/2026</p>
+    <p style="margin-top:12px;font-size:11px">Para salvar como PDF: Ctrl+P → Salvar como PDF → Margens: Mínimas · Ativar gráficos de fundo</p>
+  </div>
+</div>
+
+</body>
+</html>
