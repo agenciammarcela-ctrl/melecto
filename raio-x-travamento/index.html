@@ -175,7 +175,7 @@
   .field label, .legend { font-weight: 700; font-size: 14px; }
   .hint { font-weight: 500; color: var(--ink-soft); }
   .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  input[type=text], input[type=number], input[type=tel] {
+  input[type=text], input[type=number], input[type=tel], input[type=email] {
     width: 100%; font: 500 17px var(--body); color: var(--ink);
     padding: 14px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: #FFFAF7;
   }
@@ -320,7 +320,6 @@
   }
   .next { display: flex; flex-direction: column; gap: 8px; }
   .tie-note { font-weight: 600; font-size: 14px; padding: 12px 14px; border-radius: 14px; background: #FFF1DC; }
-  .copy-fallback { width: 100%; min-height: 150px; font: 14px/1.4 var(--body); padding: 12px; border-radius: 12px; border: 1.5px solid var(--line); }
 
   /* CTA */
   .cta {
@@ -371,8 +370,8 @@
    ============================================================ */
 const LINK_COMERCIAL = "";
 
-/* Planilha de leads: cole aqui a URL do Apps Script publicado como "App da Web" (termina em /exec).
-   Veja raio-x-travamento/apps-script.gs e o README. Vazio = não envia. */
+/* Planilha de leads + e-mail do resultado: cole aqui a URL do Apps Script publicado como
+   "App da Web" (termina em /exec). Veja apps-script.gs e o README. Vazio = não envia. */
 const PLANILHA_URL = "";
 
 const OBJETIVOS = [
@@ -509,10 +508,12 @@ const IMC_FAIXAS = [
   { max: Infinity, rng: "30 ou mais", nome: "obesidade", bg: "#FDE6DA", fg: "#A8403B" }
 ];
 
-/* Etapas: 0 capa · 1 dados · 2 água · 3 IMC · 4 peso · 5–12 perguntas · 13 resumo · 14 resultado · 15 CTA */
-const TOTAL = 15;
-const STORE = "raioX-travamento-v1";
-const blank = () => ({ step: 0, nome: "", telefone: "", consent: false, enviado: false, idade: "", altura: "", peso: "", objetivo: "", answers: Array(8).fill(null) });
+/* Etapas: 0 capa · 1 dados · 2–9 perguntas · 10 contato (e-mail) · 11 água · 12 IMC · 13 peso
+   · 14 contagem · 15 diagnóstico · 16 CTA */
+const Q0 = 2, CONTATO = 10, AGUA = 11, IMC = 12, PESO = 13, RESUMO = 14, DIAGNOSTICO = 15, CTA = 16;
+const TOTAL = CTA;
+const STORE = "raioX-travamento-v2";
+const blank = () => ({ step: 0, nome: "", email: "", telefone: "", consent: false, enviadoPara: "", idade: "", altura: "", peso: "", objetivo: "", answers: Array(8).fill(null) });
 let state = blank();
 try { const s = JSON.parse(localStorage.getItem(STORE)); if (s && Array.isArray(s.answers)) state = Object.assign(blank(), s); } catch (e) {}
 const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} };
@@ -555,7 +556,6 @@ function toast(msg) {
 }
 function go(step) {
   state.step = Math.max(0, Math.min(TOTAL, step)); save(); render();
-  if (state.step === 14) enviarLead();
   window.scrollTo({ top: 0 });
   const h = $("#app h1, #app h2"); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
 }
@@ -587,11 +587,6 @@ function telaDados() {
       <input type="text" id="nome" autocomplete="given-name" placeholder="Como você gosta de ser chamada?" value="${esc(state.nome)}">
       <span class="err" id="err-nome"></span>
     </div>
-    <div class="field">
-      <label for="telefone">WhatsApp <span class="hint">(com DDD)</span></label>
-      <input type="tel" id="telefone" autocomplete="tel-national" inputmode="tel" placeholder="(11) 98765-4321" value="${esc(state.telefone)}">
-      <span class="err" id="err-tel"></span>
-    </div>
     <div class="row">
       <div class="field">
         <label for="idade">Idade</label>
@@ -612,14 +607,38 @@ function telaDados() {
       <div class="goals">${goals}</div>
       <span class="err" id="err-obj"></span>
     </div>
+    <div class="nav">
+      <button type="button" class="ghost" data-go="0">Voltar</button>
+      <button type="submit" class="btn">Começar o quiz</button>
+    </div>
+  </form>`;
+}
+
+function telaContato() {
+  const nome = primeiroNome();
+  return `
+  <form class="screen card" id="formContato" novalidate>
+    <span class="eyebrow">Raio-X concluído</span>
+    <h2>${nome ? nome + ", seu" : "Seu"} Raio&#8209;X está pronto</h2>
+    <p class="muted">Deixe seu e-mail para receber o resultado completo: seu travamento, sua meta de água, seu IMC, sua referência de peso e a ação para começar hoje. Assim você não perde nada.</p>
+    <div class="field">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" value="${esc(state.email)}">
+      <span class="err" id="err-email"></span>
+    </div>
+    <div class="field">
+      <label for="telefone">WhatsApp <span class="hint">(com DDD)</span></label>
+      <input type="tel" id="telefone" autocomplete="tel-national" inputmode="tel" placeholder="(11) 98765-4321" value="${esc(state.telefone)}">
+      <span class="err" id="err-tel"></span>
+    </div>
     <label class="consent" for="consent">
       <input type="checkbox" id="consent" ${state.consent ? "checked" : ""}>
-      <span>Autorizo a equipe da Thaís Tavares a salvar meu nome, WhatsApp e resultado do Raio-X para entrar em contato comigo.</span>
+      <span>Autorizo a equipe da Thaís Tavares a salvar meus dados, me enviar meu resultado por e-mail e falar comigo pelo WhatsApp.</span>
     </label>
     <span class="err" id="err-consent"></span>
     <div class="nav">
-      <button type="button" class="ghost" data-go="0">Voltar</button>
-      <button type="submit" class="btn">Ver meus cálculos</button>
+      <button type="button" class="ghost" data-go="${Q0 + 7}">Voltar</button>
+      <button type="submit" class="btn">Receber meu resultado</button>
     </div>
   </form>`;
 }
@@ -629,7 +648,7 @@ function telaAgua() {
   const menor = num(state.idade) < 18;
   return `
   <section class="screen card">
-    <span class="eyebrow" style="--chip-bg:#E1F3F6;--chip-fg:#0F6E7B">Água · 1 de 3</span>
+    <span class="eyebrow" style="--chip-bg:#E1F3F6;--chip-fg:#0F6E7B">Sua entrega · 1 de 3 · Água</span>
     <h2>Sua referência diária de água</h2>
     <p class="muted">Para adultos, a média usada é:</p>
     <div class="formula">Peso em kg × 35 ml</div>
@@ -641,7 +660,7 @@ function telaAgua() {
     </div>
     ${menor ? `<p class="note"><strong>Você informou menos de 18 anos.</strong> Essa fórmula é pensada para adultos — para adolescentes, a referência deve ser orientada por um profissional.</p>` : ""}
     <p class="note">Essa é uma estimativa geral. Necessidades individuais podem variar conforme rotina, clima, treino, saúde e orientação profissional.</p>
-    <div class="nav"><button class="ghost" data-go="1">Voltar</button><button class="btn" data-go="3">Avançar</button></div>
+    <div class="nav"><button class="ghost" data-go="${CONTATO}">Voltar</button><button class="btn" data-go="${IMC}">Avançar</button></div>
   </section>`;
 }
 
@@ -652,7 +671,7 @@ function telaImc() {
     `<div class="scale-row ${f === faixa ? "on" : ""}" style="--on-bg:${f.bg};--on-fg:${f.fg}"><span class="rng">${f.rng}</span><span>${f.nome}</span></div>`).join("");
   return `
   <section class="screen card">
-    <span class="eyebrow" style="--chip-bg:#E6F5F1;--chip-fg:#1E7864">IMC · 2 de 3</span>
+    <span class="eyebrow" style="--chip-bg:#E6F5F1;--chip-fg:#1E7864">Sua entrega · 2 de 3 · IMC</span>
     <h2>Seu IMC estimado</h2>
     <p class="muted">O IMC, ou Índice de Massa Corporal, é o peso dividido pela altura ao quadrado.</p>
     <div class="formula">IMC = peso ÷ (altura × altura)</div>
@@ -664,7 +683,7 @@ function telaImc() {
     <div class="scale" aria-label="Classificação do IMC">${escala}</div>
     ${menor ? `<p class="note"><strong>Menos de 18 anos:</strong> para adolescentes, o IMC é avaliado por curvas de idade e sexo, não por essa tabela.</p>` : ""}
     <p class="note"><strong>O IMC é apenas uma referência.</strong> Ele não avalia composição corporal, massa muscular, gordura localizada, retenção, metabolismo, histórico de saúde ou hábitos. Por isso, não deve ser usado sozinho para definir resultado.</p>
-    <div class="nav"><button class="ghost" data-go="2">Voltar</button><button class="btn" data-go="4">Avançar</button></div>
+    <div class="nav"><button class="ghost" data-go="${AGUA}">Voltar</button><button class="btn" data-go="${PESO}">Avançar</button></div>
   </section>`;
 }
 
@@ -677,13 +696,13 @@ function telaPeso() {
     : `<p class="note"><strong>Essa tabela traz uma referência para alturas entre 1,50 m e 1,80 m.</strong> Para uma análise individual, o ideal é avaliar composição corporal, histórico, rotina e objetivo.</p>`;
   return `
   <section class="screen card">
-    <span class="eyebrow" style="--chip-bg:#FFF1DC;--chip-fg:#9A5A00">Peso · 3 de 3</span>
+    <span class="eyebrow" style="--chip-bg:#FFF1DC;--chip-fg:#9A5A00">Sua entrega · 3 de 3 · Peso</span>
     <h2>Sua referência de peso saudável 👇🏼</h2>
     ${destaque}
     <div class="wtable" aria-label="Tabela de referência por altura">${linhas}</div>
     <p>Essa é uma referência baseada no IMC saudável. <strong>Mas peso não diz tudo.</strong></p>
     <p class="muted">O mais importante é saúde, composição corporal, hábitos, constância e como o seu corpo responde à sua rotina.</p>
-    <div class="nav"><button class="ghost" data-go="3">Voltar</button><button class="btn" data-go="5">Começar o quiz</button></div>
+    <div class="nav"><button class="ghost" data-go="${IMC}">Voltar</button><button class="btn" data-go="${RESUMO}">Ver meu travamento</button></div>
   </section>`;
 }
 
@@ -700,8 +719,8 @@ function telaPergunta(i) {
     <h2>${q}</h2>
     <div class="opts">${botoes}</div>
     <div class="nav">
-      <button class="ghost" data-go="${i === 0 ? 4 : 5 + i - 1}">Voltar</button>
-      <button class="btn" data-go="${6 + i}" ${sel ? "" : "disabled"}>${i === 7 ? "Ver meu Raio-X" : "Avançar"}</button>
+      <button class="ghost" data-go="${i === 0 ? 1 : Q0 + i - 1}">Voltar</button>
+      <button class="btn" data-go="${Q0 + i + 1}" ${sel ? "" : "disabled"}>${i === 7 ? "Finalizar" : "Avançar"}</button>
     </div>
   </section>`;
 }
@@ -721,7 +740,7 @@ function telaResumo() {
     <p class="muted">Cada resposta soma 1 ponto para uma letra. A letra que mais apareceu mostra seu principal travamento hoje.</p>
     <div class="bars">${barras}</div>
     ${top.length > 1 ? `<p class="tie-note">Deu empate entre ${top.map(k => CATS[k].curto.toLowerCase()).join(" e ")}. Seu resultado pode estar travado por mais de um ponto — vou te mostrar ${top.length === 2 ? "os dois diagnósticos" : "todos eles"}.</p>` : ""}
-    <div class="nav"><button class="ghost" data-go="12">Voltar</button><button class="btn" data-go="14">Abrir meu diagnóstico</button></div>
+    <div class="nav"><button class="ghost" data-go="${PESO}">Voltar</button><button class="btn" data-go="${DIAGNOSTICO}">Abrir meu diagnóstico</button></div>
   </section>`;
 }
 
@@ -768,9 +787,8 @@ function telaResultado() {
     </div>
     <p class="note">Água, IMC e peso são referências gerais — não definem sozinhos o seu resultado.</p>
     ${top.map((k, i) => blocoDiag(k, i, top.length)).join("")}
-    <button class="ghost" id="copiar" style="width:100%">Copiar meu resultado para enviar</button>
-    <textarea class="copy-fallback" id="copyBox" readonly hidden aria-label="Texto do resultado"></textarea>
-    <div class="nav"><button class="ghost" data-go="13">Voltar</button><button class="btn" data-go="15">Continuar</button></div>
+    ${state.enviadoPara ? `<p class="note">📩 Enviei seu resultado completo para <strong>${esc(state.enviadoPara)}</strong>. Se não aparecer em alguns minutos, olhe o spam ou a aba Promoções.</p>` : ""}
+    <div class="nav"><button class="ghost" data-go="${RESUMO}">Voltar</button><button class="btn" data-go="${CTA}">Continuar</button></div>
   </div>`;
 }
 
@@ -787,7 +805,7 @@ function telaCta() {
       <p>Para entender mais sobre o BMT, fale com a equipe:</p>
       <a class="btn light" id="ctaLink" href="${esc(LINK_COMERCIAL || "#")}" target="_blank" rel="noopener">Quero entender o BMT →</a>
     </section>
-    <div class="nav"><button class="ghost" data-go="14" style="flex:1">Rever meu diagnóstico</button></div>
+    <div class="nav"><button class="ghost" data-go="${DIAGNOSTICO}" style="flex:1">Rever meu diagnóstico</button></div>
     <button class="restart" id="refazer">Refazer o Raio-X do zero</button>
   </div>`;
 }
@@ -798,12 +816,13 @@ function render() {
   let html;
   if (s === 0) html = telaCapa();
   else if (s === 1) html = telaDados();
-  else if (s === 2) html = telaAgua();
-  else if (s === 3) html = telaImc();
-  else if (s === 4) html = telaPeso();
-  else if (s <= 12) html = telaPergunta(s - 5);
-  else if (s === 13) html = telaResumo();
-  else if (s === 14) html = telaResultado();
+  else if (s < CONTATO) html = telaPergunta(s - Q0);
+  else if (s === CONTATO) html = telaContato();
+  else if (s === AGUA) html = telaAgua();
+  else if (s === IMC) html = telaImc();
+  else if (s === PESO) html = telaPeso();
+  else if (s === RESUMO) html = telaResumo();
+  else if (s === DIAGNOSTICO) html = telaResultado();
   else html = telaCta();
   $("#app").innerHTML = html;
 
@@ -818,23 +837,28 @@ function render() {
 function telDigitos() { return String(state.telefone).replace(/\D/g, ""); }
 function telValido() { const n = telDigitos().length; return n >= 10 && n <= 13; }
 
+function emailValido() { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(state.email.trim()); }
+function contatoValido() { return emailValido() && telValido() && state.consent; }
+
+/* Envia os dados brutos; o Apps Script recalcula tudo, grava na planilha e manda o e-mail.
+   Só reenvia se o e-mail mudar. */
 function enviarLead() {
-  if (!PLANILHA_URL || state.enviado || !state.consent) return;
-  const { top } = placar();
+  const email = state.email.trim();
+  if (!PLANILHA_URL || !contatoValido() || state.enviadoPara === email) return;
   const body = JSON.stringify({
-    nome: state.nome.trim(),
-    telefone: state.telefone.trim(),
-    travamento: top.map(k => CATS[k].nome).join(" + ")
+    nome: state.nome.trim(), email, telefone: state.telefone.trim(),
+    objetivo: state.objetivo, idade: state.idade, altura: alturaM(), peso: pesoKg(),
+    respostas: state.answers.join("")
   });
   // no-cors + text/plain: o Apps Script recebe sem precisar de CORS
   fetch(PLANILHA_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body })
-    .then(() => { state.enviado = true; save(); })
-    .catch(() => {});
+    .catch(() => { state.enviadoPara = ""; save(); });
+  state.enviadoPara = email; save();
 }
 
 function dadosValidos() {
   const h = alturaM(), p = pesoKg(), i = num(state.idade);
-  return state.nome.trim() && telValido() && state.consent && state.objetivo && i >= 12 && i <= 100 && h >= 1.2 && h <= 2.2 && p >= 30 && p <= 250;
+  return state.nome.trim() && state.objetivo && i >= 12 && i <= 100 && h >= 1.2 && h <= 2.2 && p >= 30 && p <= 250;
 }
 
 function bind() {
@@ -842,8 +866,7 @@ function bind() {
 
   const form = $("#formDados");
   if (form) {
-    $("#consent").addEventListener("change", e => { state.consent = e.target.checked; save(); $("#err-consent").textContent = ""; });
-    ["nome", "telefone", "idade", "altura", "peso"].forEach(id => $("#" + id).addEventListener("input", e => { state[id] = e.target.value; save(); }));
+    ["nome", "idade", "altura", "peso"].forEach(id => $("#" + id).addEventListener("input", e => { state[id] = e.target.value; save(); }));
     form.querySelectorAll("[data-goal]").forEach(b => b.addEventListener("click", () => {
       state.objetivo = b.dataset.goal; save();
       form.querySelectorAll("[data-goal]").forEach(x => x.setAttribute("aria-pressed", x === b));
@@ -855,9 +878,6 @@ function bind() {
       const errs = [];
       $("#err-nome").textContent = state.nome.trim() ? "" : "Me conta seu nome para personalizar o resultado.";
       $("#nome").setAttribute("aria-invalid", !state.nome.trim());
-      $("#err-tel").textContent = telValido() ? "" : "Informe seu WhatsApp com DDD (ex.: 11 98765-4321).";
-      $("#telefone").setAttribute("aria-invalid", !telValido());
-      $("#err-consent").textContent = state.consent ? "" : "Marque a autorização para ver seu resultado.";
       const badI = !(i >= 12 && i <= 100), badH = !(h >= 1.2 && h <= 2.2), badP = !(p >= 30 && p <= 250);
       $("#idade").setAttribute("aria-invalid", badI); $("#altura").setAttribute("aria-invalid", badH); $("#peso").setAttribute("aria-invalid", badP);
       if (badI) errs.push("idade em anos (ex.: 34)");
@@ -865,36 +885,37 @@ function bind() {
       if (badP) errs.push("peso em kg (ex.: 70)");
       $("#err-medidas").textContent = errs.length ? "Confira: " + errs.join(" · ") + "." : "";
       $("#err-obj").textContent = state.objetivo ? "" : "Escolha seu objetivo principal.";
-      if (dadosValidos()) go(2);
+      if (dadosValidos()) go(Q0);
       else { const bad = form.querySelector("[aria-invalid=true]"); if (bad) bad.focus(); }
     });
   }
 
+  const fc = $("#formContato");
+  if (fc) {
+    ["email", "telefone"].forEach(id => $("#" + id).addEventListener("input", e => {
+      state[id] = e.target.value; save();
+      e.target.removeAttribute("aria-invalid"); $(id === "email" ? "#err-email" : "#err-tel").textContent = "";
+    }));
+    $("#consent").addEventListener("change", e => { state.consent = e.target.checked; save(); $("#err-consent").textContent = ""; });
+    fc.addEventListener("submit", e => {
+      e.preventDefault();
+      $("#err-email").textContent = emailValido() ? "" : "Confira seu e-mail (ex.: voce@email.com).";
+      $("#email").setAttribute("aria-invalid", !emailValido());
+      $("#err-tel").textContent = telValido() ? "" : "Informe seu WhatsApp com DDD (ex.: 11 98765-4321).";
+      $("#telefone").setAttribute("aria-invalid", !telValido());
+      $("#err-consent").textContent = state.consent ? "" : "Marque a autorização para receber seu resultado.";
+      if (contatoValido()) { enviarLead(); go(AGUA); }
+      else { const bad = fc.querySelector("[aria-invalid=true]") || $("#consent"); bad.focus(); }
+    });
+  }
+
   document.querySelectorAll("[data-ans]").forEach(b => b.addEventListener("click", () => {
-    const i = state.step - 5;
+    const i = state.step - Q0;
     state.answers[i] = b.dataset.ans; save();
     document.querySelectorAll("[data-ans]").forEach(x => x.setAttribute("aria-pressed", x === b));
     const next = document.querySelector(".nav .btn"); next.disabled = false;
     clearTimeout(bind._t); bind._t = setTimeout(() => go(state.step + 1), 320);
   }));
-
-  const copiar = $("#copiar");
-  if (copiar) copiar.addEventListener("click", () => {
-    const { top } = placar(); const a = calcAgua(), { imc, faixa } = calcImc(), f = faixaPeso();
-    const txt = [
-      "Meu Raio-X do Travamento",
-      "Principal travamento: " + top.map(k => CATS[k].nome).join(" + "),
-      "Água: " + a.txt + " L por dia (referência)",
-      "IMC estimado: " + fmt(imc) + " (" + faixa.nome + ")",
-      "Peso de referência: " + (f ? f[2] + " a " + f[3] + " kg" : "fora da tabela de 1,50–1,80 m"),
-      "Ação de hoje: " + top.map(k => DIAG[k].acaoTitulo).join(" / ")
-    ].join("\n");
-    const box = $("#copyBox");
-    const fallback = () => { box.value = txt; box.hidden = false; box.focus(); box.select(); toast("Selecionei o texto — é só copiar."); };
-    try {
-      navigator.clipboard.writeText(txt).then(() => toast("Resultado copiado. É só colar no WhatsApp."), fallback);
-    } catch (e) { fallback(); }
-  });
 
   const cta = $("#ctaLink");
   if (cta && !LINK_COMERCIAL) cta.addEventListener("click", e => { e.preventDefault(); toast("Link do comercial ainda não configurado."); });
@@ -904,8 +925,9 @@ function bind() {
 }
 
 /* se a etapa salva exige dados/respostas que não existem, volta para o início certo */
-if (state.step >= 2 && !dadosValidos()) state.step = 1;
-if (state.step >= 13 && state.answers.some(a => !a)) state.step = 5 + state.answers.findIndex(a => !a);
+if (state.step >= Q0 && !dadosValidos()) state.step = 1;
+if (state.step >= CONTATO && state.answers.some(a => !a)) state.step = Q0 + state.answers.findIndex(a => !a);
+if (state.step > CONTATO && !contatoValido()) state.step = CONTATO;
 render();
 </script>
 </body>
