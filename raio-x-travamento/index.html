@@ -175,7 +175,7 @@
   .field label, .legend { font-weight: 700; font-size: 14px; }
   .hint { font-weight: 500; color: var(--ink-soft); }
   .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  input[type=text], input[type=number] {
+  input[type=text], input[type=number], input[type=tel] {
     width: 100%; font: 500 17px var(--body); color: var(--ink);
     padding: 14px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: #FFFAF7;
   }
@@ -192,6 +192,9 @@
   }
   .goal b { color: var(--berry); }
   .goal[aria-pressed=true] { border-color: var(--berry); background: #FDE6DA; }
+
+  .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: var(--ink-soft); cursor: pointer; }
+  .consent input { width: 20px; height: 20px; margin: 1px 0 0; flex: 0 0 auto; accent-color: var(--coral-deep); }
 
   /* números grandes */
   .big {
@@ -368,6 +371,10 @@
    ============================================================ */
 const LINK_COMERCIAL = "";
 
+/* Planilha de leads: cole aqui a URL do Apps Script publicado como "App da Web" (termina em /exec).
+   Veja raio-x-travamento/apps-script.gs e o README. Vazio = não envia. */
+const PLANILHA_URL = "";
+
 const OBJETIVOS = [
   ["A", "Secar barriga"], ["B", "Desinchar"], ["C", "Emagrecer com saúde"],
   ["D", "Criar constância"], ["E", "Melhorar alimentação"], ["F", "Chegar em janeiro diferente"]
@@ -505,7 +512,7 @@ const IMC_FAIXAS = [
 /* Etapas: 0 capa · 1 dados · 2 água · 3 IMC · 4 peso · 5–12 perguntas · 13 resumo · 14 resultado · 15 CTA */
 const TOTAL = 15;
 const STORE = "raioX-travamento-v1";
-const blank = () => ({ step: 0, nome: "", idade: "", altura: "", peso: "", objetivo: "", answers: Array(8).fill(null) });
+const blank = () => ({ step: 0, nome: "", telefone: "", consent: false, enviado: false, idade: "", altura: "", peso: "", objetivo: "", answers: Array(8).fill(null) });
 let state = blank();
 try { const s = JSON.parse(localStorage.getItem(STORE)); if (s && Array.isArray(s.answers)) state = Object.assign(blank(), s); } catch (e) {}
 const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} };
@@ -548,6 +555,7 @@ function toast(msg) {
 }
 function go(step) {
   state.step = Math.max(0, Math.min(TOTAL, step)); save(); render();
+  if (state.step === 14) enviarLead();
   window.scrollTo({ top: 0 });
   const h = $("#app h1, #app h2"); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
 }
@@ -579,6 +587,11 @@ function telaDados() {
       <input type="text" id="nome" autocomplete="given-name" placeholder="Como você gosta de ser chamada?" value="${esc(state.nome)}">
       <span class="err" id="err-nome"></span>
     </div>
+    <div class="field">
+      <label for="telefone">WhatsApp <span class="hint">(com DDD)</span></label>
+      <input type="tel" id="telefone" autocomplete="tel-national" inputmode="tel" placeholder="(11) 98765-4321" value="${esc(state.telefone)}">
+      <span class="err" id="err-tel"></span>
+    </div>
     <div class="row">
       <div class="field">
         <label for="idade">Idade</label>
@@ -599,6 +612,11 @@ function telaDados() {
       <div class="goals">${goals}</div>
       <span class="err" id="err-obj"></span>
     </div>
+    <label class="consent" for="consent">
+      <input type="checkbox" id="consent" ${state.consent ? "checked" : ""}>
+      <span>Autorizo a equipe da Thaís Tavares a salvar meu nome, WhatsApp e resultado do Raio-X para entrar em contato comigo.</span>
+    </label>
+    <span class="err" id="err-consent"></span>
     <div class="nav">
       <button type="button" class="ghost" data-go="0">Voltar</button>
       <button type="submit" class="btn">Ver meus cálculos</button>
@@ -797,9 +815,26 @@ function render() {
   bind();
 }
 
+function telDigitos() { return String(state.telefone).replace(/\D/g, ""); }
+function telValido() { const n = telDigitos().length; return n >= 10 && n <= 13; }
+
+function enviarLead() {
+  if (!PLANILHA_URL || state.enviado || !state.consent) return;
+  const { top } = placar();
+  const body = JSON.stringify({
+    nome: state.nome.trim(),
+    telefone: state.telefone.trim(),
+    travamento: top.map(k => CATS[k].nome).join(" + ")
+  });
+  // no-cors + text/plain: o Apps Script recebe sem precisar de CORS
+  fetch(PLANILHA_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body })
+    .then(() => { state.enviado = true; save(); })
+    .catch(() => {});
+}
+
 function dadosValidos() {
   const h = alturaM(), p = pesoKg(), i = num(state.idade);
-  return state.nome.trim() && state.objetivo && i >= 12 && i <= 100 && h >= 1.2 && h <= 2.2 && p >= 30 && p <= 250;
+  return state.nome.trim() && telValido() && state.consent && state.objetivo && i >= 12 && i <= 100 && h >= 1.2 && h <= 2.2 && p >= 30 && p <= 250;
 }
 
 function bind() {
@@ -807,7 +842,8 @@ function bind() {
 
   const form = $("#formDados");
   if (form) {
-    ["nome", "idade", "altura", "peso"].forEach(id => $("#" + id).addEventListener("input", e => { state[id] = e.target.value; save(); }));
+    $("#consent").addEventListener("change", e => { state.consent = e.target.checked; save(); $("#err-consent").textContent = ""; });
+    ["nome", "telefone", "idade", "altura", "peso"].forEach(id => $("#" + id).addEventListener("input", e => { state[id] = e.target.value; save(); }));
     form.querySelectorAll("[data-goal]").forEach(b => b.addEventListener("click", () => {
       state.objetivo = b.dataset.goal; save();
       form.querySelectorAll("[data-goal]").forEach(x => x.setAttribute("aria-pressed", x === b));
@@ -819,6 +855,9 @@ function bind() {
       const errs = [];
       $("#err-nome").textContent = state.nome.trim() ? "" : "Me conta seu nome para personalizar o resultado.";
       $("#nome").setAttribute("aria-invalid", !state.nome.trim());
+      $("#err-tel").textContent = telValido() ? "" : "Informe seu WhatsApp com DDD (ex.: 11 98765-4321).";
+      $("#telefone").setAttribute("aria-invalid", !telValido());
+      $("#err-consent").textContent = state.consent ? "" : "Marque a autorização para ver seu resultado.";
       const badI = !(i >= 12 && i <= 100), badH = !(h >= 1.2 && h <= 2.2), badP = !(p >= 30 && p <= 250);
       $("#idade").setAttribute("aria-invalid", badI); $("#altura").setAttribute("aria-invalid", badH); $("#peso").setAttribute("aria-invalid", badP);
       if (badI) errs.push("idade em anos (ex.: 34)");
