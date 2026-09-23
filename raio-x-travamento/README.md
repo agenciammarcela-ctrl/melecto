@@ -51,15 +51,17 @@ Toda alternativa A–E soma 1 ponto para a categoria com a mesma letra:
 
 O diagnóstico é a letra com mais pontos. **Empate**: aparecem todos os diagnósticos empatados no topo (normalmente dois), um depois do outro.
 
-## Sugestão visual (para refazer no Canva/Figma)
+## Identidade visual (bmt fit)
 
-- **Fundo**: rosa bem claro `#FCEFF3`. Cards brancos com cantos de 22 px.
-- **Capa, cabeçalho do resultado e CTA**: ameixa escuro `#2B1A33` / gradiente framboesa `#C2185B → #8E1047`, com uma linha de "scanner" descendo (a ideia do raio-x).
-- **Cor principal / botões**: framboesa `#C2185B`.
-- **Uma cor por travamento** (usada no resultado):
-  alimentação coral `#EE6A4D` · constância violeta `#7A5CD6` · rotina âmbar `#E79A1E` · barriga/inchaço azul-piscina `#1A9CAE` · direção framboesa `#C2185B`.
-- **Fontes**: Bricolage Grotesque (títulos, números) + Figtree (texto).
-- **Diagnóstico**: frases curtas empilhadas com barra lateral colorida, pergunta reflexiva em caixa tingida, ação do dia em forma de checklist.
+- **Logo**: o símbolo e o texto "bmt fit" foram recortados da prancha de identidade (`assets/bmt-logomark.png`, `assets/bmt-wordmark.png`) e embutidos no HTML como máscara, então aparecem em qualquer cor (coral no cabeçalho, branco no card do BMT). Quando tiver o SVG oficial, é só trocar.
+- **Coral da marca** `#D6605A` (botões em `#B8463F` para dar contraste com o texto branco).
+- **Pêssego** `#F8C8A8` / `#FDE8DC` · **cinza** `#CFCFCF` · **fundo** `#FFF6F1` · **texto** `#3A2B2A`.
+- **Degradê coral** (capa e CTA, igual ao quadro da marca): `#D65B53 → #E07A78 → #EE9E8A`.
+- **Cabeçalho do diagnóstico** em degradê pêssego.
+- **Fontes**: Outfit (títulos e números, geométrica como o "bmt fit") + Figtree (texto).
+- **Uma cor por travamento**, em tons quentes que combinam com a marca:
+  alimentação `#E0764F` · constância `#A8679E` · rotina `#DE9A34` · barriga/inchaço `#3F9C99` · direção `#C94B5B`.
+- A capa tem uma linha de "scanner" descendo (a ideia do raio-x).
 
 ## Segurança da copy
 
