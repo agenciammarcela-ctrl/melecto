@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Raio-X do Travamento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    color-scheme: light;
+    --ink: #2B1A33;
+    --ink-soft: #6E5B75;
+    --ground: #FCEFF3;
+    --card: #FFFFFF;
+    --line: #F1DCE4;
+    --plum: #2B1A33;
+    --berry: #C2185B;
+    --berry-deep: #9A0F48;
+    --mint: #2E9C83;
+    /* cores dos 5 travamentos */
+    --cat-A: #EE6A4D; /* alimentação */
+    --cat-B: #7A5CD6; /* constância */
+    --cat-C: #E79A1E; /* rotina */
+    --cat-D: #1A9CAE; /* barriga e inchaço */
+    --cat-E: #C2185B; /* direção */
+    --radius: 22px;
+    --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    --body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { min-height: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .shell {
+    max-width: 480px;
+    margin: 0 auto;
+    padding-inline: 16px;
+    padding-block: 14px 40px;
+  }
+  /* topo */
+  .topbar { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+  .brand {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600;
+  }
+  .brand b { color: var(--berry); font-weight: 700; }
+  .brand span:last-child { white-space: nowrap; }
+  .progress { height: 8px; background: #F6DCE6; border-radius: 99px; overflow: hidden; }
+  .progress > span {
+    display: block; height: 100%; width: 0;
+    background: linear-gradient(90deg, var(--cat-A), var(--cat-C), var(--berry));
+    border-radius: 99px; transition: width .35s ease;
+  }
+  .progress-label { font-size: 12px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+
+  /* cards */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 26px 22px;
+    box-shadow: 0 1px 0 var(--line), 0 18px 40px -28px rgba(120, 20, 70, .35);
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .screen { animation: rise .35s ease both; }
+    @keyframes rise { from { transform: translateY(10px); opacity: .5; } to { transform: none; opacity: 1; } }
+  }
+  .eyebrow {
+    align-self: flex-start;
+    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    padding: 5px 11px; border-radius: 99px;
+    background: var(--chip-bg, #FBE3EC); color: var(--chip-fg, var(--berry-deep));
+  }
+  h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; line-height: 1.12; }
+  h1 { font-size: clamp(34px, 9vw, 44px); font-weight: 800; letter-spacing: -.02em; }
+  h2 { font-size: clamp(24px, 6.4vw, 29px); font-weight: 700; letter-spacing: -.01em; }
+  h3 { font-size: 18px; font-weight: 700; }
+  h1:focus, h2:focus { outline: none; }
+  p { margin: 0; }
+  .muted { color: var(--ink-soft); }
+  .small { font-size: 14px; }
+  .stack { display: flex; flex-direction: column; gap: 12px; }
+
+  /* botões */
+  .btn {
+    appearance: none; border: 0; cursor: pointer;
+    font: 700 17px/1 var(--body);
+    padding: 17px 22px; border-radius: 16px;
+    background: var(--berry); color: #fff;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; text-decoration: none;
+    box-shadow: 0 10px 22px -12px rgba(194, 24, 91, .8);
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn:hover { background: var(--berry-deep); }
+  .btn:active { transform: scale(.98); }
+  .btn:disabled { background: #E7C6D3; box-shadow: none; cursor: not-allowed; }
+  .btn:focus-visible, .opt:focus-visible, .ghost:focus-visible, input:focus-visible, .goal:focus-visible {
+    outline: 3px solid #F59BBE; outline-offset: 2px;
+  }
+  .btn.light { background: #fff; color: var(--plum); box-shadow: none; }
+  .btn.light:hover { background: #FCE4ED; }
+  .nav { display: flex; gap: 10px; align-items: center; }
+  .ghost {
+    appearance: none; border: 1.5px solid var(--line); background: transparent; cursor: pointer;
+    color: var(--ink-soft); font: 600 15px/1 var(--body); padding: 16px 16px; border-radius: 16px; flex: 0 0 auto;
+  }
+  .ghost:hover { color: var(--ink); border-color: #E4C3D0; }
+  .nav .btn { flex: 1; }
+
+  /* capa */
+  .cover {
+    position: relative; overflow: hidden;
+    background: var(--plum); color: #fff;
+    border-radius: 28px; padding: 30px 24px 26px;
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .cover::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(220px 180px at 100% 0%, rgba(238,106,77,.55), transparent 70%),
+      radial-gradient(200px 200px at 0% 100%, rgba(122,92,214,.5), transparent 70%),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.04) 0 1px, transparent 1px 14px);
+  }
+  .scan {
+    position: absolute; left: 0; right: 0; height: 70px; top: -70px; pointer-events: none;
+    background: linear-gradient(180deg, transparent, rgba(255, 190, 215, .22) 70%, rgba(255, 220, 235, .7) 100%);
+    border-bottom: 1px solid rgba(255, 230, 240, .9);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .scan { animation: scan 3.6s cubic-bezier(.5,0,.5,1) infinite; }
+    @keyframes scan { 0% { top: -70px; } 60%, 100% { top: 100%; } }
+  }
+  .cover > * { position: relative; }
+  .cover .eyebrow { background: rgba(255,255,255,.12); color: #FFD3E2; }
+  .cover h1 { color: #fff; }
+  .cover h1 em { font-style: normal; color: #FF9DBF; }
+  .cover .sub { font-family: var(--display); font-size: 21px; font-weight: 600; color: #FFE7EF; line-height: 1.25; }
+  .cover p { color: #E9DCEB; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 13px; font-weight: 600; padding: 6px 11px; border-radius: 99px;
+    background: rgba(255,255,255,.09); color: #fff;
+  }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--c); flex: 0 0 auto; }
+
+  /* formulário */
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label, .legend { font-weight: 700; font-size: 14px; }
+  .hint { font-weight: 500; color: var(--ink-soft); }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  input[type=text], input[type=number] {
+    width: 100%; font: 500 17px var(--body); color: var(--ink);
+    padding: 14px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: #FFF9FB;
+  }
+  input::placeholder { color: #B9A5B6; }
+  input[aria-invalid=true] { border-color: #E0527E; background: #FFF2F6; }
+  .err { color: #B8123F; font-size: 13px; font-weight: 600; }
+  .err:empty { display: none; }
+  .goals { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .goal {
+    appearance: none; cursor: pointer; text-align: left;
+    font: 600 14px/1.3 var(--body); color: var(--ink);
+    padding: 12px 12px; border-radius: 14px; border: 1.5px solid var(--line); background: #FFF9FB;
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .goal b { color: var(--berry); }
+  .goal[aria-pressed=true] { border-color: var(--berry); background: #FCE4ED; }
+
+  /* números grandes */
+  .big {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 20px; border-radius: 18px; background: var(--big-bg, #E6F5F1);
+  }
+  .big .num {
+    font-family: var(--display); font-weight: 800; font-size: 46px; line-height: 1; letter-spacing: -.02em;
+    color: var(--big-fg, #1E7864); font-variant-numeric: tabular-nums;
+  }
+  .big .num small { font-size: 22px; font-weight: 700; }
+  .formula {
+    font-family: var(--display); font-weight: 700; font-size: 17px;
+    padding: 12px 14px; border-radius: 14px; background: #FBF3F6; border: 1.5px dashed #EBCBD8;
+  }
+  .note {
+    font-size: 13.5px; color: var(--ink-soft);
+    padding: 12px 14px; border-radius: 14px; background: #F8F3F7;
+  }
+  .note strong { color: var(--ink); }
+
+  /* escala do IMC */
+  .scale { display: flex; flex-direction: column; gap: 6px; }
+  .scale-row {
+    display: grid; grid-template-columns: 96px 1fr; gap: 10px; align-items: center;
+    padding: 9px 12px; border-radius: 12px; font-size: 14px; background: #FAF5F8;
+  }
+  .scale-row .rng { font-weight: 700; font-variant-numeric: tabular-nums; }
+  .scale-row.on { background: var(--on-bg, #E6F5F1); outline: 2px solid var(--on-fg, #2E9C83); }
+
+  /* tabela de peso */
+  .wtable { display: flex; flex-direction: column; gap: 6px; }
+  .wrow {
+    display: flex; justify-content: space-between; gap: 10px; align-items: center;
+    padding: 11px 14px; border-radius: 12px; background: #FAF5F8; font-variant-numeric: tabular-nums; font-size: 15px;
+  }
+  .wrow b { font-weight: 700; }
+  .wrow.on { background: #FFF1DC; outline: 2px solid var(--cat-C); }
+
+  /* perguntas */
+  .qnum { font-family: var(--display); font-weight: 800; font-size: 15px; color: var(--berry); letter-spacing: .02em; }
+  .opts { display: flex; flex-direction: column; gap: 9px; }
+  .opt {
+    appearance: none; cursor: pointer; text-align: left; width: 100%;
+    display: flex; gap: 12px; align-items: center;
+    font: 500 16px/1.35 var(--body); color: var(--ink);
+    padding: 13px 14px; border-radius: 16px; border: 1.5px solid var(--line); background: #FFFBFC;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .opt:hover { border-color: #EBC2D2; }
+  .opt .let {
+    flex: 0 0 auto; width: 32px; height: 32px; border-radius: 10px;
+    display: grid; place-items: center;
+    font: 800 15px var(--display); background: #F7E6ED; color: var(--ink-soft);
+  }
+  .opt[aria-pressed=true] { border-color: var(--berry); background: #FCE4ED; }
+  .opt[aria-pressed=true] .let { background: var(--berry); color: #fff; }
+
+  /* resumo */
+  .bars { display: flex; flex-direction: column; gap: 10px; }
+  .bar { display: grid; grid-template-columns: 1fr auto; gap: 4px 10px; align-items: center; font-size: 14px; }
+  .bar .lbl { font-weight: 600; display: flex; gap: 8px; align-items: center; }
+  .bar .val { font-weight: 800; font-family: var(--display); font-variant-numeric: tabular-nums; }
+  .bar .track { grid-column: 1 / -1; height: 12px; border-radius: 99px; background: #F4E7ED; overflow: hidden; }
+  .bar .fill { height: 100%; border-radius: 99px; background: var(--c); }
+  .bar.dim .fill { opacity: .35; }
+  .bar.dim .lbl { color: var(--ink-soft); }
+
+  /* resultado */
+  .result-hero {
+    position: relative; overflow: hidden;
+    background: var(--plum); color: #fff; border-radius: 28px; padding: 26px 22px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .result-hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(260px 200px at 100% 0%, var(--c), transparent 70%);
+    opacity: .6;
+  }
+  .result-hero > * { position: relative; }
+  .result-hero .eyebrow { background: rgba(255,255,255,.14); color: #fff; }
+  .result-hero h1 { color: #fff; font-size: clamp(30px, 8vw, 38px); }
+  .result-hero p { color: #EADFEC; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .tile {
+    background: var(--card); border-radius: 16px; padding: 12px 10px;
+    display: flex; flex-direction: column; gap: 3px; min-width: 0;
+    box-shadow: 0 1px 0 var(--line);
+  }
+  .tile .k { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); }
+  .tile .v { font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1.05; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .tile .s { font-size: 12px; color: var(--ink-soft); line-height: 1.3; }
+  .diag { border-top: 6px solid var(--c); }
+  .diag .eyebrow { --chip-bg: color-mix(in srgb, var(--c) 16%, white); --chip-fg: color-mix(in srgb, var(--c) 70%, black); }
+  .beats {
+    display: flex; flex-direction: column; gap: 2px;
+    padding-left: 14px; border-left: 3px solid var(--c);
+    font-family: var(--display); font-weight: 600; font-size: 18px; line-height: 1.35;
+  }
+  .reflect {
+    background: color-mix(in srgb, var(--c) 12%, white);
+    border-radius: 18px; padding: 18px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .reflect .k, .todo .k, .next .k {
+    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: color-mix(in srgb, var(--c) 70%, black);
+  }
+  .reflect q { font-family: var(--display); font-weight: 700; font-size: 20px; line-height: 1.3; quotes: none; }
+  .todo {
+    border: 2px solid color-mix(in srgb, var(--c) 45%, white); border-radius: 18px; padding: 18px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .todo ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .todo li { display: flex; gap: 10px; align-items: flex-start; }
+  .todo li::before {
+    content: ""; flex: 0 0 auto; width: 18px; height: 18px; margin-top: 3px; border-radius: 6px;
+    border: 2px solid var(--c);
+  }
+  .write {
+    font-family: var(--display); font-weight: 700; font-size: 17px;
+    padding: 12px 14px; border-radius: 12px; background: #FBF3F6;
+  }
+  .next { display: flex; flex-direction: column; gap: 8px; }
+  .tie-note { font-weight: 600; font-size: 14px; padding: 12px 14px; border-radius: 14px; background: #FFF1DC; }
+  .copy-fallback { width: 100%; min-height: 150px; font: 14px/1.4 var(--body); padding: 12px; border-radius: 12px; border: 1.5px solid var(--line); }
+
+  /* CTA */
+  .cta {
+    background: linear-gradient(160deg, #C2185B 0%, #8E1047 55%, #2B1A33 100%);
+    color: #fff; border-radius: 28px; padding: 30px 24px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .cta h2 { color: #fff; font-size: clamp(28px, 7.5vw, 34px); }
+  .cta p { color: #FBE3EC; }
+  .cta .punch { font-family: var(--display); font-weight: 700; font-size: 20px; color: #fff; line-height: 1.3; }
+  .cta .eyebrow { background: rgba(255,255,255,.16); color: #fff; }
+  .restart { align-self: center; background: none; border: 0; color: var(--ink-soft); font: 600 14px var(--body); text-decoration: underline; cursor: pointer; padding: 8px; }
+
+  .toast {
+    position: fixed; left: 50%; transform: translateX(-50%);
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    background: var(--plum); color: #fff; font-weight: 600; font-size: 14px;
+    padding: 12px 18px; border-radius: 14px; max-width: calc(100% - 32px); text-align: center;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,.4);
+  }
+  .foot { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 18px; }
+
+  @media (max-width: 370px) {
+    .row { grid-template-columns: 1fr 1fr; }
+    .row .field:first-child { grid-column: 1 / -1; }
+    .goals { grid-template-columns: 1fr; }
+    .tile .v { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar" id="topbar">
+    <div class="brand"><span><b>Comece Agora</b> · Seque até Janeiro</span><span>Thaís Tavares</span></div>
+    <div id="progressWrap" hidden>
+      <div class="progress" role="progressbar" aria-label="Progresso do Raio-X" aria-valuemin="0" aria-valuemax="100" id="progress"><span id="progressFill"></span></div>
+    </div>
+  </header>
+  <main id="app" aria-live="polite"></main>
+  <p class="foot">Material educativo. Não substitui avaliação nutricional, médica ou individualizada.</p>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+/* ============================================================
+   CONFIGURAÇÃO — cole aqui o link do comercial (WhatsApp, página, etc.)
+   Ex.: "https://wa.me/5511999999999?text=Quero%20entender%20o%20BMT"
+   ============================================================ */
+const LINK_COMERCIAL = "";
+
+const OBJETIVOS = [
+  ["A", "Secar barriga"], ["B", "Desinchar"], ["C", "Emagrecer com saúde"],
+  ["D", "Criar constância"], ["E", "Melhorar alimentação"], ["F", "Chegar em janeiro diferente"]
+];
+
+const CATS = {
+  A: { nome: "Travamento na alimentação", curto: "Alimentação" },
+  B: { nome: "Travamento na constância", curto: "Constância" },
+  C: { nome: "Travamento na rotina", curto: "Rotina" },
+  D: { nome: "Travamento na barriga e inchaço", curto: "Barriga e inchaço" },
+  E: { nome: "Travamento por falta de direção", curto: "Direção" }
+};
+
+const PERGUNTAS = [
+  ["Hoje, o que mais te impede de secar?", [
+    "Não sei exatamente o que comer", "Começo bem e paro depois de alguns dias", "Minha rotina é bagunçada",
+    "Minha barriga vive inchada", "Eu tento sozinha e acabo me perdendo"]],
+  ["Quando você pensa em emagrecer, o que costuma fazer primeiro?", [
+    "Corto carboidrato ou várias comidas", "Começo motivada e depois abandono", "Espero uma fase mais tranquila da vida",
+    "Tento compensar exageros com restrição", "Procuro conteúdos soltos, mas não aplico"]],
+  ["Qual frase mais parece com você?", [
+    "“Eu não sei montar minhas refeições.”", "“Eu até sei o que fazer, mas não consigo manter.”", "“Minha rotina não me ajuda.”",
+    "“Minha barriga é o que mais me incomoda.”", "“Eu sinto que preciso de alguém me orientando.”"]],
+  ["No fim de semana, o que costuma acontecer?", [
+    "Saio totalmente da alimentação", "Perco o ritmo e demoro para voltar", "Não consigo planejar nada",
+    "Sinto mais inchaço e culpa depois", "Não sei como ajustar sem jogar tudo fora"]],
+  ["Sobre água, sono e intestino, você diria que:", [
+    "Quase não presto atenção nisso", "Tento melhorar, mas esqueço rápido", "Minha rotina atrapalha muito",
+    "Percebo impacto direto no meu inchaço", "Não sei o que priorizar primeiro"]],
+  ["Qual é sua maior dificuldade com alimentação?", [
+    "Saber o que comer", "Manter por mais de uma semana", "Organizar compras e refeições",
+    "Comer sem ficar inchada", "Ajustar quando saio do plano"]],
+  ["Quando você não vê resultado rápido, você tende a:", [
+    "Mudar tudo de novo", "Desanimar e parar", "Deixar para segunda ou janeiro",
+    "Focar só na barriga e se frustrar", "Sentir que precisa de ajuda para ajustar"]],
+  ["O que você mais deseja até janeiro?", [
+    "Comer melhor sem dieta maluca", "Ser mais constante", "Ter uma rotina mais organizada",
+    "Secar barriga e desinchar", "Ter acompanhamento para não desistir"]]
+];
+
+/* Diagnósticos: blocos de texto (p = parágrafo, beats = frases curtas em sequência) */
+const DIAG = {
+  A: {
+    titulo: "Seu maior travamento parece estar na alimentação.",
+    corpo: [
+      { p: "Talvez você não esteja travada porque não quer mudar." },
+      { p: "Talvez você esteja travada porque ainda tenta se alimentar entre dois extremos: ou faz tudo “perfeito”, ou sente que perdeu o controle." },
+      { p: "Você tenta melhorar, mas não sabe exatamente o que colocar no prato, o que comprar, como organizar as refeições ou como comer melhor sem cair em restrição." },
+      { p: "E quando falta clareza, a alimentação vira tentativa." },
+      { beats: ["Você corta.", "Compensa.", "Improvisa.", "Recomeça."] },
+      { p: "Mas não constrói uma rotina alimentar possível." }
+    ],
+    pergunta: "Você sabe o que precisa comer na sua rotina real ou só tenta seguir regras que não consegue sustentar?",
+    acaoTitulo: "Escolha uma refeição do dia para organizar melhor.",
+    acaoIntro: "Pode ser o almoço, o jantar ou o café da manhã. Monte pensando em:",
+    acaoLista: ["uma fonte de proteína;", "uma fonte de carboidrato;", "uma fonte de fibra;", "um alimento que te dê prazer sem tirar você do caminho."],
+    acaoFim: "Não tente arrumar a alimentação inteira hoje. Comece por uma refeição.",
+    proximo: ["Para secar com mais constância, você não precisa viver de cortes.", "Você precisa aprender a comer melhor dentro da sua vida."]
+  },
+  B: {
+    titulo: "Seu maior travamento parece estar na constância.",
+    corpo: [
+      { p: "Você provavelmente já começou muitas vezes." },
+      { beats: ["Começou animada.", "Comprou coisas saudáveis.", "Treinou alguns dias.", "Prometeu que agora seria diferente."] },
+      { p: "Mas, quando a rotina apertou, você perdeu o ritmo. E aí veio a sensação de sempre: “eu não consigo manter.”" },
+      { p: "Mas constância não nasce de motivação. <strong>Constância nasce de um plano possível.</strong>" },
+      { p: "Se você começa tentando mudar tudo ao mesmo tempo, qualquer imprevisto vira motivo para parar." }
+    ],
+    pergunta: "Você tem tentado ser constante ou tem tentado ser perfeita?",
+    acaoTitulo: "Escolha uma única ação mínima para repetir pelos próximos 3 dias.",
+    acaoIntro: "Pode ser:",
+    acaoLista: ["beber mais água;", "fazer uma caminhada curta;", "organizar uma refeição;", "dormir 30 minutos mais cedo;", "reduzir beliscos à noite;", "deixar uma proteína pronta."],
+    acaoFim: "A regra é: precisa ser tão simples que você consiga fazer mesmo em um dia comum.",
+    proximo: ["Seu resultado não vai vir de uma semana perfeita.", "Vai vir de pequenas escolhas repetidas com direção."]
+  },
+  C: {
+    titulo: "Seu maior travamento parece estar na rotina.",
+    corpo: [
+      { p: "Talvez você saiba o que deveria fazer. Mas sua vida não está organizada para facilitar isso." },
+      { beats: ["Você acorda no automático.", "Come o que dá.", "Bebe pouca água.", "Improvisa refeições.", "Deixa treino para depois.", "Chega à noite cansada e tenta compensar tudo no dia seguinte."] },
+      { p: "A rotina manda no seu resultado mais do que você imagina." },
+      { p: "Quando a rotina está solta, tudo depende de força de vontade. E <strong>força de vontade não sustenta processo.</strong>" }
+    ],
+    pergunta: "Sua rotina hoje facilita o corpo que você quer construir ou te empurra para o mesmo lugar?",
+    acaoTitulo: "Escolha um ponto da sua rotina para facilitar amanhã.",
+    acaoIntro: "Pode ser:",
+    acaoLista: ["deixar uma garrafa de água visível;", "separar o lanche da tarde;", "planejar o almoço;", "deixar a roupa do treino pronta;", "comprar 3 alimentos-chave;", "definir o horário de uma refeição."],
+    acaoFim: "Não é sobre controlar o dia inteiro. É sobre tirar um obstáculo do caminho.",
+    proximo: ["Quando você organiza o ambiente, o processo fica menos pesado.", "Você não precisa depender tanto de força de vontade quando a rotina começa a trabalhar a seu favor."]
+  },
+  D: {
+    titulo: "Seu maior travamento parece estar na barriga e no inchaço.",
+    corpo: [
+      { p: "E eu sei o quanto isso incomoda." },
+      { beats: ["A barriga pesa na roupa.", "Aumenta a insegurança.", "Tira a vontade de se arrumar.", "Faz você pensar que nada está funcionando."] },
+      { p: "Mas a barriga não responde só a “comer menos”." },
+      { p: "Ela conversa com o seu intestino, água, sono, fibras, estresse, treino, beliscos, ciclo, álcool, doces, final de semana e constância." },
+      { p: "Quando você olha só para a comida, pode ignorar sinais importantes do seu corpo." }
+    ],
+    pergunta: "Você está tentando secar a barriga só com restrição ou está olhando para os hábitos que mantêm seu corpo inflamado, inchado ou desregulado?",
+    acaoTitulo: "Escolha um hábito anti-inchaço para ajustar nas próximas 24 horas.",
+    acaoIntro: "Pode ser:",
+    acaoLista: ["beber sua meta de água{AGUA};", "incluir uma porção de vegetais;", "comer com mais calma;", "reduzir beliscos;", "dormir mais cedo;", "caminhar 20 minutos;", "observar como seu intestino está funcionando."],
+    acaoFim: "Não tente compensar. Observe e ajuste.",
+    proximo: ["Secar barriga não é sobre castigar o corpo.", "É sobre entender o que ele está tentando te mostrar e ajustar o conjunto."]
+  },
+  E: {
+    titulo: "Seu maior travamento parece estar na falta de direção.",
+    corpo: [
+      { p: "Você talvez consuma muitos conteúdos." },
+      { beats: ["Salva receitas.", "Assiste dicas.", "Começa estratégias diferentes.", "Tenta um pouco de cada coisa."] },
+      { p: "Mas, no fim, não sabe exatamente qual caminho seguir. E quando tem informação demais sem direção, tudo fica confuso." },
+      { p: "Você até sabe muita coisa. Mas não consegue transformar isso em rotina." },
+      { p: "O problema não é falta de conteúdo. <strong>É falta de um plano</strong> que organize o que fazer, quando ajustar e como continuar quando sair do eixo." }
+    ],
+    pergunta: "Você precisa de mais uma dica ou precisa de um caminho claro para finalmente aplicar o que já sabe?",
+    acaoTitulo: "Escreva em uma frase:",
+    acaoEscrever: ["“O que mais me trava hoje é…”", "“O primeiro passo que eu consigo dar ainda hoje é…”"],
+    acaoFim: "Não precisa resolver tudo agora. Mas você precisa parar de deixar tudo solto na cabeça.",
+    proximo: ["Quando existe direção, você para de pular de tentativa em tentativa.", "Você começa a construir.", "E é isso que muda o jogo."]
+  }
+};
+
+const FAIXAS_PESO = [
+  [1.50, 1.56, 42, 61], [1.57, 1.62, 46, 65], [1.63, 1.68, 49, 70], [1.69, 1.74, 53, 75], [1.75, 1.80, 57, 81]
+];
+
+const IMC_FAIXAS = [
+  { max: 18.5, rng: "abaixo de 18,5", nome: "abaixo do peso", bg: "#FFF1DC", fg: "#B26B00" },
+  { max: 25, rng: "18,5 a 24,9", nome: "faixa considerada saudável", bg: "#E6F5F1", fg: "#1E7864" },
+  { max: 30, rng: "25 a 29,9", nome: "sobrepeso", bg: "#FFF1DC", fg: "#B26B00" },
+  { max: Infinity, rng: "30 ou mais", nome: "obesidade", bg: "#FCE4ED", fg: "#A0144E" }
+];
+
+/* Etapas: 0 capa · 1 dados · 2 água · 3 IMC · 4 peso · 5–12 perguntas · 13 resumo · 14 resultado · 15 CTA */
+const TOTAL = 15;
+const STORE = "raioX-travamento-v1";
+const blank = () => ({ step: 0, nome: "", idade: "", altura: "", peso: "", objetivo: "", answers: Array(8).fill(null) });
+let state = blank();
+try { const s = JSON.parse(localStorage.getItem(STORE)); if (s && Array.isArray(s.answers)) state = Object.assign(blank(), s); } catch (e) {}
+const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} };
+
+/* ---------- utilidades ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const num = v => parseFloat(String(v).replace(",", ".").trim());
+const fmt = (n, d = 1) => n.toLocaleString("pt-BR", { minimumFractionDigits: d, maximumFractionDigits: d });
+const primeiroNome = () => esc(state.nome.trim().split(/\s+/)[0] || "");
+
+function alturaM() { let h = num(state.altura); if (h > 3) h = h / 100; return h; }
+function pesoKg() { return num(state.peso); }
+
+function calcAgua() {
+  const ml = Math.round(pesoKg() * 35);
+  const litros = ml / 1000;
+  return { ml, litros, txt: litros.toLocaleString("pt-BR", { minimumFractionDigits: 1, maximumFractionDigits: 2 }) };
+}
+function calcImc() {
+  const h = alturaM();
+  const imc = Math.round((pesoKg() / (h * h)) * 10) / 10;
+  const faixa = IMC_FAIXAS.find(f => imc < f.max);
+  return { imc, faixa };
+}
+function faixaPeso() {
+  const h = Math.round(alturaM() * 100) / 100;
+  return FAIXAS_PESO.find(f => h >= f[0] && h <= f[1]) || null;
+}
+function placar() {
+  const c = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+  state.answers.forEach(a => { if (a) c[a]++; });
+  const max = Math.max(...Object.values(c));
+  const top = Object.keys(c).filter(k => c[k] === max);
+  return { c, max, top };
+}
+function toast(msg) {
+  const t = $("#toast"); t.textContent = msg; t.hidden = false;
+  clearTimeout(toast._t); toast._t = setTimeout(() => { t.hidden = true; }, 2600);
+}
+function go(step) {
+  state.step = Math.max(0, Math.min(TOTAL, step)); save(); render();
+  window.scrollTo({ top: 0 });
+  const h = $("#app h1, #app h2"); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); }
+}
+
+/* ---------- telas ---------- */
+function telaCapa() {
+  const chips = Object.keys(CATS).map(k => `<span class="chip"><span class="dot" style="--c:var(--cat-${k})"></span>${CATS[k].curto}</span>`).join("");
+  return `
+  <section class="screen cover">
+    <div class="scan" aria-hidden="true"></div>
+    <span class="eyebrow">Quiz · 3 minutos</span>
+    <h1>Raio-X do <em>Travamento</em></h1>
+    <p class="sub">O que está te impedindo de secar?</p>
+    <p>Descubra o que pode estar travando sua barriga, sua constância e seus resultados — e veja por onde começar agora para chegar em janeiro diferente.</p>
+    <div class="chips" aria-label="Os 5 travamentos avaliados">${chips}</div>
+    <button class="btn light" data-go="1">Começar meu Raio-X →</button>
+  </section>`;
+}
+
+function telaDados() {
+  const goals = OBJETIVOS.map(([k, t]) =>
+    `<button type="button" class="goal" data-goal="${esc(t)}" aria-pressed="${state.objetivo === t}"><b>${k})</b> ${t}</button>`).join("");
+  return `
+  <form class="screen card" id="formDados" novalidate>
+    <span class="eyebrow">Seus dados</span>
+    <h2>Antes de começar, preciso de algumas informações suas</h2>
+    <div class="field">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" autocomplete="given-name" placeholder="Como você gosta de ser chamada?" value="${esc(state.nome)}">
+      <span class="err" id="err-nome"></span>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" inputmode="numeric" placeholder="34" value="${esc(state.idade)}">
+      </div>
+      <div class="field">
+        <label for="altura">Altura <span class="hint">(m)</span></label>
+        <input type="text" id="altura" inputmode="decimal" placeholder="1,65" value="${esc(state.altura)}">
+      </div>
+      <div class="field">
+        <label for="peso">Peso <span class="hint">(kg)</span></label>
+        <input type="text" id="peso" inputmode="decimal" placeholder="70" value="${esc(state.peso)}">
+      </div>
+    </div>
+    <span class="err" id="err-medidas"></span>
+    <div class="field" role="group" aria-labelledby="lg-obj">
+      <span class="legend" id="lg-obj">Objetivo principal <span class="hint">— escolha o que mais combina com você hoje</span></span>
+      <div class="goals">${goals}</div>
+      <span class="err" id="err-obj"></span>
+    </div>
+    <div class="nav">
+      <button type="button" class="ghost" data-go="0">Voltar</button>
+      <button type="submit" class="btn">Ver meus cálculos</button>
+    </div>
+  </form>`;
+}
+
+function telaAgua() {
+  const a = calcAgua();
+  const menor = num(state.idade) < 18;
+  return `
+  <section class="screen card">
+    <span class="eyebrow" style="--chip-bg:#E1F3F6;--chip-fg:#0F6E7B">Água · 1 de 3</span>
+    <h2>Sua referência diária de água</h2>
+    <p class="muted">Para adultos, a média usada é:</p>
+    <div class="formula">Peso em kg × 35 ml</div>
+    <p class="small muted">Exemplo: 70 kg × 35 ml = 2.450 ml → 2,45 litros por dia.</p>
+    <div class="big" style="--big-bg:#E1F3F6;--big-fg:#0F6E7B">
+      <span class="small">${primeiroNome() ? primeiroNome() + ", com" : "Com"} base no seu peso, sua meta aproximada é de:</span>
+      <span class="num">${a.txt} <small>litros/dia</small></span>
+      <span class="small muted">${fmt(pesoKg(), pesoKg() % 1 ? 1 : 0)} kg × 35 ml = ${a.ml.toLocaleString("pt-BR")} ml</span>
+    </div>
+    ${menor ? `<p class="note"><strong>Você informou menos de 18 anos.</strong> Essa fórmula é pensada para adultos — para adolescentes, a referência deve ser orientada por um profissional.</p>` : ""}
+    <p class="note">Essa é uma estimativa geral. Necessidades individuais podem variar conforme rotina, clima, treino, saúde e orientação profissional.</p>
+    <div class="nav"><button class="ghost" data-go="1">Voltar</button><button class="btn" data-go="3">Avançar</button></div>
+  </section>`;
+}
+
+function telaImc() {
+  const { imc, faixa } = calcImc();
+  const menor = num(state.idade) < 18;
+  const escala = IMC_FAIXAS.map(f =>
+    `<div class="scale-row ${f === faixa ? "on" : ""}" style="--on-bg:${f.bg};--on-fg:${f.fg}"><span class="rng">${f.rng}</span><span>${f.nome}</span></div>`).join("");
+  return `
+  <section class="screen card">
+    <span class="eyebrow" style="--chip-bg:#E6F5F1;--chip-fg:#1E7864">IMC · 2 de 3</span>
+    <h2>Seu IMC estimado</h2>
+    <p class="muted">O IMC, ou Índice de Massa Corporal, é o peso dividido pela altura ao quadrado.</p>
+    <div class="formula">IMC = peso ÷ (altura × altura)</div>
+    <div class="big" style="--big-bg:${faixa.bg};--big-fg:${faixa.fg}">
+      <span class="small">Seu IMC estimado é:</span>
+      <span class="num">${fmt(imc)}</span>
+      <span class="small"><strong>${faixa.nome[0].toUpperCase() + faixa.nome.slice(1)}</strong> · ${fmt(pesoKg(), pesoKg() % 1 ? 1 : 0)} kg ÷ (${fmt(alturaM(), 2)} × ${fmt(alturaM(), 2)})</span>
+    </div>
+    <div class="scale" aria-label="Classificação do IMC">${escala}</div>
+    ${menor ? `<p class="note"><strong>Menos de 18 anos:</strong> para adolescentes, o IMC é avaliado por curvas de idade e sexo, não por essa tabela.</p>` : ""}
+    <p class="note"><strong>O IMC é apenas uma referência.</strong> Ele não avalia composição corporal, massa muscular, gordura localizada, retenção, metabolismo, histórico de saúde ou hábitos. Por isso, não deve ser usado sozinho para definir resultado.</p>
+    <div class="nav"><button class="ghost" data-go="2">Voltar</button><button class="btn" data-go="4">Avançar</button></div>
+  </section>`;
+}
+
+function telaPeso() {
+  const f = faixaPeso();
+  const linhas = FAIXAS_PESO.map(r =>
+    `<div class="wrow ${r === f ? "on" : ""}"><span>${fmt(r[0], 2)} a ${fmt(r[1], 2)} m</span><b>${r[2]} a ${r[3]} kg</b></div>`).join("");
+  const destaque = f
+    ? `<div class="big" style="--big-bg:#FFF1DC;--big-fg:#9A5A00"><span class="small">Para a sua altura (${fmt(alturaM(), 2)} m), a referência é:</span><span class="num">${f[2]}–${f[3]} <small>kg</small></span></div>`
+    : `<p class="note"><strong>Essa tabela traz uma referência para alturas entre 1,50 m e 1,80 m.</strong> Para uma análise individual, o ideal é avaliar composição corporal, histórico, rotina e objetivo.</p>`;
+  return `
+  <section class="screen card">
+    <span class="eyebrow" style="--chip-bg:#FFF1DC;--chip-fg:#9A5A00">Peso · 3 de 3</span>
+    <h2>Sua referência de peso saudável 👇🏼</h2>
+    ${destaque}
+    <div class="wtable" aria-label="Tabela de referência por altura">${linhas}</div>
+    <p>Essa é uma referência baseada no IMC saudável. <strong>Mas peso não diz tudo.</strong></p>
+    <p class="muted">O mais importante é saúde, composição corporal, hábitos, constância e como o seu corpo responde à sua rotina.</p>
+    <div class="nav"><button class="ghost" data-go="3">Voltar</button><button class="btn" data-go="5">Começar o quiz</button></div>
+  </section>`;
+}
+
+function telaPergunta(i) {
+  const [q, opts] = PERGUNTAS[i];
+  const sel = state.answers[i];
+  const botoes = opts.map((t, j) => {
+    const k = "ABCDE"[j];
+    return `<button type="button" class="opt" data-ans="${k}" aria-pressed="${sel === k}"><span class="let">${k}</span><span>${t}</span></button>`;
+  }).join("");
+  return `
+  <section class="screen card">
+    <span class="qnum">Pergunta ${i + 1} de 8</span>
+    <h2>${q}</h2>
+    <div class="opts">${botoes}</div>
+    <div class="nav">
+      <button class="ghost" data-go="${i === 0 ? 4 : 5 + i - 1}">Voltar</button>
+      <button class="btn" data-go="${6 + i}" ${sel ? "" : "disabled"}>${i === 7 ? "Ver meu Raio-X" : "Avançar"}</button>
+    </div>
+  </section>`;
+}
+
+function telaResumo() {
+  const { c, max, top } = placar();
+  const barras = Object.keys(CATS).map(k => `
+    <div class="bar ${top.includes(k) ? "" : "dim"}" style="--c:var(--cat-${k})">
+      <span class="lbl"><span class="dot"></span>${k}) ${CATS[k].nome}</span>
+      <span class="val">${c[k]}</span>
+      <div class="track"><div class="fill" style="width:${(c[k] / 8) * 100}%"></div></div>
+    </div>`).join("");
+  return `
+  <section class="screen card">
+    <span class="eyebrow">Sua contagem</span>
+    <h2>Agora veja o seu Raio-X</h2>
+    <p class="muted">Cada resposta soma 1 ponto para uma letra. A letra que mais apareceu mostra seu principal travamento hoje.</p>
+    <div class="bars">${barras}</div>
+    ${top.length > 1 ? `<p class="tie-note">Deu empate entre ${top.map(k => CATS[k].curto.toLowerCase()).join(" e ")}. Seu resultado pode estar travado por mais de um ponto — vou te mostrar ${top.length === 2 ? "os dois diagnósticos" : "todos eles"}.</p>` : ""}
+    <div class="nav"><button class="ghost" data-go="12">Voltar</button><button class="btn" data-go="14">Abrir meu diagnóstico</button></div>
+  </section>`;
+}
+
+function blocoDiag(k, idx, total) {
+  const d = DIAG[k];
+  const agua = calcAgua();
+  const corpo = d.corpo.map(b => b.beats
+    ? `<div class="beats">${b.beats.map(x => `<span>${x}</span>`).join("")}</div>`
+    : `<p>${b.p}</p>`).join("");
+  const lista = d.acaoLista ? `<p>${d.acaoIntro}</p><ul>${d.acaoLista.map(x => `<li>${x.replace("{AGUA}", ` (${agua.txt} L)`)}</li>`).join("")}</ul>` : "";
+  const escrever = d.acaoEscrever ? d.acaoEscrever.map(x => `<div class="write">${x}</div>`).join("") : "";
+  return `
+  <article class="card diag" style="--c:var(--cat-${k})">
+    <span class="eyebrow">${total > 1 ? `Diagnóstico ${idx + 1} de ${total} · ` : ""}${k}) ${CATS[k].nome}</span>
+    <h2>${d.titulo}</h2>
+    <div class="stack">${corpo}</div>
+    <div class="reflect"><span class="k">Pergunta para você</span><q>${d.pergunta}</q></div>
+    <div class="todo">
+      <span class="k">Ação simples para hoje</span>
+      <h3>${d.acaoTitulo}</h3>
+      ${lista}${escrever}
+      <p class="small muted">${d.acaoFim}</p>
+    </div>
+    <div class="next"><span class="k">Próximo passo</span>${d.proximo.map(x => `<p><strong>${x}</strong></p>`).join("")}</div>
+  </article>`;
+}
+
+function telaResultado() {
+  const { top } = placar();
+  const a = calcAgua(), { imc, faixa } = calcImc(), f = faixaPeso();
+  const nome = primeiroNome();
+  const principal = top[0];
+  return `
+  <div class="screen stack">
+    <section class="result-hero" style="--c:var(--cat-${principal})">
+      <span class="eyebrow">Raio-X ${nome ? "de " + nome : "pronto"}</span>
+      <h1>${top.length > 1 ? "Seu travamento tem mais de um ponto" : CATS[principal].nome}</h1>
+      <p>${top.length > 1 ? top.map(k => CATS[k].nome).join(" + ") : `Objetivo: ${esc(state.objetivo.toLowerCase())}. Olha o que o seu Raio-X mostrou 👇🏼`}</p>
+    </section>
+    <div class="tiles">
+      <div class="tile"><span class="k">Água</span><span class="v">${a.txt} L</span><span class="s">por dia, aprox.</span></div>
+      <div class="tile"><span class="k">IMC</span><span class="v">${fmt(imc)}</span><span class="s">${faixa.nome}</span></div>
+      <div class="tile"><span class="k">Peso ref.</span><span class="v">${f ? `${f[2]}–${f[3]}` : "—"}</span><span class="s">${f ? "kg p/ sua altura" : "fora da tabela"}</span></div>
+    </div>
+    <p class="note">Água, IMC e peso são referências gerais — não definem sozinhos o seu resultado.</p>
+    ${top.map((k, i) => blocoDiag(k, i, top.length)).join("")}
+    <button class="ghost" id="copiar" style="width:100%">Copiar meu resultado para enviar</button>
+    <textarea class="copy-fallback" id="copyBox" readonly hidden aria-label="Texto do resultado"></textarea>
+    <div class="nav"><button class="ghost" data-go="13">Voltar</button><button class="btn" data-go="15">Continuar</button></div>
+  </div>`;
+}
+
+function telaCta() {
+  return `
+  <div class="screen stack">
+    <section class="cta">
+      <span class="eyebrow">Próximo passo</span>
+      <h2>Quer começar com mais direção?</h2>
+      <p>Se o seu Raio-X mostrou que você não está travada por falta de vontade, mas por falta de clareza, rotina, constância ou acompanhamento, talvez esse seja o momento de parar de tentar sozinha.</p>
+      <p>O BMT foi criado para mulheres que querem construir o corpo, a alimentação e os hábitos que desejam com plano, ajustes e suporte.</p>
+      <p class="punch">Não é sobre fazer loucura até janeiro.<br>É sobre começar agora com direção.</p>
+      <p>Para entender mais sobre o BMT, fale com a equipe:</p>
+      <a class="btn light" id="ctaLink" href="${esc(LINK_COMERCIAL || "#")}" target="_blank" rel="noopener">Quero entender o BMT →</a>
+    </section>
+    <div class="nav"><button class="ghost" data-go="14" style="flex:1">Rever meu diagnóstico</button></div>
+    <button class="restart" id="refazer">Refazer o Raio-X do zero</button>
+  </div>`;
+}
+
+/* ---------- render ---------- */
+function render() {
+  const s = state.step;
+  let html;
+  if (s === 0) html = telaCapa();
+  else if (s === 1) html = telaDados();
+  else if (s === 2) html = telaAgua();
+  else if (s === 3) html = telaImc();
+  else if (s === 4) html = telaPeso();
+  else if (s <= 12) html = telaPergunta(s - 5);
+  else if (s === 13) html = telaResumo();
+  else if (s === 14) html = telaResultado();
+  else html = telaCta();
+  $("#app").innerHTML = html;
+
+  const pct = Math.round((s / TOTAL) * 100);
+  $("#progressWrap").hidden = s === 0;
+  $("#progressFill").style.width = pct + "%";
+  $("#progress").setAttribute("aria-valuenow", pct);
+
+  bind();
+}
+
+function dadosValidos() {
+  const h = alturaM(), p = pesoKg(), i = num(state.idade);
+  return state.nome.trim() && state.objetivo && i >= 12 && i <= 100 && h >= 1.2 && h <= 2.2 && p >= 30 && p <= 250;
+}
+
+function bind() {
+  document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => go(+b.dataset.go)));
+
+  const form = $("#formDados");
+  if (form) {
+    ["nome", "idade", "altura", "peso"].forEach(id => $("#" + id).addEventListener("input", e => { state[id] = e.target.value; save(); }));
+    form.querySelectorAll("[data-goal]").forEach(b => b.addEventListener("click", () => {
+      state.objetivo = b.dataset.goal; save();
+      form.querySelectorAll("[data-goal]").forEach(x => x.setAttribute("aria-pressed", x === b));
+      $("#err-obj").textContent = "";
+    }));
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const h = alturaM(), p = pesoKg(), i = num(state.idade);
+      const errs = [];
+      $("#err-nome").textContent = state.nome.trim() ? "" : "Me conta seu nome para personalizar o resultado.";
+      $("#nome").setAttribute("aria-invalid", !state.nome.trim());
+      const badI = !(i >= 12 && i <= 100), badH = !(h >= 1.2 && h <= 2.2), badP = !(p >= 30 && p <= 250);
+      $("#idade").setAttribute("aria-invalid", badI); $("#altura").setAttribute("aria-invalid", badH); $("#peso").setAttribute("aria-invalid", badP);
+      if (badI) errs.push("idade em anos (ex.: 34)");
+      if (badH) errs.push("altura em metros (ex.: 1,65)");
+      if (badP) errs.push("peso em kg (ex.: 70)");
+      $("#err-medidas").textContent = errs.length ? "Confira: " + errs.join(" · ") + "." : "";
+      $("#err-obj").textContent = state.objetivo ? "" : "Escolha seu objetivo principal.";
+      if (dadosValidos()) go(2);
+      else { const bad = form.querySelector("[aria-invalid=true]"); if (bad) bad.focus(); }
+    });
+  }
+
+  document.querySelectorAll("[data-ans]").forEach(b => b.addEventListener("click", () => {
+    const i = state.step - 5;
+    state.answers[i] = b.dataset.ans; save();
+    document.querySelectorAll("[data-ans]").forEach(x => x.setAttribute("aria-pressed", x === b));
+    const next = document.querySelector(".nav .btn"); next.disabled = false;
+    clearTimeout(bind._t); bind._t = setTimeout(() => go(state.step + 1), 320);
+  }));
+
+  const copiar = $("#copiar");
+  if (copiar) copiar.addEventListener("click", () => {
+    const { top } = placar(); const a = calcAgua(), { imc, faixa } = calcImc(), f = faixaPeso();
+    const txt = [
+      "Meu Raio-X do Travamento",
+      "Principal travamento: " + top.map(k => CATS[k].nome).join(" + "),
+      "Água: " + a.txt + " L por dia (referência)",
+      "IMC estimado: " + fmt(imc) + " (" + faixa.nome + ")",
+      "Peso de referência: " + (f ? f[2] + " a " + f[3] + " kg" : "fora da tabela de 1,50–1,80 m"),
+      "Ação de hoje: " + top.map(k => DIAG[k].acaoTitulo).join(" / ")
+    ].join("\n");
+    const box = $("#copyBox");
+    const fallback = () => { box.value = txt; box.hidden = false; box.focus(); box.select(); toast("Selecionei o texto — é só copiar."); };
+    try {
+      navigator.clipboard.writeText(txt).then(() => toast("Resultado copiado. É só colar no WhatsApp."), fallback);
+    } catch (e) { fallback(); }
+  });
+
+  const cta = $("#ctaLink");
+  if (cta && !LINK_COMERCIAL) cta.addEventListener("click", e => { e.preventDefault(); toast("Link do comercial ainda não configurado."); });
+
+  const refazer = $("#refazer");
+  if (refazer) refazer.addEventListener("click", () => { state = blank(); go(0); });
+}
+
+/* se a etapa salva exige dados/respostas que não existem, volta para o início certo */
+if (state.step >= 2 && !dadosValidos()) state.step = 1;
+if (state.step >= 13 && state.answers.some(a => !a)) state.step = 5 + state.answers.findIndex(a => !a);
+render();
+</script>
+</body>
+</html>

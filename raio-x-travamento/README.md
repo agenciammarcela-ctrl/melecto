@@ -1,0 +1,66 @@
+# Raio-X do Travamento — isca interativa
+
+Quiz para a campanha **Comece Agora | Seque até Janeiro** (Thaís Tavares).
+Arquivo único: `index.html` (HTML/CSS/JS, sem dependências, só a fonte do Google Fonts). Funciona no celular, pode ser hospedado em qualquer lugar (Netlify, Vercel, GitHub Pages, Hostinger) ou aberto direto no navegador.
+
+## Antes de publicar: link do comercial
+
+No topo do `<script>`, preencha:
+
+```js
+const LINK_COMERCIAL = "https://wa.me/5511999999999?text=Quero%20entender%20o%20BMT";
+```
+
+Enquanto estiver vazio, o botão **Quero entender o BMT** mostra o aviso "Link do comercial ainda não configurado".
+
+## Fluxo de telas (16 cards)
+
+| # | Tela | O que faz |
+|---|------|-----------|
+| 0 | Capa | Título, subtítulo, os 5 travamentos, botão **Começar meu Raio-X** |
+| 1 | Dados iniciais | Nome, idade, altura, peso, objetivo (A–F). Todos obrigatórios e validados |
+| 2 | Água | peso × 35 ml, exibido em litros + observação obrigatória |
+| 3 | IMC | peso ÷ altura², classificação destacada na escala + observação obrigatória |
+| 4 | Peso de referência | Tabela 1,50–1,80 m com a linha da pessoa destacada (ou aviso se estiver fora) |
+| 5–12 | Perguntas 1 a 8 | 5 alternativas cada; avança sozinho ao tocar; dá para voltar e trocar |
+| 13 | Agora veja o seu Raio-X | Contagem por letra em barras + aviso de empate |
+| 14 | Diagnóstico | Água, IMC e peso em destaque + diagnóstico completo (1 ou mais em caso de empate) + botão "Copiar meu resultado" (para colar no WhatsApp) |
+| 15 | CTA | Convite para o BMT com botão para o link do comercial |
+
+Barra de progresso no topo a partir da tela 1. As respostas ficam salvas no navegador da pessoa: se ela fechar a página, continua de onde parou.
+
+## Lógica dos cálculos
+
+- **Altura**: aceita `1,65`, `1.65` ou `165` (acima de 3 é tratado como cm).
+- **Água**: `ml = peso × 35` → `litros = ml / 1000` (ex.: 70 kg → 2.450 ml → 2,45 L).
+- **IMC**: `peso / (altura × altura)`, arredondado para 1 casa. Faixas:
+  < 18,5 abaixo do peso · 18,5–24,9 faixa considerada saudável · 25–29,9 sobrepeso · ≥ 30 obesidade.
+- **Peso de referência**: altura arredondada para 2 casas e comparada com as 5 faixas da tabela. Fora de 1,50–1,80 m aparece o aviso para buscar avaliação individual.
+- **Menores de 18 anos**: água e IMC mostram uma nota extra (a fórmula e a tabela são para adultos).
+- Validação: idade 12–100, altura 1,20–2,20 m, peso 30–250 kg.
+
+## Lógica de pontuação
+
+Toda alternativa A–E soma 1 ponto para a categoria com a mesma letra:
+
+- A = Travamento na alimentação
+- B = Travamento na constância
+- C = Travamento na rotina
+- D = Travamento na barriga e inchaço
+- E = Travamento por falta de direção
+
+O diagnóstico é a letra com mais pontos. **Empate**: aparecem todos os diagnósticos empatados no topo (normalmente dois), um depois do outro.
+
+## Sugestão visual (para refazer no Canva/Figma)
+
+- **Fundo**: rosa bem claro `#FCEFF3`. Cards brancos com cantos de 22 px.
+- **Capa, cabeçalho do resultado e CTA**: ameixa escuro `#2B1A33` / gradiente framboesa `#C2185B → #8E1047`, com uma linha de "scanner" descendo (a ideia do raio-x).
+- **Cor principal / botões**: framboesa `#C2185B`.
+- **Uma cor por travamento** (usada no resultado):
+  alimentação coral `#EE6A4D` · constância violeta `#7A5CD6` · rotina âmbar `#E79A1E` · barriga/inchaço azul-piscina `#1A9CAE` · direção framboesa `#C2185B`.
+- **Fontes**: Bricolage Grotesque (títulos, números) + Figtree (texto).
+- **Diagnóstico**: frases curtas empilhadas com barra lateral colorida, pergunta reflexiva em caixa tingida, ação do dia em forma de checklist.
+
+## Segurança da copy
+
+O material não promete cura, resultado garantido nem suspensão de medicação. Água, IMC e peso aparecem sempre como referências gerais, e o rodapé lembra que o material não substitui avaliação nutricional, médica ou individualizada.
