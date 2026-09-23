@@ -319,6 +319,13 @@
     padding: 12px 14px; border-radius: 12px; background: #FEF4EE;
   }
   .next { display: flex; flex-direction: column; gap: 8px; }
+  .combo { border-top: 0; position: relative; overflow: hidden; }
+  .combo::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 6px; background: var(--bar); }
+  .between { text-align: center; font-weight: 600; color: var(--ink-soft); font-size: 14px; }
+  .olist { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; font-weight: 600; }
+  .btn.pdf { background: var(--peach-soft); color: var(--coral-deep); box-shadow: inset 0 0 0 2px var(--peach); }
+  .btn.pdf:hover { background: #FBDCCB; }
+  .btn.pdf[aria-busy=true] { opacity: .7; cursor: progress; }
   .tie-note { font-weight: 600; font-size: 14px; padding: 12px 14px; border-radius: 14px; background: #FFF1DC; }
 
   /* CTA */
@@ -368,10 +375,10 @@
    CONFIGURAÇÃO — cole aqui o link do comercial (WhatsApp, página, etc.)
    Ex.: "https://wa.me/5511999999999?text=Quero%20entender%20o%20BMT"
    ============================================================ */
-const LINK_COMERCIAL = "";
+const LINK_COMERCIAL = "https://api.whatsapp.com/send/?phone=5531971539890&text&type=phone_number&app_absent=0&utm_source=ig";
 
-/* Planilha de leads + e-mail do resultado: cole aqui a URL do Apps Script publicado como
-   "App da Web" (termina em /exec). Veja apps-script.gs e o README. Vazio = não envia. */
+/* Planilha de leads: URL do Apps Script publicado como "App da Web" (termina em /exec).
+   Veja apps-script.gs e o README. Vazio = não salva. */
 const PLANILHA_URL = "https://script.google.com/macros/s/AKfycbwedYV9LgEVQ8buJ6uAi7WvADz3qWYLeHB5FSZCMEALQcnJONyMzUZzg3xZcYDNM5SJzQ/exec";
 
 const OBJETIVOS = [
@@ -497,6 +504,11 @@ const DIAG = {
   }
 };
 
+/* Copies de empate: chave = letras empatadas em ordem (ex.: "AB", "ACE"), "4" ou "5".
+   Blocos: p, beats (frases curtas), lead (instrução em destaque), ul, ol, write (frase para completar). */
+const COMBOS = {"AB": {"titulo": "Seu Raio-X mostrou um empate entre alimentação e constância.", "corpo": [{"p": "Isso significa que você talvez não esteja travada apenas pelo que come, mas pela dificuldade de sustentar uma alimentação possível por tempo suficiente para o corpo responder."}, {"beats": ["Você pode até começar bem.", "Organiza melhor o prato.", "Faz escolhas melhores por alguns dias.", "Mas, quando a rotina muda, a constância quebra."]}, {"p": "E aí vem a sensação de que você não consegue."}, {"p": "Mas talvez o problema não seja falta de força de vontade."}, {"p": "Talvez seja uma alimentação difícil demais de manter."}], "pergunta": "Sua alimentação hoje cabe na sua vida real ou só funciona quando tudo está sob controle?", "acao": [{"lead": "Escolha uma refeição para repetir por 3 dias."}, {"p": "Algo simples, possível e equilibrado."}, {"p": "Não tente mudar tudo."}, {"p": "Comece por uma refeição que você consiga sustentar."}]}, "AC": {"titulo": "Seu Raio-X mostrou um empate entre alimentação e rotina.", "corpo": [{"p": "Isso mostra que sua alimentação talvez não esteja ruim por falta de intenção, mas porque sua rotina não facilita boas escolhas."}, {"beats": ["Você até quer comer melhor.", "Mas chega na hora da fome e precisa improvisar.", "Improvisa no almoço.", "Improvisa no lanche.", "Improvisa no jantar."]}, {"p": "E quando tudo vira improviso, o resultado fica instável."}], "pergunta": "Você está tentando comer melhor sem preparar minimamente o ambiente para isso acontecer?", "acao": [{"lead": "Escolha 3 alimentos-chave para ter em casa essa semana:"}, {"ul": ["uma proteína prática;", "uma opção de carboidrato;", "uma opção de fibra ou vegetal."]}, {"p": "Começar pela compra pode destravar mais do que tentar ter disciplina no caos."}]}, "AD": {"titulo": "Seu Raio-X mostrou um empate entre alimentação e barriga/inchaço.", "corpo": [{"p": "Isso significa que o que mais te incomoda no corpo pode estar diretamente ligado à forma como sua alimentação acontece hoje."}, {"p": "Não é só sobre comer muito ou pouco."}, {"beats": ["Pode ser sobre comer rápido.", "Beliscar.", "Ter pouca fibra.", "Beber pouca água.", "Compensar exageros com restrição.", "Oscilar demais entre “perfeito” e “desandei”."]}, {"p": "A barriga costuma mostrar o que a rotina tenta esconder."}], "pergunta": "Você está tentando secar a barriga só com corte ou está observando o que faz seu corpo inchar?", "acao": [{"lead": "Na próxima refeição, inclua:"}, {"ul": ["uma proteína;", "uma porção de vegetais ou fibras;", "água ao longo do dia;", "e coma com mais calma."]}, {"p": "Não compense."}, {"p": "Observe."}]}, "AE": {"titulo": "Seu Raio-X mostrou um empate entre alimentação e falta de direção.", "corpo": [{"p": "Isso significa que você talvez esteja perdida entre muitas informações sobre comida."}, {"beats": ["Uma hora corta carboidrato.", "Outra hora tenta comer pouco.", "Depois salva receita.", "Depois tenta seguir um cardápio solto.", "Depois se culpa porque não sustenta."]}, {"p": "O problema talvez não seja falta de informação."}, {"p": "É falta de clareza sobre o que faz sentido para você."}], "pergunta": "Você sabe o que precisa ajustar na sua alimentação ou está tentando juntar dicas soltas?", "acao": [{"lead": "Escreva uma frase:"}, {"write": "“Minha alimentação trava quando…”"}, {"p": "Depois complete com sinceridade. Exemplo:"}, {"write": "“Minha alimentação trava quando chego com fome e não tenho nada pronto.”"}, {"p": "Essa resposta mostra seu primeiro ajuste."}]}, "BC": {"titulo": "Seu Raio-X mostrou um empate entre constância e rotina.", "corpo": [{"p": "Esse é um dos empates mais comuns."}, {"beats": ["Você não para porque não quer.", "Você para porque sua rotina não sustenta o plano que você tenta seguir.", "Você começa motivada.", "Mas a semana aperta.", "O horário muda.", "A casa demanda.", "O trabalho pesa.", "E o plano fica grande demais para caber no seu dia."]}, {"p": "Constância não nasce de uma rotina perfeita."}, {"p": "Ela nasce de uma rotina possível."}], "pergunta": "Você tem tentado ser constante dentro da sua vida real ou dentro de uma versão idealizada da sua rotina?", "acao": [{"lead": "Escolha uma ação mínima para repetir amanhã:"}, {"ul": ["beber uma garrafa de água;", "caminhar 15 minutos;", "deixar uma refeição encaminhada;", "separar uma proteína;", "dormir 30 minutos mais cedo."]}, {"p": "Pequeno o suficiente para caber."}, {"p": "Importante o suficiente para começar."}]}, "BD": {"titulo": "Seu Raio-X mostrou um empate entre constância e barriga/inchaço.", "corpo": [{"p": "Isso significa que sua barriga pode não estar travada por uma única refeição, mas pela oscilação."}, {"beats": ["Alguns dias você cuida.", "Depois se perde.", "Depois compensa.", "Depois restringe.", "Depois desiste."]}, {"p": "E o corpo sente essa montanha-russa."}, {"p": "Barriga, inchaço e desconforto muitas vezes pioram quando falta repetição do básico."}], "pergunta": "Você está tentando resolver a barriga com medidas pontuais ou com hábitos repetidos?", "acao": [{"lead": "Escolha um hábito anti-inchaço para repetir por 3 dias:"}, {"ul": ["água;", "caminhada;", "vegetais;", "comer com calma;", "reduzir beliscos;", "dormir melhor."]}, {"p": "Não escolha todos."}, {"p": "Escolha um e repita."}]}, "BE": {"titulo": "Seu Raio-X mostrou um empate entre constância e falta de direção.", "corpo": [{"p": "Você talvez ache que não tem constância, mas a verdade pode ser outra: você não sustenta porque não sabe exatamente o que seguir."}, {"p": "Quando o caminho não está claro, qualquer dificuldade vira motivo para parar."}, {"beats": ["Você começa.", "Aparece uma dúvida.", "Algo sai do plano.", "Você não sabe ajustar.", "Então abandona."]}, {"p": "Constância precisa de direção."}], "pergunta": "Você desiste porque não consegue ou porque não sabe como ajustar quando sai do plano?", "acao": [{"lead": "Escreva:"}, {"write": "“Quando eu saio do plano, eu costumo…”"}, {"p": "Depois escreva:"}, {"write": "“Da próxima vez, em vez de desistir, eu posso…”"}, {"p": "Esse é o começo de uma rota de ajuste."}]}, "CD": {"titulo": "Seu Raio-X mostrou um empate entre rotina e barriga/inchaço.", "corpo": [{"p": "Isso mostra que sua barriga talvez esteja respondendo ao seu dia inteiro, não só ao prato."}, {"beats": ["Sono ruim.", "Pouca água.", "Pouca fibra.", "Estresse.", "Beliscos.", "Final de semana solto.", "Refeições sem horário."]}, {"p": "Tudo isso conversa com o corpo."}, {"p": "A barriga não é uma parte isolada."}, {"p": "Ela é um reflexo do conjunto."}], "pergunta": "O que na sua rotina mais conversa com o inchaço que você sente?", "acao": [{"lead": "Escolha um ajuste para as próximas 24 horas:"}, {"ul": ["beber sua meta de água{AGUA};", "incluir vegetais em uma refeição;", "caminhar 20 minutos;", "reduzir beliscos;", "dormir mais cedo;", "observar o intestino."]}, {"p": "Não tente atacar tudo."}, {"p": "Comece por um sinal."}]}, "CE": {"titulo": "Seu Raio-X mostrou um empate entre rotina e falta de direção.", "corpo": [{"p": "Isso significa que talvez você até queira mudar, mas não tem uma ordem clara de prioridades."}, {"beats": ["Você tenta melhorar alimentação.", "Depois pensa em treino.", "Depois lembra da água.", "Depois quer arrumar o sono.", "Depois se cobra por não fazer tudo."]}, {"p": "E, no fim, nada ganha consistência."}, {"p": "Quando falta direção, a rotina vira acúmulo de tarefas soltas."}], "pergunta": "Você sabe qual é o primeiro ajuste que mais destravaria sua rotina hoje?", "acao": [{"lead": "Escolha apenas uma prioridade para as próximas 24 horas. Complete:"}, {"write": "“A primeira coisa que eu preciso organizar é…”"}, {"p": "Pode ser água, refeição, compra, sono, treino ou horário."}, {"p": "Uma prioridade bem escolhida vale mais que dez cobranças soltas."}]}, "DE": {"titulo": "Seu Raio-X mostrou um empate entre barriga/inchaço e falta de direção.", "corpo": [{"p": "Isso significa que você sente o incômodo no corpo, mas talvez ainda não saiba o que precisa ajustar primeiro."}, {"beats": ["A barriga incomoda.", "A roupa aperta.", "O inchaço aparece.", "A autoestima pesa."]}, {"p": "Mas, em vez de entender o conjunto, você pode estar tentando resolver com medidas soltas."}, {"beats": ["Corta comida.", "Compensa.", "Tenta chá.", "Faz promessa.", "Procura uma dica nova."]}, {"p": "Só que barriga não responde bem à confusão."}, {"p": "Ela responde melhor a rotina, água, intestino, treino, sono, alimentação e constância."}], "pergunta": "Você está tentando resolver o incômodo da barriga com atalhos ou com direção?", "acao": [{"lead": "Escreva três coisas:"}, {"ol": ["Como está minha água?", "Como está meu intestino?", "Como estão meus beliscos?"]}, {"p": "Escolha uma delas para ajustar hoje."}]}, "ABC": {"titulo": "Seu Raio-X mostrou um empate entre alimentação, constância e rotina.", "corpo": [{"p": "Esse resultado mostra que você talvez não tenha um problema isolado."}, {"beats": ["Sua alimentação depende da sua rotina.", "Sua rotina influencia sua constância.", "E sua constância determina o resultado."]}, {"p": "Quando uma dessas áreas falha, as outras também sentem."}, {"p": "Você até sabe que precisa mudar, mas tenta fazer isso dentro de uma rotina que não sustenta suas escolhas."}], "pergunta": "Você está tentando mudar o corpo sem reorganizar a rotina que sustenta suas escolhas?", "acao": [{"lead": "Escolha uma refeição para organizar amanhã e deixe uma parte dela encaminhada hoje. Exemplo:"}, {"ul": ["deixar proteína pronta;", "separar o lanche;", "planejar o almoço;", "comprar 3 alimentos-chave."]}, {"p": "Seu começo precisa ser simples o suficiente para caber na sua vida."}]}, "ABD": {"titulo": "Seu Raio-X mostrou um empate entre alimentação, constância e barriga/inchaço.", "corpo": [{"p": "Esse resultado mostra que seu corpo pode estar sentindo a oscilação."}, {"beats": ["Você tenta cuidar da alimentação.", "Depois perde a constância.", "Depois sente o corpo mais inchado.", "Depois tenta compensar.", "E o ciclo recomeça."]}, {"p": "A barriga talvez não esteja respondendo só ao que você come, mas à falta de repetição de hábitos básicos."}], "pergunta": "O que mais pesa hoje: o que você come ou a dificuldade de manter o básico por mais de alguns dias?", "acao": [{"lead": "Escolha um hábito para repetir por 3 dias:"}, {"ul": ["beber sua meta de água{AGUA};", "incluir vegetais em uma refeição;", "comer com mais calma;", "reduzir beliscos;", "caminhar 20 minutos."]}, {"p": "O objetivo não é compensar."}, {"p": "É repetir."}]}, "ABE": {"titulo": "Seu Raio-X mostrou um empate entre alimentação, constância e falta de direção.", "corpo": [{"p": "Isso mostra que você pode estar tentando sustentar uma alimentação que ainda não entende bem."}, {"beats": ["Você recebe dicas.", "Tenta cortar.", "Tenta fazer perfeito.", "Começa motivada.", "Mas, quando surge uma dúvida ou dificuldade, você se perde."]}, {"p": "Sem direção, a constância fica frágil."}], "pergunta": "Você sabe exatamente o que fazer quando sai do plano ou simplesmente abandona e promete recomeçar?", "acao": [{"lead": "Defina sua “refeição âncora” da semana."}, {"p": "Uma refeição simples que você consegue repetir mesmo em dias comuns. Exemplo:"}, {"ul": ["café da manhã organizado;", "almoço com proteína e fibra;", "jantar leve, mas que sustenta;", "lanche prático."]}, {"p": "Uma refeição âncora diminui a sensação de descontrole."}]}, "ACD": {"titulo": "Seu Raio-X mostrou um empate entre alimentação, rotina e barriga/inchaço.", "corpo": [{"p": "Esse resultado mostra que sua barriga pode estar refletindo a forma como sua rotina organiza — ou desorganiza — sua alimentação."}, {"beats": ["Você come no improviso.", "Pula refeições.", "Belisca.", "Compensa.", "Bebe pouca água.", "Chega cansada e escolhe o que dá."]}, {"p": "Depois, o corpo responde."}], "pergunta": "Sua barriga está recebendo cuidado ou só tentativas de compensação?", "acao": [{"lead": "Organize a próxima refeição com intenção:"}, {"ul": ["sente para comer;", "coloque proteína;", "inclua fibra;", "beba água ao longo do dia;", "evite transformar a refeição em compensação."]}, {"p": "O corpo responde melhor ao cuidado do que ao castigo."}]}, "ACE": {"titulo": "Seu Raio-X mostrou um empate entre alimentação, rotina e falta de direção.", "corpo": [{"p": "Isso mostra que você talvez esteja tentando melhorar a alimentação sem uma rota clara e sem uma rotina que ajude."}, {"beats": ["Você sabe que precisa comer melhor, mas não sabe por onde começar.", "Sabe que precisa se organizar, mas tudo fica solto.", "Sabe que precisa mudar, mas cada dia tenta uma coisa diferente."]}, {"p": "Quando falta direção, a rotina vira improviso."}, {"p": "E quando a rotina vira improviso, a alimentação desanda."}], "pergunta": "Qual é o primeiro ajuste alimentar que deixaria sua rotina mais leve esta semana?", "acao": [{"lead": "Monte uma mini-lista com 5 alimentos para facilitar sua semana:"}, {"ul": ["1 proteína;", "1 carboidrato;", "1 fruta;", "1 vegetal;", "1 opção prática de lanche."]}, {"p": "Essa lista simples já começa a organizar o caminho."}]}, "ADE": {"titulo": "Seu Raio-X mostrou um empate entre alimentação, barriga/inchaço e falta de direção.", "corpo": [{"p": "Esse resultado mostra que você sente o incômodo no corpo, mas talvez ainda tente resolver com estratégias soltas."}, {"beats": ["Corta comida.", "Busca uma dica.", "Tenta desinchar rápido.", "Compensa exageros.", "Foca só na barriga."]}, {"p": "Mas o corpo precisa de direção, não de mais confusão."}, {"p": "A barriga pode estar pedindo uma alimentação mais organizada, água, fibras, rotina e constância."}], "pergunta": "Você sabe o que realmente aumenta seu inchaço ou só tenta cortar coisas quando se incomoda?", "acao": [{"lead": "Observe seu dia e anote:"}, {"ul": ["quanto de água bebeu;", "como foi seu intestino;", "quais foram seus beliscos;", "se teve fibra nas refeições."]}, {"p": "Não julgue."}, {"p": "Mapeie."}, {"p": "O que você enxerga, você consegue ajustar."}]}, "BCD": {"titulo": "Seu Raio-X mostrou um empate entre constância, rotina e barriga/inchaço.", "corpo": [{"p": "Esse resultado mostra que a sua barriga pode estar sofrendo com a instabilidade da rotina."}, {"beats": ["Você até tenta fazer certo.", "Mas muda muito.", "Para.", "Volta.", "Compensa.", "Se perde.", "Recomeça."]}, {"p": "O corpo sente essa falta de ritmo."}, {"p": "E, muitas vezes, o inchaço aparece como resposta a dias sem padrão."}], "pergunta": "Seu corpo tem recebido repetição ou vive tentando se adaptar aos seus recomeços?", "acao": [{"lead": "Escolha um básico para repetir por 3 dias:"}, {"ul": ["água;", "caminhada;", "horário de refeição;", "vegetais;", "sono;", "redução de beliscos."]}, {"p": "A barriga costuma responder melhor à repetição do que ao desespero."}]}, "BCE": {"titulo": "Seu Raio-X mostrou um empate entre constância, rotina e falta de direção.", "corpo": [{"p": "Esse resultado mostra que talvez você não esteja sem força de vontade."}, {"p": "Talvez você esteja sem um plano simples o bastante para caber na sua rotina."}, {"beats": ["Quando falta direção, você tenta muitas coisas.", "Quando a rotina aperta, você larga.", "Quando larga, acha que não tem constância."]}, {"p": "Mas constância não aparece quando o caminho é confuso."}], "pergunta": "Você está tentando manter um plano claro ou tentando dar conta de um monte de ideias soltas?", "acao": [{"lead": "Defina sua prioridade dos próximos 3 dias. Complete:"}, {"write": "“Nos próximos 3 dias, minha prioridade será…”"}, {"p": "Escolha uma:"}, {"ul": ["água;", "refeição;", "caminhada;", "sono;", "organização da compra;", "redução de beliscos."]}, {"p": "Sem prioridade, tudo parece urgente."}]}, "BDE": {"titulo": "Seu Raio-X mostrou um empate entre constância, barriga/inchaço e falta de direção.", "corpo": [{"p": "Isso mostra que você pode estar presa em um ciclo:"}, {"beats": ["sente a barriga incomodar;", "procura uma solução rápida;", "começa com força;", "não sabe como sustentar;", "desanda;", "volta ao ponto inicial."]}, {"p": "A falta de direção enfraquece a constância."}, {"p": "E a falta de constância mantém o incômodo no corpo."}], "pergunta": "Você quer resolver a barriga com uma tentativa rápida ou com um caminho que consiga sustentar?", "acao": [{"lead": "Escolha uma ação pequena e escreva quando vai fazer:"}, {"ul": ["beber água: horário;", "caminhar: horário;", "organizar refeição: qual refeição;", "dormir melhor: que horas;", "reduzir beliscos: em qual período."]}, {"p": "Ação sem hora marcada vira intenção."}]}, "CDE": {"titulo": "Seu Raio-X mostrou um empate entre rotina, barriga/inchaço e falta de direção.", "corpo": [{"p": "Esse resultado mostra que seu corpo talvez esteja pedindo organização."}, {"p": "A barriga incomoda, mas o problema não está só nela."}, {"beats": ["Pode estar na rotina solta.", "Na falta de água.", "No intestino.", "Nos beliscos.", "No sono.", "Na falta de um plano claro."]}, {"p": "Quando tudo fica solto, o corpo responde."}], "pergunta": "Se você tivesse que organizar só uma coisa na sua rotina para ajudar seu corpo, qual seria?", "acao": [{"lead": "Escolha um “ponto de ordem” para amanhã:"}, {"ul": ["água visível;", "refeição planejada;", "lanche separado;", "caminhada marcada;", "horário de dormir;", "compra simples."]}, {"p": "Seu corpo precisa de menos caos e mais repetição."}]}, "4": {"titulo": "Seu Raio-X mostrou que seu travamento não está em um ponto só.", "corpo": [{"p": "Quando quatro áreas aparecem empatadas, isso indica que o problema provavelmente não é uma única escolha errada."}, {"p": "É o processo inteiro que está sem direção suficiente."}, {"beats": ["A alimentação fica solta.", "A rotina não ajuda.", "A constância quebra.", "O corpo responde.", "E você sente que começa sempre do zero."]}, {"p": "Mas isso não significa que está tudo perdido."}, {"p": "Significa que você precisa parar de tentar resolver tudo ao mesmo tempo."}], "pergunta": "Qual dessas áreas, se melhorasse primeiro, deixaria as outras mais fáceis?", "acao": [{"lead": "Escolha apenas uma prioridade para as próximas 24 horas:"}, {"ul": ["organizar uma refeição;", "beber água;", "caminhar;", "dormir melhor;", "planejar uma compra;", "escrever seu primeiro passo."]}, {"p": "Uma prioridade bem escolhida começa a destravar o resto."}]}, "5": {"titulo": "Seu Raio-X mostrou que você está tentando carregar muita coisa ao mesmo tempo.", "corpo": [{"p": "Quando todos os travamentos aparecem empatados, isso não significa que você falhou em tudo."}, {"p": "Significa que seu processo está sem uma ordem clara."}, {"p": "Você talvez tente mexer na alimentação, rotina, barriga, constância e direção ao mesmo tempo."}, {"p": "E quando tudo vira prioridade, nada vira prática."}, {"p": "O caminho agora não é se cobrar mais."}, {"p": "É simplificar."}], "pergunta": "Se você só pudesse escolher um primeiro passo hoje, qual seria?", "acao": [{"lead": "Complete:"}, {"write": "“Hoje, eu vou começar por…”"}, {"p": "E escolha apenas uma opção:"}, {"ul": ["água;", "uma refeição;", "uma caminhada;", "uma compra;", "uma hora de sono;", "uma anotação sincera sobre seu maior travamento."]}, {"p": "Não precisa resolver tudo hoje."}, {"p": "Precisa começar por algum lugar."}]}};
+const NOME_EMPATE = { A: "alimentação", B: "constância", C: "rotina", D: "barriga/inchaço", E: "falta de direção" };
+
 const FAIXAS_PESO = [
   [1.50, 1.56, 42, 61], [1.57, 1.62, 46, 65], [1.63, 1.68, 49, 70], [1.69, 1.74, 53, 75], [1.75, 1.80, 57, 81]
 ];
@@ -512,8 +524,8 @@ const IMC_FAIXAS = [
    · 14 contagem · 15 diagnóstico · 16 CTA */
 const Q0 = 2, CONTATO = 10, AGUA = 11, IMC = 12, PESO = 13, RESUMO = 14, DIAGNOSTICO = 15, CTA = 16;
 const TOTAL = CTA;
-const STORE = "raioX-travamento-v2";
-const blank = () => ({ step: 0, nome: "", email: "", telefone: "", consent: false, enviadoPara: "", idade: "", altura: "", peso: "", objetivo: "", answers: Array(8).fill(null) });
+const STORE = "raioX-travamento-v3";
+const blank = () => ({ step: 0, nome: "", email: "", telefone: "", consent: false, registrado: "", idade: "", altura: "", peso: "", objetivo: "", answers: Array(8).fill(null) });
 let state = blank();
 try { const s = JSON.parse(localStorage.getItem(STORE)); if (s && Array.isArray(s.answers)) state = Object.assign(blank(), s); } catch (e) {}
 const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) {} };
@@ -620,7 +632,7 @@ function telaContato() {
   <form class="screen card" id="formContato" novalidate>
     <span class="eyebrow">Raio-X concluído</span>
     <h2>${nome ? nome + ", seu" : "Seu"} Raio&#8209;X está pronto</h2>
-    <p class="muted">Deixe seu e-mail para receber o resultado completo: seu travamento, sua meta de água, seu IMC, sua referência de peso e a ação para começar hoje. Assim você não perde nada.</p>
+    <p class="muted">Deixe seu e-mail e seu WhatsApp para liberar o resultado completo: seu travamento, sua meta de água, seu IMC, sua referência de peso e a ação para começar hoje. No final, você baixa tudo em PDF.</p>
     <div class="field">
       <label for="email">E-mail</label>
       <input type="email" id="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" value="${esc(state.email)}">
@@ -633,12 +645,12 @@ function telaContato() {
     </div>
     <label class="consent" for="consent">
       <input type="checkbox" id="consent" ${state.consent ? "checked" : ""}>
-      <span>Autorizo a equipe da Thaís Tavares a salvar meus dados, me enviar meu resultado por e-mail e falar comigo pelo WhatsApp.</span>
+      <span>Autorizo a equipe da Thaís Tavares a salvar meus dados e falar comigo pelo WhatsApp e e-mail sobre o meu resultado.</span>
     </label>
     <span class="err" id="err-consent"></span>
     <div class="nav">
       <button type="button" class="ghost" data-go="${Q0 + 7}">Voltar</button>
-      <button type="submit" class="btn">Receber meu resultado</button>
+      <button type="submit" class="btn">Ver meu resultado</button>
     </div>
   </form>`;
 }
@@ -739,9 +751,37 @@ function telaResumo() {
     <h2>Agora veja o seu Raio-X</h2>
     <p class="muted">Cada resposta soma 1 ponto para uma letra. A letra que mais apareceu mostra seu principal travamento hoje.</p>
     <div class="bars">${barras}</div>
-    ${top.length > 1 ? `<p class="tie-note">Deu empate entre ${top.map(k => CATS[k].curto.toLowerCase()).join(" e ")}. Seu resultado pode estar travado por mais de um ponto — vou te mostrar ${top.length === 2 ? "os dois diagnósticos" : "todos eles"}.</p>` : ""}
+    ${top.length > 1 ? `<p class="tie-note">Deu empate entre ${nomesEmpate(top)}. Isso significa que seu resultado talvez não esteja parado por um único motivo, mas por fatores que se alimentam entre si.</p>` : ""}
     <div class="nav"><button class="ghost" data-go="${PESO}">Voltar</button><button class="btn" data-go="${DIAGNOSTICO}">Abrir meu diagnóstico</button></div>
   </section>`;
+}
+
+function nomesEmpate(top) { return top.map(k => NOME_EMPATE[k]).join(" + "); }
+function comboDe(top) { return top.length < 2 ? null : COMBOS[top.length >= 4 ? String(top.length) : top.join("")]; }
+function comAgua(t) { return t.replace("{AGUA}", ` (${calcAgua().txt} L)`); }
+
+function blocosHTML(arr) {
+  return arr.map(b =>
+    b.p ? `<p>${b.p}</p>` :
+    b.lead ? `<h3>${b.lead}</h3>` :
+    b.beats ? `<div class="beats">${b.beats.map(x => `<span>${x}</span>`).join("")}</div>` :
+    b.ul ? `<ul>${b.ul.map(x => `<li>${comAgua(x)}</li>`).join("")}</ul>` :
+    b.ol ? `<ol class="olist">${b.ol.map(x => `<li>${x}</li>`).join("")}</ol>` :
+    b.write ? `<div class="write">${b.write}</div>` : "").join("");
+}
+
+function blocoCombo(top) {
+  const c = comboDe(top);
+  const cores = top.map(k => `var(--cat-${k})`).join(", ");
+  return `
+  <article class="card diag combo" style="--c:var(--coral);--bar:linear-gradient(90deg, ${cores})">
+    <span class="eyebrow">Combinação · ${top.join(" + ")}</span>
+    <h2>${c.titulo}</h2>
+    <div class="stack">${blocosHTML(c.corpo)}</div>
+    <div class="reflect"><span class="k">Pergunta para você</span><q>${c.pergunta}</q></div>
+    <div class="todo"><span class="k">Ação prioritária para hoje</span>${blocosHTML(c.acao)}</div>
+  </article>
+  <p class="between">Agora veja cada travamento do seu empate, um por um 👇🏼</p>`;
 }
 
 function blocoDiag(k, idx, total) {
@@ -777,8 +817,10 @@ function telaResultado() {
   <div class="screen stack">
     <section class="result-hero" style="--c:var(--cat-${principal})">
       <span class="eyebrow">Raio-X ${nome ? "de " + nome : "pronto"}</span>
-      <h1>${top.length > 1 ? "Seu travamento tem mais de um ponto" : CATS[principal].nome}</h1>
-      <p>${top.length > 1 ? top.map(k => CATS[k].nome).join(" + ") : `Objetivo: ${esc(state.objetivo.toLowerCase())}. Olha o que o seu Raio-X mostrou 👇🏼`}</p>
+      <h1>${top.length > 1 ? "Seu travamento é uma combinação" : CATS[principal].nome}</h1>
+      <p>${top.length > 1
+        ? `Seu Raio-X mostrou um empate entre <strong>${nomesEmpate(top)}</strong>. Isso significa que seu resultado talvez não esteja travado por um único ponto, mas por uma combinação de fatores que se alimentam entre si.`
+        : `Objetivo: ${esc(state.objetivo.toLowerCase())}. Olha o que o seu Raio-X mostrou 👇🏼`}</p>
     </section>
     <div class="tiles">
       <div class="tile"><span class="k">Água</span><span class="v">${a.txt} L</span><span class="s">por dia, aprox.</span></div>
@@ -786,8 +828,9 @@ function telaResultado() {
       <div class="tile"><span class="k">Peso ref.</span><span class="v">${f ? `${f[2]}–${f[3]}` : "—"}</span><span class="s">${f ? "kg p/ sua altura" : "fora da tabela"}</span></div>
     </div>
     <p class="note">Água, IMC e peso são referências gerais — não definem sozinhos o seu resultado.</p>
+    ${top.length > 1 ? blocoCombo(top) : ""}
     ${top.map((k, i) => blocoDiag(k, i, top.length)).join("")}
-    ${state.enviadoPara ? `<p class="note">📩 Enviei seu resultado completo para <strong>${esc(state.enviadoPara)}</strong>. Se não aparecer em alguns minutos, olhe o spam ou a aba Promoções.</p>` : ""}
+    <button class="btn pdf" data-pdf>Baixar meu Raio-X em PDF</button>
     <div class="nav"><button class="ghost" data-go="${RESUMO}">Voltar</button><button class="btn" data-go="${CTA}">Continuar</button></div>
   </div>`;
 }
@@ -805,6 +848,7 @@ function telaCta() {
       <p>Para entender mais sobre o BMT, fale com a equipe:</p>
       <a class="btn light" id="ctaLink" href="${esc(LINK_COMERCIAL || "#")}" target="_blank" rel="noopener">Quero entender o BMT →</a>
     </section>
+    <button class="btn pdf" data-pdf>Baixar meu Raio-X em PDF</button>
     <div class="nav"><button class="ghost" data-go="${DIAGNOSTICO}" style="flex:1">Rever meu diagnóstico</button></div>
     <button class="restart" id="refazer">Refazer o Raio-X do zero</button>
   </div>`;
@@ -840,11 +884,11 @@ function telValido() { const n = telDigitos().length; return n >= 10 && n <= 13;
 function emailValido() { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(state.email.trim()); }
 function contatoValido() { return emailValido() && telValido() && state.consent; }
 
-/* Envia os dados brutos; o Apps Script recalcula tudo, grava na planilha e manda o e-mail.
-   Só reenvia se o e-mail mudar. */
+/* Envia os dados para o Apps Script gravar na planilha (o travamento é recalculado lá a partir
+   das respostas). Só reenvia se o e-mail mudar. */
 function enviarLead() {
   const email = state.email.trim();
-  if (!PLANILHA_URL || !contatoValido() || state.enviadoPara === email) return;
+  if (!PLANILHA_URL || !contatoValido() || state.registrado === email) return;
   const body = JSON.stringify({
     nome: state.nome.trim(), email, telefone: state.telefone.trim(),
     objetivo: state.objetivo, idade: state.idade, altura: alturaM(), peso: pesoKg(),
@@ -852,8 +896,181 @@ function enviarLead() {
   });
   // no-cors + text/plain: o Apps Script recebe sem precisar de CORS
   fetch(PLANILHA_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body })
-    .catch(() => { state.enviadoPara = ""; save(); });
-  state.enviadoPara = email; save();
+    .catch(() => { state.registrado = ""; save(); });
+  state.registrado = email; save();
+}
+
+/* ---------- PDF (jsPDF carregado só quando a pessoa pede o arquivo) ---------- */
+const LOGO_MARCA = "data:image/png;base64,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";
+const LOGO_TEXTO = "data:image/png;base64,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";
+
+function carregarJsPDF() {
+  if (window.jspdf) return Promise.resolve(window.jspdf.jsPDF);
+  return new Promise((ok, erro) => {
+    const sc = document.createElement("script");
+    sc.src = "jspdf.umd.min.js";
+    sc.onload = () => window.jspdf ? ok(window.jspdf.jsPDF) : erro(new Error("jsPDF"));
+    sc.onerror = erro;
+    document.head.appendChild(sc);
+  });
+}
+
+/* As fontes padrão do PDF não têm aspas curvas, travessão, setas nem emoji */
+function pdfTxt(t) {
+  return String(t).replace(/<[^>]+>/g, "").replace(/[“”]/g, '"').replace(/[‘’]/g, "'")
+    .replace(/—/g, "-").replace(/…/g, "...").replace(/→/g, "->")
+    .replace(/[\u{1F000}-\u{1FFFF}\u{2600}-\u{27BF}\u{FE0F}]/gu, "").trim();
+}
+
+async function gerarPDF(btn) {
+  btn.setAttribute("aria-busy", "true"); const rotulo = btn.textContent; btn.textContent = "Gerando PDF…";
+  try {
+    const jsPDF = await carregarJsPDF();
+    const doc = new jsPDF({ unit: "mm", format: "a4" });
+    const W = 210, M = 16, LARG = W - 2 * M, FIM = 282;
+    const COR = { ink: [58, 43, 42], soft: [122, 101, 96], coral: [214, 96, 90], deep: [184, 70, 63], peach: [253, 232, 220], peachD: [248, 200, 168], ground: [255, 246, 241] };
+    const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+    const CAT_HEX = { A: "#E0764F", B: "#A8679E", C: "#DE9A34", D: "#3F9C99", E: "#C94B5B" };
+    let y = M;
+
+    const novaPagina = () => { doc.addPage(); y = M; };
+    const cabe = h => { if (y + h > FIM) novaPagina(); };
+    const linhas = (t, tam, larg) => { doc.setFontSize(tam); return doc.splitTextToSize(pdfTxt(t), larg); };
+    function texto(t, { tam = 10.5, negrito = false, cor = COR.ink, x = M, larg = LARG, antes = 0, depois = 2.2, ent = 1.45 } = {}) {
+      doc.setFont("helvetica", negrito ? "bold" : "normal"); doc.setTextColor(...cor);
+      const ls = linhas(t, tam, larg); const lh = tam * 0.3528 * ent;
+      y += antes;
+      ls.forEach(l => { cabe(lh); doc.text(l, x, y + lh * 0.8); y += lh; });
+      y += depois;
+    }
+    function rotuloSec(t, cor = COR.deep) { texto(t.toUpperCase(), { tam: 8, negrito: true, cor, depois: 1.5 }); }
+    function caixa(t, { fundo = COR.peach, tam = 12, rot = "Pergunta para você" } = {}) {
+      doc.setFont("helvetica", "bold");
+      const ls = linhas(t, tam, LARG - 12); const lh = tam * 0.3528 * 1.4; const h = 13 + ls.length * lh;
+      cabe(h + 4);
+      doc.setFillColor(...fundo); doc.roundedRect(M, y, LARG, h, 3, 3, "F");
+      doc.setFontSize(8); doc.setTextColor(...COR.deep); doc.text(rot.toUpperCase(), M + 6, y + 7);
+      doc.setFontSize(tam); doc.setTextColor(...COR.ink);
+      ls.forEach((l, i) => doc.text(l, M + 6, y + 12 + lh * 0.8 + i * lh));
+      y += h + 5;
+    }
+    function blocos(arr) {
+      arr.forEach(b => {
+        if (b.p) texto(b.p);
+        else if (b.lead) texto(b.lead, { negrito: true, tam: 11 });
+        else if (b.beats) {
+          const y0 = y; b.beats.forEach(x => texto(x, { negrito: true, tam: 11, x: M + 5, larg: LARG - 5, depois: 0.6 }));
+          if (y > y0) { doc.setDrawColor(...COR.coral); doc.setLineWidth(0.8); doc.line(M + 1, Math.max(M, y0), M + 1, y - 0.6); }
+          y += 2;
+        }
+        else if (b.ul) b.ul.forEach(x => texto("•  " + comAgua(x), { x: M + 3, larg: LARG - 3, depois: 1 }));
+        else if (b.ol) b.ol.forEach((x, i) => texto((i + 1) + ".  " + x, { x: M + 3, larg: LARG - 3, depois: 1, negrito: true }));
+        else if (b.write) texto(b.write, { negrito: true, tam: 11.5, cor: COR.deep, antes: 1, depois: 3 });
+      });
+      y += 1;
+    }
+    function faixaCor(rgbs) {
+      cabe(40); const w = LARG / rgbs.length;
+      rgbs.forEach((c, i) => { doc.setFillColor(...c); doc.rect(M + i * w, y, w, 2.2, "F"); });
+      y += 7;
+    }
+
+    const { top } = placar(); const a = calcAgua(), { imc, faixa } = calcImc(), fp = faixaPeso();
+    const nome = state.nome.trim().split(/\s+/)[0] || "";
+
+    // Capa
+    doc.setFillColor(...COR.coral); doc.rect(0, 0, W, 62, "F");
+    doc.setFillColor(...COR.peachD); doc.rect(0, 62, W, 2.5, "F");
+    doc.addImage(LOGO_MARCA, "PNG", M, 12, 9, 9); doc.addImage(LOGO_TEXTO, "PNG", M + 12, 13.2, 24, 6.6);
+    doc.setTextColor(255, 255, 255); doc.setFont("helvetica", "bold"); doc.setFontSize(8);
+    doc.text("COMECE AGORA  ·  SEQUE ATÉ JANEIRO", W - M, 17, { align: "right" });
+    doc.setFontSize(23); doc.text(pdfTxt(nome ? `${nome}, seu Raio-X do Travamento` : "Seu Raio-X do Travamento"), M, 36);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(11.5);
+    doc.text(doc.splitTextToSize(pdfTxt(top.length > 1 ? "Empate: " + top.map(k => CATS[k].nome).join(" + ") : CATS[top[0]].nome), LARG), M, 45);
+    y = 74;
+
+    // Números
+    texto("Seus números de referência", { tam: 14, negrito: true, depois: 3 });
+    const tiles = [["Água", `${a.txt} L`, "por dia, aprox."], ["IMC", fmt(imc), faixa.nome], ["Peso de referência", fp ? `${fp[2]} a ${fp[3]} kg` : "-", fp ? `para ${fmt(alturaM(), 2)} m` : "fora da tabela"]];
+    const tw = (LARG - 8) / 3;
+    tiles.forEach(([k, v, sub], i) => {
+      const x = M + i * (tw + 4);
+      doc.setFillColor(...COR.ground); doc.roundedRect(x, y, tw, 26, 3, 3, "F");
+      doc.setFont("helvetica", "bold"); doc.setFontSize(7.5); doc.setTextColor(...COR.soft); doc.text(k.toUpperCase(), x + tw / 2, y + 7, { align: "center" });
+      doc.setFontSize(16); doc.setTextColor(...COR.ink); doc.text(v, x + tw / 2, y + 15.5, { align: "center" });
+      doc.setFont("helvetica", "normal"); doc.setFontSize(8); doc.setTextColor(...COR.soft); doc.text(doc.splitTextToSize(sub, tw - 4), x + tw / 2, y + 21, { align: "center" });
+    });
+    y += 31;
+    texto("Água: peso × 35 ml. IMC: peso ÷ (altura × altura). Peso de referência: tabela baseada no IMC saudável, para alturas de 1,50 a 1,80 m. São referências gerais: não avaliam composição corporal, massa muscular, retenção, metabolismo, histórico ou hábitos, e não substituem avaliação individual." + (num(state.idade) < 18 ? " Para menores de 18 anos, essas referências devem ser orientadas por um profissional." : ""), { tam: 8.5, cor: COR.soft, depois: 6 });
+
+    // Empate
+    if (top.length > 1) {
+      const c = comboDe(top);
+      faixaCor(top.map(k => hex(CAT_HEX[k])));
+      rotuloSec("Combinação · " + nomesEmpate(top));
+      texto(c.titulo, { tam: 15, negrito: true, depois: 2 });
+      texto("Isso significa que seu resultado talvez não esteja travado por um único ponto, mas por uma combinação de fatores que se alimentam entre si.", { cor: COR.soft });
+      blocos(c.corpo);
+      caixa(c.pergunta);
+      rotuloSec("Ação prioritária para hoje");
+      blocos(c.acao);
+      y += 4;
+    }
+
+    // Diagnósticos
+    top.forEach(k => {
+      const d = DIAG[k];
+      faixaCor([hex(CAT_HEX[k])]);
+      rotuloSec(CATS[k].nome, hex(CAT_HEX[k]));
+      texto(d.titulo, { tam: 15, negrito: true, depois: 2 });
+      blocos(d.corpo);
+      caixa(d.pergunta);
+      rotuloSec("Ação simples para hoje");
+      texto(d.acaoTitulo, { negrito: true, tam: 11 });
+      if (d.acaoLista) { texto(d.acaoIntro); d.acaoLista.forEach(x => texto("•  " + comAgua(x), { x: M + 3, larg: LARG - 3, depois: 1 })); y += 1; }
+      if (d.acaoEscrever) d.acaoEscrever.forEach(x => texto(x, { negrito: true, tam: 11.5, cor: COR.deep, depois: 2 }));
+      texto(d.acaoFim, { cor: COR.soft, depois: 3 });
+      rotuloSec("Próximo passo");
+      d.proximo.forEach(x => texto(x, { negrito: true, depois: 1.2 }));
+      y += 6;
+    });
+
+    // CTA
+    const cta = ["Se o seu Raio-X mostrou que você não está travada por falta de vontade, mas por falta de clareza, rotina, constância ou acompanhamento, talvez esse seja o momento de parar de tentar sozinha.",
+      "O BMT foi criado para mulheres que querem construir o corpo, a alimentação e os hábitos que desejam com plano, ajustes e suporte."];
+    doc.setFont("helvetica", "normal");
+    const ctaLs = cta.map(t => linhas(t, 10.5, LARG - 16)); const lh = 10.5 * 0.3528 * 1.45;
+    const hCta = 24 + ctaLs.reduce((s, l) => s + l.length * lh + 2, 0) + 12 + 16;
+    cabe(hCta);
+    doc.setFillColor(...COR.coral); doc.roundedRect(M, y, LARG, hCta, 4, 4, "F");
+    let yy = y + 11;
+    doc.setTextColor(255, 255, 255); doc.setFont("helvetica", "bold"); doc.setFontSize(16); doc.text("Quer começar com mais direção?", M + 8, yy); yy += 7;
+    doc.setFont("helvetica", "normal"); doc.setFontSize(10.5);
+    ctaLs.forEach(ls => { ls.forEach(l => { doc.text(l, M + 8, yy); yy += lh; }); yy += 2; });
+    doc.setFont("helvetica", "bold"); doc.setFontSize(11);
+    doc.text("Não é sobre fazer loucura até janeiro. É sobre começar agora com direção.", M + 8, yy, { maxWidth: LARG - 16 }); yy += 9;
+    if (LINK_COMERCIAL) {
+      doc.setFillColor(255, 255, 255); doc.roundedRect(M + 8, yy - 1, 72, 11, 3, 3, "F");
+      doc.setTextColor(...COR.deep); doc.setFontSize(11);
+      doc.textWithLink("Quero entender o BMT  >", M + 13, yy + 6, { url: LINK_COMERCIAL });
+    }
+    y += hCta + 4;
+
+    // Rodapé em todas as páginas
+    const n = doc.getNumberOfPages();
+    for (let i = 1; i <= n; i++) {
+      doc.setPage(i); doc.setFont("helvetica", "normal"); doc.setFontSize(7.5); doc.setTextColor(...COR.soft);
+      doc.text("Material educativo. Não substitui avaliação nutricional, médica ou individualizada.  ·  Thaís Tavares", M, 291);
+      doc.text(`${i}/${n}`, W - M, 291, { align: "right" });
+    }
+    const arq = "Raio-X-do-Travamento" + (nome ? "-" + nome.normalize("NFD").replace(/[^\w-]/g, "") : "") + ".pdf";
+    doc.save(arq);
+    toast("PDF pronto. Confira seus downloads.");
+  } catch (e) {
+    toast("Não consegui gerar o PDF agora. Tente de novo em instantes.");
+  } finally {
+    btn.removeAttribute("aria-busy"); btn.textContent = rotulo;
+  }
 }
 
 function dadosValidos() {
@@ -903,7 +1120,7 @@ function bind() {
       $("#email").setAttribute("aria-invalid", !emailValido());
       $("#err-tel").textContent = telValido() ? "" : "Informe seu WhatsApp com DDD (ex.: 11 98765-4321).";
       $("#telefone").setAttribute("aria-invalid", !telValido());
-      $("#err-consent").textContent = state.consent ? "" : "Marque a autorização para receber seu resultado.";
+      $("#err-consent").textContent = state.consent ? "" : "Marque a autorização para ver seu resultado.";
       if (contatoValido()) { enviarLead(); go(AGUA); }
       else { const bad = fc.querySelector("[aria-invalid=true]") || $("#consent"); bad.focus(); }
     });
@@ -916,6 +1133,8 @@ function bind() {
     const next = document.querySelector(".nav .btn"); next.disabled = false;
     clearTimeout(bind._t); bind._t = setTimeout(() => go(state.step + 1), 320);
   }));
+
+  document.querySelectorAll("[data-pdf]").forEach(b => b.addEventListener("click", () => { if (!b.hasAttribute("aria-busy")) gerarPDF(b); }));
 
   const cta = $("#ctaLink");
   if (cta && !LINK_COMERCIAL) cta.addEventListener("click", e => { e.preventDefault(); toast("Link do comercial ainda não configurado."); });
