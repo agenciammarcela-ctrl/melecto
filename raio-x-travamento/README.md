@@ -19,7 +19,7 @@ Planilha no Google Drive: **Leads — Raio-X do Travamento**
 https://docs.google.com/spreadsheets/d/1jogXVfuZV13gmlbZNx2RqN9qcIAG3sLl5A3YT66Kt9E/edit
 Colunas: Data/hora · Nome · E-mail · Telefone (WhatsApp) · Travamento · Objetivo.
 
-Depois das 8 perguntas, a pessoa informa **e-mail + WhatsApp + autorização (LGPD)**. O quiz grava uma linha na planilha (via `apps-script.gs`) e libera o resultado. No diagnóstico e no card final há o botão **Baixar meu Raio-X em PDF**: o PDF é gerado no próprio celular (números, combinação de empate, diagnósticos, ação de hoje e botão do BMT clicável). Nenhum e-mail é enviado.
+Depois das 8 perguntas, a pessoa informa **e-mail + WhatsApp + autorização (LGPD)**. O quiz grava uma linha na planilha (via `apps-script.gs`) e libera o resultado. No diagnóstico há o botão **Baixar meu Raio-X em PDF**: o PDF é gerado no próprio celular (números, combinação de empate, diagnósticos, ação de hoje e uma página final com o antes e depois e o botão do BMT clicável). Nenhum e-mail é enviado.
 
 O gerador de PDF (jsPDF) está embutido no próprio `index.html`, então o site é um arquivo só. Se o navegador do Instagram/WhatsApp não baixar, aparece um link para abrir o PDF.
 

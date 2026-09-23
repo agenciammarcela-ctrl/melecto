@@ -1,11 +1,12 @@
 /**
  * Raio-X do Travamento → planilha de leads
- * (não envia e-mail: a pessoa baixa o resultado em PDF no próprio quiz)
+ * NÃO envia e-mail: a pessoa baixa o resultado em PDF no próprio quiz.
  *
- * Como atualizar:
- * 1. Na planilha, menu Extensões → Apps Script. Apague tudo e cole este arquivo inteiro. Salve.
- * 2. Implantar → Gerenciar implantações → lápis (editar) → Versão: "Nova versão" → Implantar.
- *    Assim a URL /exec continua a mesma e o quiz não precisa mudar.
+ * Como atualizar (é obrigatório criar uma "Nova versão", só salvar não basta):
+ * 1. Na planilha, menu Extensões → Apps Script. Apague TUDO e cole este arquivo inteiro. Salve (Ctrl+S).
+ * 2. Implantar → Gerenciar implantações → clique no lápis (editar) da implantação ativa
+ *    → em "Versão", escolha "Nova versão" → Implantar.
+ *    (Não use "Nova implantação": ela cria outra URL e o quiz continua falando com a antiga.)
  */
 
 const SHEET_ID = "1jogXVfuZV13gmlbZNx2RqN9qcIAG3sLl5A3YT66Kt9E";
@@ -21,8 +22,8 @@ const CATS = {
 
 function doPost(e) {
   const d = JSON.parse((e && e.postData && e.postData.contents) || "{}");
-  const respostas = String(d.respostas || "").replace(/[^A-E]/g, "").slice(0, 8);
-  const top = travamentos(respostas);
+  const resp = String(d.resp || d.respostas || "").replace(/[^A-E]/g, "").slice(0, 8);
+  const travamento = resp ? travamentos(resp).map(k => CATS[k]).join(" + ") : texto(d.travamento, 200);
 
   const sheet = SpreadsheetApp.openById(SHEET_ID).getSheets()[0];
   sheet.getRange(1, 1, 1, CABECALHO.length).setValues([CABECALHO]);
@@ -31,15 +32,15 @@ function doPost(e) {
     celula(texto(d.nome, 60)),
     celula(texto(d.email, 120)),
     celula(texto(d.telefone, 30)),
-    top.map(k => CATS[k]).join(" + "),
+    celula(travamento),
     celula(texto(d.objetivo, 40))
   ]);
   return ContentService.createTextOutput("ok");
 }
 
-function travamentos(respostas) {
+function travamentos(resp) {
   const c = { A: 0, B: 0, C: 0, D: 0, E: 0 };
-  respostas.split("").forEach(k => c[k]++);
+  resp.split("").forEach(k => c[k]++);
   const max = Math.max.apply(null, Object.keys(c).map(k => c[k]));
   return max ? Object.keys(c).filter(k => c[k] === max) : [];
 }

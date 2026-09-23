@@ -904,10 +904,12 @@ function contatoValido() { return emailValido() && telValido() && state.consent;
 function enviarLead() {
   const email = state.email.trim();
   if (!PLANILHA_URL || !contatoValido() || state.registrado === email) return;
+  // Só dados de cadastro (sem peso/altura/"respostas"): assim nenhuma versão antiga do
+  // Apps Script consegue montar e enviar e-mail.
+  const { top } = placar();
   const body = JSON.stringify({
-    nome: state.nome.trim(), email, telefone: state.telefone.trim(),
-    objetivo: state.objetivo, idade: state.idade, altura: alturaM(), peso: pesoKg(),
-    respostas: state.answers.join("")
+    nome: state.nome.trim(), email, telefone: state.telefone.trim(), objetivo: state.objetivo,
+    travamento: top.map(k => CATS[k].nome).join(" + "), resp: state.answers.join("")
   });
   // no-cors + text/plain: o Apps Script recebe sem precisar de CORS
   fetch(PLANILHA_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body })
@@ -1040,12 +1042,27 @@ function gerarPDF(btn) {
       y += 6;
     });
 
+    // Página final: antes e depois + convite do BMT
+    novaPagina();
+    texto("Resultados que começam com direção", { tam: 16, negrito: true, depois: 4 });
+    if (IMAGEM_BMT && IMAGEM_BMT.startsWith("data:image/jpeg")) {
+      const lado = 118, xi = (W - lado) / 2;
+      doc.addImage(IMAGEM_BMT, "JPEG", xi, y, lado, lado);
+      doc.setFont("helvetica", "bold"); doc.setFontSize(7.5);
+      [["ANTES", xi + 3], ["DEPOIS", xi + lado - 19]].forEach(([t, x]) => {
+        doc.setFillColor(255, 255, 255); doc.roundedRect(x, y + lado - 9, 16, 6, 3, 3, "F");
+        doc.setTextColor(...COR.deep); doc.text(t, x + 8, y + lado - 4.9, { align: "center" });
+      });
+      y += lado + 2;
+      texto("Resultado de aluna do BMT. Cada corpo responde de um jeito: resultados variam de pessoa para pessoa.", { tam: 8, cor: COR.soft, x: xi, larg: lado, depois: 5 });
+    }
+
     // CTA
     const cta = ["Se o seu Raio-X mostrou que você não está travada por falta de vontade, mas por falta de clareza, rotina, constância ou acompanhamento, talvez esse seja o momento de parar de tentar sozinha.",
       "O BMT foi criado para mulheres que querem construir o corpo, a alimentação e os hábitos que desejam com plano, ajustes e suporte."];
     doc.setFont("helvetica", "normal");
     const ctaLs = cta.map(t => linhas(t, 10.5, LARG - 16)); const lh = 10.5 * 0.3528 * 1.45;
-    const hCta = 24 + ctaLs.reduce((s, l) => s + l.length * lh + 2, 0) + 12 + 16;
+    const hCta = 24 + ctaLs.reduce((s, l) => s + l.length * lh + 2, 0) + 12 + 6;
     cabe(hCta);
     doc.setFillColor(...COR.coral); doc.roundedRect(M, y, LARG, hCta, 4, 4, "F");
     let yy = y + 11;
