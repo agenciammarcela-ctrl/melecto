@@ -21,7 +21,9 @@ Colunas: Data/hora · Nome · E-mail · Telefone (WhatsApp) · Travamento · Obj
 
 Depois das 8 perguntas, a pessoa informa **e-mail + WhatsApp + autorização (LGPD)**. O quiz grava uma linha na planilha (via `apps-script.gs`) e libera o resultado. No diagnóstico e no card final há o botão **Baixar meu Raio-X em PDF**: o PDF é gerado no próprio celular (números, combinação de empate, diagnósticos, ação de hoje e botão do BMT clicável). Nenhum e-mail é enviado.
 
-O PDF usa o arquivo `jspdf.umd.min.js`, que precisa ficar **na mesma pasta** do `index.html`.
+O gerador de PDF (jsPDF) está embutido no próprio `index.html`, então o site é um arquivo só. Se o navegador do Instagram/WhatsApp não baixar, aparece um link para abrir o PDF.
+
+Imagem do card final do BMT: coloque o arquivo `bmt.jpg` na mesma pasta do `index.html` (ou mude `IMAGEM_BMT`). Sem o arquivo, o card aparece sem imagem.
 
 A URL do Apps Script já está em `PLANILHA_URL` e o link do comercial em `LINK_COMERCIAL`.
 Se mudar o `apps-script.gs`: cole de novo no Apps Script e use **Implantar → Gerenciar implantações → editar → Nova versão** (a URL /exec continua a mesma).
@@ -47,7 +49,7 @@ O preview no Claude (claude.ai/artifact) serve para ver o visual, mas não salva
 | 13 | Sua entrega 3/3 · Peso | Tabela 1,50–1,80 m com a linha da pessoa destacada (ou aviso se estiver fora) |
 | 14 | Agora veja o seu Raio-X | Contagem por letra em barras + aviso de empate |
 | 15 | Diagnóstico | Resumo dos números + copy da combinação (se houver empate) + diagnósticos das letras empatadas + botão do PDF |
-| 16 | CTA | Convite para o BMT com botão para o WhatsApp do comercial + botão do PDF |
+| 16 | CTA | Imagem + convite para o BMT, com um único botão: WhatsApp do comercial |
 
 ## Lógica dos cálculos
 
