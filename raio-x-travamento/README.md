@@ -23,7 +23,7 @@ Depois das 8 perguntas, a pessoa informa **e-mail + WhatsApp + autorização (LG
 
 O gerador de PDF (jsPDF) está embutido no próprio `index.html`, então o site é um arquivo só. Se o navegador do Instagram/WhatsApp não baixar, aparece um link para abrir o PDF.
 
-Imagem do card final do BMT: coloque o arquivo `bmt.jpg` na mesma pasta do `index.html` (ou mude `IMAGEM_BMT`). Sem o arquivo, o card aparece sem imagem.
+Imagem do card final do BMT (antes e depois) embutida no `index.html` em `IMAGEM_BMT`, com as etiquetas Antes/Depois e a legenda "resultados variam de pessoa para pessoa".
 
 A URL do Apps Script já está em `PLANILHA_URL` e o link do comercial em `LINK_COMERCIAL`.
 Se mudar o `apps-script.gs`: cole de novo no Apps Script e use **Implantar → Gerenciar implantações → editar → Nova versão** (a URL /exec continua a mesma).
