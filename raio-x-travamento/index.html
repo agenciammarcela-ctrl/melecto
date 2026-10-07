@@ -904,12 +904,13 @@ function contatoValido() { return emailValido() && telValido() && state.consent;
 function enviarLead() {
   const email = state.email.trim();
   if (!PLANILHA_URL || !contatoValido() || state.registrado === email) return;
-  // Só dados de cadastro (sem peso/altura/"respostas"): assim nenhuma versão antiga do
-  // Apps Script consegue montar e enviar e-mail.
+  // Sem peso/altura: a versão antiga do Apps Script só mandava e-mail com esses dois campos,
+  // então ela grava o travamento (calculado de "respostas") mas não consegue enviar e-mail.
   const { top } = placar();
   const body = JSON.stringify({
     nome: state.nome.trim(), email, telefone: state.telefone.trim(), objetivo: state.objetivo,
-    travamento: top.map(k => CATS[k].nome).join(" + "), resp: state.answers.join("")
+    travamento: top.map(k => CATS[k].nome).join(" + "), resp: state.answers.join(""),
+    respostas: state.answers.join("")
   });
   // no-cors + text/plain: o Apps Script recebe sem precisar de CORS
   fetch(PLANILHA_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body })
