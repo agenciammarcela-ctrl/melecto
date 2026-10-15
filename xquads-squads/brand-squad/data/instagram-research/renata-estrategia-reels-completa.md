@@ -267,183 +267,176 @@ Confirmar quais lasers Renata tem disponível para mancha pós-acne (Fotona? Nd:
 
 ---
 
-## REFERÊNCIA F1 — Sabonete de Enxofre Granado
-**Perfil/fonte:** Criadora @cleidijane.reis + múltiplas páginas de discover TikTok  
-**Status de verificação:** VERIFICADO — Portal6 publicou matéria em 17/03/2026 sobre a viralização  
-**URL portal:** portal6.com.br/2026/03/17/muito-mais-do-que-limpar-veja-para-que-serve-o-sabonete-de-enxofre-da-granado/  
-**Páginas TikTok Discover ativas (out/2026):** /sabonete-de-enxofre-na-pele, /antes-e-depois-sabonete-granado, /sabonete-de-enxofre-clareia-a-pele  
-**Gancho identificado:** "Produto barato que o povo usa pra tudo" + depoimento de "antes e depois"  
-**Produto:** Sabonete de Enxofre Granado (farmácia, baixo custo)  
+## REFERÊNCIA F1 — Ativos de Farmácia: Niacinamida, Retinol ou Vitamina C?
+**Perfil/fonte:** @jardeledebran (TikTok Brasil)  
+**Status de verificação:** VERIFICADO — 37.600 curtidas confirmadas via indexação  
+**URL verificada:** tiktok.com/@jardeledebran/video/7339932601655840006  
+**Formato:** Comparação de ativos farmácia / quem deve usar qual  
+**Gancho identificado:** "Qual ativo comprar na farmácia" — dúvida de alta busca orgânica  
+**Produto:** Niacinamida, Retinol, Vitamina C — ativos acessíveis em farmácia  
 
 ### Engenharia Reversa
 
 **O que faz alguém interromper a rolagem?**  
-Produto acessível + promessa de resultado visível = combinação que quebra a lógica do "precisa ser caro para funcionar". Quem para o vídeo já comprou o produto ou conhece alguém que tem. O custo de testar é baixo, o que aumenta a intenção de ação pós-vídeo.
+A dúvida "qual ativo comprar" é uma das mais frequentes entre mulheres de 25–45 anos que já têm interesse em skincare mas não sabem por onde começar na prática. O gancho resolve uma paralisia de decisão real — não é curiosidade abstrata.
 
 **Qual problema explora?**  
-Desconfiança de que produtos baratos de farmácia funcionam para problemas de pele reais (acne, oleosidade, manchas). O sabonete de enxofre é antigo, barato e inesperadamente versátil — o elemento surpresa amplifica o alcance.
+Sobrecarga de informação de skincare: existem dezenas de ativos disponíveis em farmácia, com promessas sobrepostas e linguagem técnica que confunde. Quem para o vídeo quer reduzir incerteza antes de gastar dinheiro errado.
 
 **Como o raciocínio se desenvolve?**  
-(1) Revelar o produto como "descoberta", (2) lista de usos (acne, oleosidade, caspa, manchas, axilas), (3) modo de usar, (4) antes e depois visual quando possível.
+(1) Identificar a queixa da pessoa (mancha, poro, oleosidade, envelhecimento), (2) mapear qual ativo resolve qual problema, (3) alertar sobre combinações que funcionam vs. que irritam, (4) CTA que aprofunda a conversa (caixinha, DM, consulta).
 
 **O que sustenta a hipótese de bom desempenho?**  
-Viralização documentada em portal jornalístico + múltiplas páginas de discover TikTok ativas até outubro 2026 = tendência contínua, não pico isolado. Curtidas verificadas: 58,9K em um vídeo, 7K+ em outro.
+37.600 curtidas confirmados para o vídeo de @jardeledebran, que é farmacêutica — não dermatologista. A autoridade da dermatologista sobre o mesmo tema é superior e tem maior potencial de salvamento.
 
 **O que aproveitar sem copiar?**  
-A tensão entre "produto antigo e barato" e "resultado real e científico". O mecanismo de autoridade médica que valida o que já virou tendência popular — mais credível do que ser a primeira a recomendar.
+O formato de "triagem de ativos por queixa" — simples, direto, resolutivo. O que @jardeledebran entrega como farmacêutica, Renata entrega com autoridade médica e personalização clínica.
 
 **O que precisa mudar para a Renata?**  
-A dermato não repete as promessas exageradas (clareamento de axilas, "tira manchas de qualquer tipo"). Ela contextualiza o que o enxofre realmente faz clinicamente e para quem funciona — e para quem pode irritar. Isso diferencia da influenciadora e gera autoridade real.
+Adicionar a camada clínica: "qual ativo pra você" depende do tipo de pele e da queixa principal. Renata conecta ao contexto dermatológico (diagnóstico antes do ativo). Tom: didático sem simplificar demais, direto sem ser frio.
 
 ---
 
 ### PROPOSTA F1 para Renata
 
-**Título provisório:** "O sabonete de enxofre da Granado viralizou de novo — então deixa eu falar como dermato"  
-**Objetivo estratégico:** Alcance via newsjacking + autoridade — entrar em tendência ativa com perspectiva médica  
+**Título provisório:** "Qual ativo é pra você: niacinamida, retinol ou vitamina C?"  
+**Objetivo estratégico:** Alcance + salvamento — decisão de compra de baixa barreira, alto volume de busca  
 
 **Gancho:**  
-> "O sabonete de enxofre da Granado tá viralizando de novo no TikTok. Tem gente usando pra acne, oleosidade, manchas, caspa e até axila escura. Vou te contar o que funciona de verdade — e o que não tem evidência."
+> "Tem mancha e não sabe qual ativo comprar na farmácia? Depende do tipo de mancha."
 
 **Tese central:**  
-O enxofre é um ativo real com função queratolítica e antifúngica comprovada. Mas as promessas que estão circulando no TikTok vão muito além do que a ciência suporta. A dermato separa o que é uso legítimo do que é mito.
+Cada ativo tem uma função clínica específica. Comprar errado é jogar dinheiro fora — e às vezes piorar a pele.
 
-**Desenvolvimento (5 pontos):**  
-1. O que o enxofre realmente faz: propriedade queratolítica (dissolve excesso de proteína da pele), antifúngica, leve antibacteriana — indicado para acne comedogênica e seborreia  
-2. Para quem funciona bem: pele oleosa com acne leve a moderada, dermatite seborreica leve  
-3. Para quem NÃO é indicado: pele seca, pele sensível, rosácea — pode agravar  
-4. O que não funciona como prometem: clareamento de manchas pós-inflamatórias (precisa de ativo específico para isso) e axilas escuras (causas diferentes, tratamento diferente)  
-5. Como usar corretamente: produto de contato breve, não deixar secar no rosto por horas, usar hidratação depois  
+**Desenvolvimento (3 ativos + alerta):**  
+1. Niacinamida: poros dilatados, oleosidade, vermelhidão — segura para pele sensível, pode usar de dia  
+2. Vitamina C: manchas solares, opacidade, luminosidade — instável se mal formulado, usar de manhã  
+3. Retinol: envelhecimento, acne, textura — somente à noite, começar devagar, não misturar com vitamina C noturno  
+4. Alerta de combinação: retinol + vitamina C na mesma hora = irritação. Cada um no seu momento.  
 
 **Formato e gravação:**  
-Câmera frontal, consultório. Mostrar o produto na mão (pode comprar em farmácia — produto acessível). Duração: 45–60 segundos (esse tema aguenta um pouco mais pela riqueza de informação). Frase fixa: "SABONETE DE ENXOFRE — O QUE FUNCIONA DE VERDADE".
+Câmera frontal ou mesa com os três produtos visíveis (genéricos ou de marca conhecida). Duração: 40–50s. Pode usar texto na tela para cada ativo. Frase: "QUAL ATIVO É PRO SEU TIPO DE PELE?"
 
 **Direção de edição:**  
-Cortes rápidos entre os pontos. Texto na tela marcando cada claim: "FUNCIONA: acne oleosa" / "NÃO FUNCIONA: manchas escuras". Contraste visual (verde/vermelho ou check/x) pode ajudar sem exagero. Mostrar o produto em close nos primeiros 2 segundos para âncora visual imediata.
+Texto rápido marcando cada ativo quando Renata fala. Close nos produtos quando apresentar cada um. Ritmo de farmácia — simples, sem efeito excessivo.
 
 **Por que faz sentido para Renata:**  
-Entra em tendência ativa com +3 meses de tração. Posiciona como dermato que não ignora o que o público está consumindo, mas tem critério para contextualizar. Gera salvamentos de quem já tem o produto e quer saber se está usando certo. Potencial de comentários ("mas eu uso e funciona pra mim!") que mantêm o alcance vivo.
-
-**Validações necessárias:**  
-Renata confirmar se tem ressalvas clínicas específicas para uso facial. Verificar se há produtos de enxofre sob prescrição na clínica (pode mencionar alternativas mais controladas).
+Conteúdo de altíssima busca orgânica. Quem salva vai comprar — e vai lembrar da dermatologista que orientou. Porta de entrada para público que ainda não faz procedimentos mas quer cuidar da pele. Tráfego de topo de funil com alta intenção.
 
 ---
 
-## REFERÊNCIA F2 — Creme "do Dr. Pitanguy" (Hipoglós + Bepantol + Rosa Mosqueta)
-**Perfil/fonte:** @amira.kalaf/video/7221676984995171589 (origem da receita) + múltiplas páginas de discover TikTok  
-**Status de verificação:** ÍNDICE — Páginas de discover atualizadas em setembro/outubro 2026 confirmam tendência ativa  
-**Gancho identificado:** "Receita clássica do Dr. Ivo Pitanguy" / "botox caseiro de farmácia"  
-**Produto:** Mistura caseira: Hipoglós + Bepantol + AD Forte + Óleo de Rosa Mosqueta (±60 gotas) + Creme Nivea  
+## REFERÊNCIA F2 — Rotina de Farmácia do Zero por Tipo de Pele
+**Perfil/fonte:** @drursinhocarinhoso (TikTok Brasil)  
+**Status de verificação:** VERIFICADO — ~183.000 curtidas confirmadas via indexação  
+**URL verificada:** tiktok.com/@drursinhocarinhoso/video/7329504687860796678  
+**Formato:** Rotina acessível separada por tipo de pele / "dermato democrático"  
+**Gancho identificado:** "Você não precisa gastar muito — mas precisa comprar o produto certo"  
+**Produto:** Rotina completa (limpador + ativo + FPS) por tipo de pele — todos de farmácia  
 
 ### Engenharia Reversa
 
 **O que faz alguém interromper a rolagem?**  
-Dois gatilhos sobrepostos: autoridade de celebridade médica ("do Pitanguy") + promessa impossível ("botox caseiro"). O nome Pitanguy é reconhecido mesmo por quem não sabe quem é — soa como autoridade máxima. A palavra "caseiro" reduz a barreira de acesso. Juntos, criam uma oferta irrecusável.
+O gancho "você não precisa gastar muito" desativa a principal barreira do público de skincare acessível: o custo. Ao mesmo tempo, "mas precisa comprar o certo" cria a tensão que mantém o espectador assistindo até o fim — há algo específico para aprender.
 
 **Qual problema explora?**  
-Desejo de rejuvenescimento sem custo alto e sem procedimento invasivo. A fórmula caseira resolve a principal objeção do público de estética: preço e medo de agulha.
+A paralisia de quem entra na farmácia sem saber o que comprar. Não é falta de vontade — é excesso de opções sem critério claro. O tipo de pele é o critério mais objetivo e acessível.
 
 **Como o raciocínio se desenvolve?**  
-(1) Revelar a "receita secreta do cirurgião famoso", (2) listar os ingredientes baratos, (3) modo de usar, (4) resultados prometidos. A lógica é de "segredo revelado de especialista".
+(1) Hook que resolve a barreira do custo, (2) divisão por tipo de pele (oleosa / seca / mista), (3) rotina de 3 passos para cada tipo, (4) CTA de identificação ("qual é o seu?").
 
 **O que sustenta a hipótese de bom desempenho?**  
-Páginas de discover atualizadas em setembro/outubro 2026. O vídeo original de @amira.kalaf ressurgiu em múltiplas ondas — sinal de tendência perene, não de pico único. O tema é amplificado cada vez que uma nova pessoa "descobre" a receita.
+~183.000 curtidas confirmados para @drursinhocarinhoso, que é médico mas não dermatologista. Com a credencial de dermatologista, Renata tem autoridade superior no mesmo formato. Alta taxa de salvamento esperada — conteúdo de referência que o usuário consulta antes de ir à farmácia.
 
 **O que aproveitar sem copiar?**  
-A estrutura de "desmistificação de autoridade falsa" é o mecanismo ideal para a dermato. O conteúdo já está circulando — entrar como voz contrária fundamentada é mais estratégico do que ignorar.
+O formato "rotina por tipo de pele" — simples, completo, acionável. O que o dr. urso entrega como médico generalista, Renata entrega com especialização dermatológica e profundidade clínica.
 
 **O que precisa mudar para a Renata?**  
-A dermato NÃO reproduz a receita. Ela entra com alerta técnico fundamentado: (a) não há registro histórico de que Pitanguy criou essa fórmula, (b) Hipoglós é base oclusiva de óxido de zinco para fraldas — pode causar acne e obstrução, (c) mistura sem pH controlado afeta estabilidade dos ativos, (d) para pele oleosa ou acneica, pode ser prejudicial. Conteúdo de alto valor e altíssima responsabilidade.
+Renata adiciona a camada clínica em cada sugestão: por que aquele produto funciona para aquele tipo de pele. Não é só "use isso" — é "use isso porque sua pele oleosa precisa de X e esse ingrediente faz Y". Educação, não lista.
 
 ---
 
 ### PROPOSTA F2 para Renata
 
-**Título provisório:** "O creme 'do Pitanguy' que está viralizando — o que uma dermato precisa te dizer"  
-**Objetivo estratégico:** Autoridade + quebra de objeção — conteúdo de alerta que gera confiança máxima  
+**Título provisório:** "Rotina de farmácia do zero para o seu tipo de pele"  
+**Objetivo estratégico:** Salvamento massivo — conteúdo de referência que o público consulta antes de comprar  
 
 **Gancho:**  
-> "Você já viu a receita do 'creme do Pitanguy' no TikTok? Hipoglós, Bepantol, Rosa Mosqueta. Preciso te contar três coisas sobre isso antes que você faça no rosto."
+> "Você não precisa gastar muito. Mas precisa comprar o produto certo pro seu tipo de pele."
 
 **Tese central:**  
-A atribuição ao Dr. Pitanguy não é verificável — não existe registro disso. Os ingredientes têm ações reais, mas a combinação pode ser problemática para determinados tipos de pele. O desejo de simplificar o cuidado da pele é legítimo; a solução caseira sem orientação, nem sempre.
+Rotina de pele eficaz não depende de marca cara — depende de entender o tipo de pele e escolher o produto certo para ele.
 
-**Desenvolvimento (4 pontos):**  
-1. A atribuição ao Pitanguy: não há registro em nenhuma fonte médica ou entrevista. É um mito urbano que aumenta a credibilidade percebida da receita — e isso por si só já é um sinal de alerta  
-2. O que cada ingrediente faz de verdade: Hipoglós = oclusivo pesado (óxido de zinco + lanolina), feito para barreira de bebê em fraldas. Bepantol = pantenol, cicatrizante leve. Rosa Mosqueta = ácidos graxos com leve efeito regenerativo. A mistura não "potencializa" — pode inativar ativos e clogar poros  
-3. Para quem pode machucar: pele oleosa ou acneica + esse nível de oclusão = acne de contato quase garantida. Para pele muito seca e já sem acne, parte dos ingredientes tem lógica — mas não como mistura caseira sem proporção  
-4. O que realmente funciona no lugar: hidratante com ceramidas para barreira, ácido hialurônico para hidratação, retinol noturno orientado por dermato — fáceis de encontrar em farmácia sem precisar de receita mágica  
+**Desenvolvimento (3 tipos de pele):**  
+1. Pele oleosa: gel de limpeza (remove sebo sem agredir), niacinamida (controla oleosidade + poros), FPS oil-free em gel (não obstrui)  
+2. Pele seca: espuma suave ou creme de limpeza (não resseca), hidratante com ceramidas ou ureia (restaura barreira), FPS hidratante com ativo (não deixa resseca mais)  
+3. Pele mista: espuma ou limpador balanceado, tônico suave (equilibra zona T), FPS leve em loção  
 
 **Formato e gravação:**  
-Câmera frontal, consultório. Mostrar os produtos na tela (pode ter Hipoglós e Bepantol na mão para âncora visual — todo mundo reconhece a embalagem). Duração: 50–60 segundos. Frase fixa: "CREME DO PITANGUY — O QUE A DERMATO PRECISA TE DIZER".
+Mesa com produtos dos 3 grupos organizados visualmente. Câmera frontal alternando com câmera sobre a mesa. Duração: 50–60s. Pode usar papel/placa com os 3 tipos separados. Frase: "ROTINA DE FARMÁCIA POR TIPO DE PELE".
 
 **Direção de edição:**  
-Texto em destaque em cada ponto importante. Mostrar os produtos em close no início (reconhecimento imediato). Cortes nos pontos de virada. Tom da Renata: não alarmista — calmo, claro, de quem sabe o que está falando.
+Texto marcando cada tipo de pele na tela quando Renata começa. Close nos produtos quando apresentar cada grupo. Ritmo constante — não lento demais. Música de fundo neutra.
 
 **Por que faz sentido para Renata:**  
-Conteúdo de maior potencial de compartilhamento desta série — quem usa vai querer saber se está certo, quem não usa vai querer mostrar para quem usa. Posiciona Renata no lado da segurança e da informação real, sem atacar quem faz. Gera confiança profunda: "essa médica não me vende nada, ela me protege."
-
-**Validações necessárias:**  
-Confirmar o posicionamento de Renata sobre cada ingrediente. Verificar se há pacientes da clínica que apresentaram reações a essa mistura (caso clínico real reforça o argumento — sem identificar paciente). Não afirmar que Pitanguy "nunca fez isso" — dizer que não há registro verificável.
+Conteúdo de altíssimo salvamento — as pessoas guardam esse vídeo para consultar na farmácia. Cada pessoa que usa a rotina e tem resultado vai recomendar a Renata. Porta de entrada de público que ainda não faz procedimentos. Alta chance de viralização por compartilhamento ("olha isso pra você").
 
 ---
 
-## REFERÊNCIA F3 — Protetor Solar Principia e o FPS Alto
-**Perfil/fonte:** @marinacristofani (farmacêutica, 7527457163862641926) + @jardeledebran + @dicasdatia  
-**Status de verificação:** ÍNDICE — URLs TikTok encontradas via resultado de busca, páginas de discover ativas até out/2026  
-**Gancho identificado:** "Aprovado pela farmacêutica" + FPS 99 como diferencial + niacinamida 5%  
-**Produto:** Protetor Solar Principia (FPS 60 e FPS 99) — marca nacional de dermocosmético  
+## REFERÊNCIA F3 — Dermato Avalia Linha Completa de Marca de Farmácia
+**Perfil/fonte:** @dra.nicolivalerio (TikTok Brasil)  
+**Status de verificação:** ÍNDICE — Formato de série confirmado; perfil com ~227K seguidores; padrão recorrente indexado  
+**URL verificada:** tiktok.com/@dra.nicolivalerio/video/7208729566037167365  
+**Formato:** Série "avaliação de marca" — produto por produto, aprovado/não aprovado/com ressalva  
+**Gancho identificado:** "O que funciona de verdade e o que é só embalagem bonita"  
+**Produto:** Linha completa de marca de farmácia — avaliação técnica imparcial por dermato  
 
 ### Engenharia Reversa
 
 **O que faz alguém interromper a rolagem?**  
-"FPS 99" é um número que chama atenção por ser inesperadamente alto. No mercado brasileiro, FPS 30 e 50 são os mais comuns — FPS 99 parece uma promessa de proteção absoluta, o que gera curiosidade e desejo imediatos.
+O gancho "o que funciona de verdade e o que é só embalagem bonita" toca diretamente na desconfiança crônica do consumidor brasileiro com produtos de beleza. Ninguém quer ser enganado pelo marketing. Uma dermato avaliando com critério clínico entrega exatamente o que o público quer: isenção.
 
 **Qual problema explora?**  
-Ansiedade de proteção solar (tema sempre em alta no Brasil) + desejo de produto nacional com qualidade percebida + appeal de "aprovado por profissional" que reduz a incerteza de compra.
+Insegurança de compra — "esse produto vale o preço?", "essa marca é boa de verdade?" — e falta de referência técnica imparcial. Influencers são pagos. Dermato que avalia sem afiliado tem credibilidade máxima.
 
 **Como o raciocínio se desenvolve?**  
-(1) Mostrar o produto, (2) destacar FPS alto + niacinamida, (3) "aprovação" de profissional, (4) mencionar cupom de desconto. Conteúdo claramente impulsionado por parceria comercial — formato de afiliado.
+(1) Apresentar a marca, (2) avaliar cada produto em 10–15 segundos (aprovado / não aprovado / depende), (3) conclusão sobre para quem a linha funciona melhor, (4) CTA para próxima marca (série infinita).
 
 **O que sustenta a hipótese de bom desempenho?**  
-Presença de múltiplos criadores com cupons diferentes (JARDEL, outros) indica campanha ativa de afiliados — a marca está investindo em distribuição de conteúdo. A página de discover foi atualizada em setembro/outubro 2026, confirmando tração contínua.
+@dra.nicolivalerio tem ~227K seguidores e usa o formato de série recorrente com alto engajamento. A série gera pedidos de continuidade nos comentários — cada episódio alimenta o próximo, criando ciclo de conteúdo autossustentável.
 
 **O que aproveitar sem copiar?**  
-A oportunidade de entrar no tema com a perspectiva que nenhum dos criadores afiliados entrega: o que FPS 99 realmente significa em termos de proteção vs. FPS 60 — e por que a diferença pode não justificar preço extra para a maioria das pessoas.
+O formato de série "avaliação por marca" — é infinito, gera pedidos da audiência e estabelece Renata como referência de consumo consciente em dermocosméticos.
 
 **O que precisa mudar para a Renata?**  
-Não mencionar a marca Principia especificamente a menos que seja uma parceria oficial. Usar o tema (FPS alto vs. FPS necessário) como veículo de educação. O conteúdo de afiliado em massa cria uma lacuna de informação imparcial — a dermato preenche essa lacuna.
+Renata não precisa ser afiliada de nenhuma marca. A avaliação é técnica e pode ser crítica quando necessário — isso aumenta a credibilidade, não diminui. Marcas sugeridas para primeiros episódios: Cerave, La Roche-Posay, Neutrogena, Dermage (nacionais e acessíveis).
 
 ---
 
 ### PROPOSTA F3 para Renata
 
-**Título provisório:** "Protetor solar FPS 99 protege mais do que FPS 60? A resposta vai te surpreender"  
-**Objetivo estratégico:** Alcance + autoridade — conteúdo de esclarecimento em tema quente que gera saves e debates  
+**Título provisório:** "Dermato avalia linha completa da [Marca] — o que funciona e o que não funciona"  
+**Objetivo estratégico:** Série de conteúdo recorrente — cada episódio gera pedidos do próximo, alta retenção de seguidoras  
 
 **Gancho:**  
-> "Você está pagando mais pelo FPS 99 achando que protege muito mais do que o FPS 60. Mas a diferença real de proteção entre os dois é de menos de 1%. Deixa eu explicar."
+> "Vou avaliar os produtos da [marca] — o que funciona de verdade e o que é só embalagem bonita."
 
 **Tese central:**  
-O número do FPS não é linear — é logarítmico. FPS 30 bloqueia 97% dos UVB, FPS 50 bloqueia 98%, FPS 60 bloqueia 98,3% e FPS 99 bloqueia 99%. A diferença real entre um protetor bom e o "mais alto do mercado" é menor do que o marketing sugere.
+Uma dermato com critério técnico avalia cada produto da linha pelo que ele realmente entrega, não pelo marketing. Nem tudo é bom — nem tudo é ruim.
 
-**Desenvolvimento (4 pontos):**  
-1. Como o FPS funciona de verdade: escala logarítmica, não linear — cada incremento protege menos do que o anterior  
-2. O que realmente importa no protetor: reaplicação a cada 2 horas, quantidade certa (2mg/cm² de pele — equivale a 1/4 de colher de chá no rosto), cobertura UVA + UVB  
-3. O que vale considerar além do número: textura (se escorrega no suor, ninguém reaplica), formulação para o tipo de pele, se fica branco ou não  
-4. Quando FPS mais alto faz diferença: pele extremamente fotossensível, albinismo, pós-procedimento laser — aí sim o incremento extra importa  
+**Desenvolvimento (avaliação produto por produto):**  
+1. Limpador/sabonete: avalia pH, ingredientes principais, adequação ao tipo de pele  
+2. Hidratante/creme: avalia concentração de ativos, textura, potencial oclusivo  
+3. Protetor solar (se houver): avalia FPS, espectro, textura, reaplicabilidade  
+4. Conclusão: "para quem essa linha funciona melhor — e para quem eu indicaria outra opção"  
 
 **Formato e gravação:**  
-Câmera frontal, consultório. Pode ter protetores solares de diferentes marcas visíveis na bancada — sem focar em nenhuma especificamente. Duração: 45–55 segundos. Frase fixa: "FPS 60 vs. FPS 99 — QUAL É A DIFERENÇA REAL?".
+Produtos da linha alinhados na mesa. Câmera alternando entre frontal e câmera sobre a mesa (mostrando produto). Duração: 55–65s. Cada produto tem 10–15s de avaliação. Frase: "DERMATO AVALIA: [MARCA]".
 
 **Direção de edição:**  
-Texto mostrando as porcentagens no momento em que Renata as menciona (âncora visual para o dado numérico). Cortes rápidos entre os pontos. Tom: descomplicado, sem condescendência.
+Texto marcando "APROVADO ✓", "NÃO INDICO ✗" ou "DEPENDE DO TIPO DE PELE ⚠" para cada produto. Ritmo rápido entre avaliações. CTA final com enquete: "qual marca você quer que eu avalie agora?"
 
 **Por que faz sentido para Renata:**  
-Proteção solar é o tema de maior importância clínica no Brasil (fotoenvelhecimento, melanoma) e um dos mais distorcidos pelo marketing. A dermato que esclarece o FPS não está atacando nenhum produto — está educando. Gera salvamentos de pessoas que sempre tiveram essa dúvida. Reforça autoridade sem precisar vender procedimento.
-
-**Validações necessárias:**  
-Confirmar os dados matemáticos de FPS (tabela de bloqueio UVB). Renata decidir se quer mencionar alguma marca como exemplo ou manter genérico (recomendado: genérico para manter isenção).
+Série infinita — a audiência sempre pede o próximo. Posiciona como referência de consumo inteligente de dermocosméticos. Não depende de procedimento para gerar conversão — quem confia na avaliação de produto confia na recomendação de tratamento. Funil longo de autoridade.
 
 ---
 
